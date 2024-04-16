@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CukierniaProjekt
 {
-    public partial class Form1 : Form
+    public partial class Konto : Form
     {
-        public Form1()
+        public Konto()
         {
             InitializeComponent();
         }
