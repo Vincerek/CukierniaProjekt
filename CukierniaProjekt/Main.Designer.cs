@@ -30,12 +30,12 @@
         {
             this.panelTop = new System.Windows.Forms.Panel();
             this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
-            this.btnKonto = new System.Windows.Forms.Button();
-            this.btnFormularz = new System.Windows.Forms.Button();
-            this.btnAktualnosci = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnAktualnosci = new FontAwesome.Sharp.IconButton();
+            this.btnFormularz = new FontAwesome.Sharp.IconButton();
+            this.btnKonto = new FontAwesome.Sharp.IconButton();
             this.panelTop.SuspendLayout();
             this.tlpMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -70,54 +70,6 @@
             this.tlpMenu.Size = new System.Drawing.Size(1016, 75);
             this.tlpMenu.TabIndex = 0;
             // 
-            // btnKonto
-            // 
-            this.btnKonto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKonto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnKonto.FlatAppearance.BorderSize = 0;
-            this.btnKonto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKonto.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnKonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
-            this.btnKonto.Location = new System.Drawing.Point(679, 3);
-            this.btnKonto.Name = "btnKonto";
-            this.btnKonto.Size = new System.Drawing.Size(334, 69);
-            this.btnKonto.TabIndex = 2;
-            this.btnKonto.Text = "Konto";
-            this.btnKonto.UseVisualStyleBackColor = true;
-            this.btnKonto.Click += new System.EventHandler(this.btnKonto_Click);
-            // 
-            // btnFormularz
-            // 
-            this.btnFormularz.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFormularz.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFormularz.FlatAppearance.BorderSize = 0;
-            this.btnFormularz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFormularz.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnFormularz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
-            this.btnFormularz.Location = new System.Drawing.Point(341, 3);
-            this.btnFormularz.Name = "btnFormularz";
-            this.btnFormularz.Size = new System.Drawing.Size(332, 69);
-            this.btnFormularz.TabIndex = 1;
-            this.btnFormularz.Text = "Formularz";
-            this.btnFormularz.UseVisualStyleBackColor = true;
-            this.btnFormularz.Click += new System.EventHandler(this.btnFormularz_Click);
-            // 
-            // btnAktualnosci
-            // 
-            this.btnAktualnosci.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAktualnosci.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAktualnosci.FlatAppearance.BorderSize = 0;
-            this.btnAktualnosci.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAktualnosci.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAktualnosci.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
-            this.btnAktualnosci.Location = new System.Drawing.Point(3, 3);
-            this.btnAktualnosci.Name = "btnAktualnosci";
-            this.btnAktualnosci.Size = new System.Drawing.Size(332, 69);
-            this.btnAktualnosci.TabIndex = 0;
-            this.btnAktualnosci.Text = "Aktualności";
-            this.btnAktualnosci.UseVisualStyleBackColor = true;
-            this.btnAktualnosci.Click += new System.EventHandler(this.btnAktualnosci_Click);
-            // 
             // panelLogo
             // 
             this.panelLogo.Controls.Add(this.pbLogo);
@@ -147,6 +99,60 @@
             this.panelMain.Size = new System.Drawing.Size(1216, 440);
             this.panelMain.TabIndex = 2;
             // 
+            // btnAktualnosci
+            // 
+            this.btnAktualnosci.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAktualnosci.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAktualnosci.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.btnAktualnosci.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            this.btnAktualnosci.IconColor = System.Drawing.Color.Black;
+            this.btnAktualnosci.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnAktualnosci.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAktualnosci.Location = new System.Drawing.Point(0, 0);
+            this.btnAktualnosci.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAktualnosci.Name = "btnAktualnosci";
+            this.btnAktualnosci.Size = new System.Drawing.Size(338, 75);
+            this.btnAktualnosci.TabIndex = 3;
+            this.btnAktualnosci.Text = "Aktualności";
+            this.btnAktualnosci.UseVisualStyleBackColor = true;
+            this.btnAktualnosci.Click += new System.EventHandler(this.btnAktualnosci_Click);
+            // 
+            // btnFormularz
+            // 
+            this.btnFormularz.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFormularz.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnFormularz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.btnFormularz.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.btnFormularz.IconColor = System.Drawing.Color.Black;
+            this.btnFormularz.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnFormularz.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormularz.Location = new System.Drawing.Point(338, 0);
+            this.btnFormularz.Margin = new System.Windows.Forms.Padding(0);
+            this.btnFormularz.Name = "btnFormularz";
+            this.btnFormularz.Size = new System.Drawing.Size(338, 75);
+            this.btnFormularz.TabIndex = 4;
+            this.btnFormularz.Text = "Formularz";
+            this.btnFormularz.UseVisualStyleBackColor = true;
+            this.btnFormularz.Click += new System.EventHandler(this.btnFormularz_Click);
+            // 
+            // btnKonto
+            // 
+            this.btnKonto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.btnKonto.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.btnKonto.IconColor = System.Drawing.Color.Black;
+            this.btnKonto.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnKonto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKonto.Location = new System.Drawing.Point(676, 0);
+            this.btnKonto.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKonto.Name = "btnKonto";
+            this.btnKonto.Size = new System.Drawing.Size(340, 75);
+            this.btnKonto.TabIndex = 5;
+            this.btnKonto.Text = "Konto";
+            this.btnKonto.UseVisualStyleBackColor = true;
+            this.btnKonto.Click += new System.EventHandler(this.btnKonto_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -169,10 +175,10 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.TableLayoutPanel tlpMenu;
         private System.Windows.Forms.PictureBox pbLogo;
-        private System.Windows.Forms.Button btnAktualnosci;
-        private System.Windows.Forms.Button btnKonto;
-        private System.Windows.Forms.Button btnFormularz;
         private System.Windows.Forms.Panel panelMain;
+        private FontAwesome.Sharp.IconButton btnFormularz;
+        private FontAwesome.Sharp.IconButton btnAktualnosci;
+        private FontAwesome.Sharp.IconButton btnKonto;
     }
 }
 
