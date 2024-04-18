@@ -66,7 +66,11 @@ namespace CukierniaProjekt
         private void btnFormularz_Click(object sender, EventArgs e)
         {
             ActiveButton(sender);
-            OpenChildForm(new Formularz());
+            OpenChildForm(new StwórzTort());
+            menuFormularz.Show(btnZamów, new Point(0, btnZamów.Height));
+            menuFormularz.Size = btnZamów.Size;
+            stwórzTort.Width = btnZamów.Width;
+            wybierzTort.Width = btnZamów.Width;
         }
 
         private void btnKonto_Click(object sender, EventArgs e)
@@ -74,10 +78,15 @@ namespace CukierniaProjekt
             ActiveButton(sender);
             OpenChildForm(new Konto());
         }
-        /*
-* ActiveButton(sender);
-OpenChildForm(new Aktualnosci());
-*/
 
+        private void stwórzTort_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new StwórzTort());
+        }
+
+        private void wybierzTort_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new WybierzTort());
+        }
     }
 }

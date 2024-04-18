@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace CukierniaProjekt
 {
-    public partial class Formularz : Form
+    public partial class StwórzTort : Form
     {
-        public Formularz()
+        public StwórzTort()
         {
             InitializeComponent();
         }
+
     }
 }
