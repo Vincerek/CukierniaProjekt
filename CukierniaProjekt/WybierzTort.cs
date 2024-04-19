@@ -17,6 +17,15 @@ namespace CukierniaProjekt
             InitializeComponent();
         }
 
+        
+
+        
+
+        private void WybierzTort_Load(object sender, EventArgs e)
+        {
+            //tu bedzie wyswietlenie danych w sliderze
+        }
+
         private void right_Click(object sender, EventArgs e)
         {
 

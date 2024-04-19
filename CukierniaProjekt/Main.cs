@@ -67,6 +67,7 @@ namespace CukierniaProjekt
         {
             ActiveButton(sender);
             OpenChildForm(new StwórzTort());
+            // pozycjonowanie i ustawianie dynamicznie rozmiaru kontrolki Context Menu Strip
             menuFormularz.Show(btnZamów, new Point(0, btnZamów.Height));
             menuFormularz.Size = btnZamów.Size;
             stwórzTort.Width = btnZamów.Width;
