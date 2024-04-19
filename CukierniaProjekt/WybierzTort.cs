@@ -35,5 +35,11 @@ namespace CukierniaProjekt
         {
 
         }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            WyswietlUczulenia.Text += textBoxUczulenia.Text+", ";
+            textBoxUczulenia.Clear();
+        }
     }
 }
