@@ -66,10 +66,10 @@ namespace CukierniaProjekt
         private void btnFormularz_Click(object sender, EventArgs e)
         {
             ActiveButton(sender);
-            OpenChildForm(new StwórzTort());
+            //OpenChildForm(new StwórzTort());
             // pozycjonowanie i ustawianie dynamicznie rozmiaru kontrolki Context Menu Strip (Łukasz Jankowiak)
             menuFormularz.Show(btnZamów, new Point(0, btnZamów.Height));
-            menuFormularz.Size = btnZamów.Size;
+            menuFormularz.Width = btnZamów.Width;
             stwórzTort.Width = btnZamów.Width;
             wybierzTort.Width = btnZamów.Width;
         }

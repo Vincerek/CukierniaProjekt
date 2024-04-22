@@ -38,8 +38,12 @@ namespace CukierniaProjekt
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            WyswietlUczulenia.Text += textBoxUczulenia.Text+", ";
-            textBoxUczulenia.Clear();
+            WyswietlUczulenia.Text += comboBoxUczulenia.SelectedItem + ", ";
+        }
+
+        private void btnPodsumowanie_Click(object sender, EventArgs e)
+        {
+            podsumowanie.Text=nazwaCiasta.Text+"; \n"+textboxInformacje.Text+"; \n";
         }
     }
 }
