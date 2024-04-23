@@ -59,12 +59,6 @@
     <Compile Include="Aktualnosci.Designer.cs">
       <DependentUpon>Aktualnosci.cs</DependentUpon>
     </Compile>
-    <Compile Include="Konto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Konto.Designer.cs">
-      <DependentUpon>Konto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,17 +76,15 @@
     <Compile Include="WybierzTort.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WybierzTort.Designer.cs">
+    <Compile Include=".Designer.cs">
       <DependentUpon>WybierzTort.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
     <EmbeddedResource Include="Aktualnosci.resx">
       <DependentUpon>Aktualnosci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StwórzTort.resx">
       <DependentUpon>StwórzTort.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Konto.resx">
-      <DependentUpon>Konto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

@@ -17,33 +17,24 @@ namespace CukierniaProjekt
             InitializeComponent();
         }
 
-        
-
-        
-
         private void WybierzTort_Load(object sender, EventArgs e)
         {
             //tu bedzie wyswietlenie danych w sliderze
         }
 
-        private void right_Click(object sender, EventArgs e)
+        private void btnPrawo_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void left_Click(object sender, EventArgs e)
+        private void btnLewo_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnDodaj_Click(object sender, EventArgs e)
+        private void btnDalej_Click(object sender, EventArgs e)
         {
-            WyswietlUczulenia.Text += comboBoxUczulenia.SelectedItem + ", ";
-        }
 
-        private void btnPodsumowanie_Click(object sender, EventArgs e)
-        {
-            podsumowanie.Text=nazwaCiasta.Text+"; \n"+textboxInformacje.Text+"; \n";
         }
     }
 }
