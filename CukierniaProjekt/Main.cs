@@ -18,9 +18,12 @@ namespace CukierniaProjekt
         public Main()
         {
             InitializeComponent();
+            //Otwieranie aktualności jako strony początkowej
             OpenChildForm(new Aktualnosci());
+            //ustawieie btnAktualnosci jako aktywny na start
             ActiveButton(btnAktualnosci);
         }
+        //Funkcja odpowiadająca za otwieranie formatki wewnątrz panelu formatki Main
         private void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
@@ -36,24 +39,26 @@ namespace CukierniaProjekt
             childForm.BringToFront();
             childForm.Show();
         }
+        //Funkcja Odznaczająca button dla lepszego wyglądu i czytelnosci strony
         private void ActiveButton(object senderBtn)
         {
             if (senderBtn != null)
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.ForeColor = System.Drawing.Color.FromArgb(227, 23, 67);
+                //currentBtn.ForeColor = System.Drawing.Color.FromArgb(227, 23, 67);
                 currentBtn.Font = new Font(currentBtn.Font, FontStyle.Bold);
-                currentBtn.IconColor = System.Drawing.Color.FromArgb(227, 23, 67);
+                //currentBtn.IconColor = System.Drawing.Color.FromArgb(227, 23, 67);
             }
         }
+        //zdejmowanie wyrużnienia przycisku
         private void DisableButton()
         {
             if (currentBtn != null)
             {
-                currentBtn.ForeColor = System.Drawing.Color.FromArgb(69, 69, 69);
+                currentBtn.ForeColor = System.Drawing.Color.FromArgb(53, 28, 117);
                 currentBtn.Font = new Font(currentBtn.Font, FontStyle.Regular);
-                currentBtn.IconColor = System.Drawing.Color.FromArgb(69, 69, 69);
+                currentBtn.IconColor = System.Drawing.Color.FromArgb(53, 28, 117);
             }
         }
 
@@ -74,6 +79,12 @@ namespace CukierniaProjekt
         {
             ActiveButton(sender);
             OpenChildForm(new StwórzTort());
+        }
+
+        private void btnKontakt_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender);
+            OpenChildForm(new Kontakt());
         }
     }
 }
