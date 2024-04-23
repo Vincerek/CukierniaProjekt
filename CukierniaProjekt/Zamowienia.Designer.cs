@@ -68,6 +68,7 @@
             this.textImie.Size = new System.Drawing.Size(100, 22);
             this.textImie.TabIndex = 0;
             this.textImie.Text = "Podaj Imię";
+            this.textImie.TextChanged += new System.EventHandler(this.textImie_TextChanged);
             this.textImie.Enter += new System.EventHandler(this.textImie_Enter);
             this.textImie.Leave += new System.EventHandler(this.textImie_Leave);
             // 
@@ -79,6 +80,8 @@
             this.textNazwisko.Name = "textNazwisko";
             this.textNazwisko.Size = new System.Drawing.Size(100, 22);
             this.textNazwisko.TabIndex = 1;
+            this.textNazwisko.Enter += new System.EventHandler(this.textNazwisko_Enter);
+            this.textNazwisko.Leave += new System.EventHandler(this.textNazwisko_Leave);
             // 
             // textMail
             // 

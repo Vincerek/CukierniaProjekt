@@ -13,9 +13,15 @@ namespace CukierniaProjekt
     public partial class Zamowienia : Form
     {
         string hintImie;
+        string hintNazwisko;
+        string hintMail;
+        string hintTel;
         public Zamowienia()
         {
             InitializeComponent();
+            hintImie = textImie.Text;
+            hintImie = textImie.Text;
+            hintImie = textImie.Text;
             hintImie = textImie.Text;
 
 
@@ -23,8 +29,11 @@ namespace CukierniaProjekt
         public void onHint(string hint, TextBox textBox)
         {
             if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
                 textBox.Text = hint;
                 textBox.ForeColor = Color.DarkGray;
+            }
+
         }
         public void offHint(string hint, TextBox textBox)
         {
@@ -43,6 +52,21 @@ namespace CukierniaProjekt
         private void textImie_Leave(object sender, EventArgs e)
         {
             onHint(hintImie, textImie);
+        }
+
+        private void textImie_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textNazwisko_Enter(object sender, EventArgs e)
+        {
+            offHint(hintImie, textNazwisko);
+        }
+
+        private void textNazwisko_Leave(object sender, EventArgs e)
+        {
+            onHint(hintImie, textNazwisko);
         }
     }
 }

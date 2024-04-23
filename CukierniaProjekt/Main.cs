@@ -19,9 +19,9 @@ namespace CukierniaProjekt
         public Main()
         {
             InitializeComponent();
-            OpenChildForm(new Aktualnosci());
+           //OpenChildForm(new Aktualnosci());
             //Debugging
-            //OpenChildForm(new Zamowienia());
+            OpenChildForm(new Zamowienia());
             ActiveButton(btnAktualnosci);
         }
         public void OpenChildForm(Form childForm)
