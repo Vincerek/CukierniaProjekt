@@ -80,6 +80,12 @@
       <DependentUpon>WybierzTort.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Zamowienia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia.Designer.cs">
+      <DependentUpon>Zamowienia.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Aktualnosci.resx">
       <DependentUpon>Aktualnosci.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +107,9 @@
     </Compile>
     <EmbeddedResource Include="WybierzTort.resx">
       <DependentUpon>WybierzTort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia.resx">
+      <DependentUpon>Zamowienia.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

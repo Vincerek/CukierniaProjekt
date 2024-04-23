@@ -9,19 +9,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CukierniaProjekt
 {
     public partial class Main : Form
     {
-        private Form currentChildForm;
-        private IconButton currentBtn;
+        public Form currentChildForm;
+        public IconButton currentBtn;
         public Main()
         {
             InitializeComponent();
             OpenChildForm(new Aktualnosci());
+            //Debugging
+            //OpenChildForm(new Zamowienia());
             ActiveButton(btnAktualnosci);
         }
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
@@ -35,6 +38,7 @@ namespace CukierniaProjekt
             panelMain.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+            //MessageBox.Show("Wykonano");
         }
         private void ActiveButton(object senderBtn)
         {

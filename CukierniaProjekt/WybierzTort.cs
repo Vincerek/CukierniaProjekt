@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +36,13 @@ namespace CukierniaProjekt
         private void btnDalej_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDalej_Click_1(object sender, EventArgs e)
+        {
+            
+            //Main.OpenChildForm(new Zamowienia());
+            
         }
     }
 }

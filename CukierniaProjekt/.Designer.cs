@@ -80,8 +80,8 @@
             this.btnDalej.Name = "btnDalej";
             this.btnDalej.Size = new System.Drawing.Size(193, 205);
             this.btnDalej.TabIndex = 6;
-            this.btnDalej.Text = "Dalej";
             this.btnDalej.UseVisualStyleBackColor = false;
+            this.btnDalej.Click += new System.EventHandler(this.btnDalej_Click_1);
             // 
             // infOCiescie
             // 
