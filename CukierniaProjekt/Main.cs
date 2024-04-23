@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace CukierniaProjekt
     public partial class Main : Form
     {
         private Form currentChildForm;
-        private Button currentBtn;
+        private IconButton currentBtn;
         public Main()
         {
             InitializeComponent();
@@ -40,9 +41,10 @@ namespace CukierniaProjekt
             if (senderBtn != null)
             {
                 DisableButton();
-                currentBtn = (Button)senderBtn;
+                currentBtn = (IconButton)senderBtn;
                 currentBtn.ForeColor = System.Drawing.Color.FromArgb(227, 23, 67);
                 currentBtn.Font = new Font(currentBtn.Font, FontStyle.Bold);
+                currentBtn.IconColor = System.Drawing.Color.FromArgb(227, 23, 67);
             }
         }
         private void DisableButton()
@@ -51,6 +53,7 @@ namespace CukierniaProjekt
             {
                 currentBtn.ForeColor = System.Drawing.Color.FromArgb(69, 69, 69);
                 currentBtn.Font = new Font(currentBtn.Font, FontStyle.Regular);
+                currentBtn.IconColor = System.Drawing.Color.FromArgb(69, 69, 69);
             }
         }
 
@@ -60,16 +63,17 @@ namespace CukierniaProjekt
             OpenChildForm(new Aktualnosci());
         }
 
-        private void btnFormularz_Click(object sender, EventArgs e)
+
+        private void btnNaszeCiasta_Click(object sender, EventArgs e)
         {
             ActiveButton(sender);
-            OpenChildForm(new Formularz());
+            OpenChildForm(new WybierzTort());
         }
 
-        private void btnKonto_Click(object sender, EventArgs e)
+        private void btnStworz_Click(object sender, EventArgs e)
         {
             ActiveButton(sender);
-            OpenChildForm(new Konto());
+            OpenChildForm(new StwórzTort());
         }
     }
 }

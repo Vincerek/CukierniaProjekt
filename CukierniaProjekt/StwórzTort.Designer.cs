@@ -1,6 +1,6 @@
 ﻿namespace CukierniaProjekt
 {
-    partial class Formularz
+    partial class StwórzTort
     {
         /// <summary>
         /// Required designer variable.
@@ -35,20 +35,21 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(722, 425);
+            this.label1.Location = new System.Drawing.Point(1120, 397);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Formularz";
             // 
-            // Formularz
+            // StwórzTort
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1198, 422);
+            this.ControlBox = false;
             this.Controls.Add(this.label1);
-            this.Name = "Formularz";
-            this.Text = "Formularz";
+            this.Name = "StwórzTort";
+            this.ShowIcon = false;
             this.ResumeLayout(false);
             this.PerformLayout();
 
