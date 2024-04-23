@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace CukierniaProjekt
 {
@@ -23,7 +24,6 @@ namespace CukierniaProjekt
             hintNazwisko = textNazwisko.Text;
             hintMail = textMail.Text;
             hintTel = textTel.Text;
-
 
         }
         public void onHint(string hint, TextBox textBox)

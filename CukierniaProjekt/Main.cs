@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace CukierniaProjekt
 {
+    
     public partial class Main : Form
     {
         private Form currentChildForm;
@@ -19,13 +20,13 @@ namespace CukierniaProjekt
         {
             InitializeComponent();
             //Otwieranie aktualności jako strony początkowej
-            //OpenChildForm(new Aktualnosci());
-            OpenChildForm(new Zamowienia());
+            OpenChildForm(new Aktualnosci());
+            //OpenChildForm(new Zamowienia());
             //ustawieie btnAktualnosci jako aktywny na start
             ActiveButton(btnAktualnosci);
         }
         //Funkcja odpowiadająca za otwieranie formatki wewnątrz panelu formatki Main
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
