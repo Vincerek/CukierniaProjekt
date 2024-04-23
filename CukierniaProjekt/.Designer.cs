@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WybierzTort));
             this.panelNaszeCiasta = new System.Windows.Forms.TableLayoutPanel();
             this.btnDalej = new FontAwesome.Sharp.IconButton();
             this.infOCiescie = new System.Windows.Forms.Label();
@@ -35,7 +37,7 @@
             this.nazwaCiasta = new System.Windows.Forms.Label();
             this.btnLewo = new FontAwesome.Sharp.IconButton();
             this.zdjCiast = new System.Windows.Forms.Panel();
-            this.iconSplitButton1 = new FontAwesome.Sharp.IconSplitButton();
+            this.listaCiast = new System.Windows.Forms.ImageList(this.components);
             this.panelNaszeCiasta.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,17 +161,13 @@
             this.zdjCiast.Size = new System.Drawing.Size(836, 210);
             this.zdjCiast.TabIndex = 3;
             // 
-            // iconSplitButton1
+            // listaCiast
             // 
-            this.iconSplitButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconSplitButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconSplitButton1.IconColor = System.Drawing.Color.Black;
-            this.iconSplitButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconSplitButton1.IconSize = 48;
-            this.iconSplitButton1.Name = "iconSplitButton1";
-            this.iconSplitButton1.Rotation = 0D;
-            this.iconSplitButton1.Size = new System.Drawing.Size(23, 23);
-            this.iconSplitButton1.Text = "iconSplitButton1";
+            this.listaCiast.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("listaCiast.ImageStream")));
+            this.listaCiast.TransparentColor = System.Drawing.Color.Transparent;
+            this.listaCiast.Images.SetKeyName(0, "ciasto3.png");
+            this.listaCiast.Images.SetKeyName(1, "ciasto2.png");
+            this.listaCiast.Images.SetKeyName(2, "ciasto1.jpg");
             // 
             // WybierzTort
             // 
@@ -196,7 +194,7 @@
         private FontAwesome.Sharp.IconButton btnLewo;
         private System.Windows.Forms.Panel zdjCiast;
         private System.Windows.Forms.Label infOCiescie;
-        private FontAwesome.Sharp.IconSplitButton iconSplitButton1;
         private FontAwesome.Sharp.IconButton btnDalej;
+        private System.Windows.Forms.ImageList listaCiast;
     }
 }
