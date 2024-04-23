@@ -19,7 +19,8 @@ namespace CukierniaProjekt
         {
             InitializeComponent();
             //Otwieranie aktualności jako strony początkowej
-            OpenChildForm(new Aktualnosci());
+            //OpenChildForm(new Aktualnosci());
+            OpenChildForm(new Zamowienia());
             //ustawieie btnAktualnosci jako aktywny na start
             ActiveButton(btnAktualnosci);
         }
