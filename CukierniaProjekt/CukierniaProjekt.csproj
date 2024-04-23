@@ -59,6 +59,12 @@
     <Compile Include="Aktualnosci.Designer.cs">
       <DependentUpon>Aktualnosci.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kontakt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kontakt.Designer.cs">
+      <DependentUpon>Kontakt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
