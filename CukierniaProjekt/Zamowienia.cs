@@ -20,9 +20,9 @@ namespace CukierniaProjekt
         {
             InitializeComponent();
             hintImie = textImie.Text;
-            hintImie = textImie.Text;
-            hintImie = textImie.Text;
-            hintImie = textImie.Text;
+            hintNazwisko = textNazwisko.Text;
+            hintMail = textMail.Text;
+            hintTel = textTel.Text;
 
 
         }
@@ -61,12 +61,33 @@ namespace CukierniaProjekt
 
         private void textNazwisko_Enter(object sender, EventArgs e)
         {
-            offHint(hintImie, textNazwisko);
+            offHint(hintNazwisko, textNazwisko);
         }
 
         private void textNazwisko_Leave(object sender, EventArgs e)
         {
-            onHint(hintImie, textNazwisko);
+            onHint(hintNazwisko, textNazwisko);
+        }
+
+        private void textMail_Enter(object sender, EventArgs e)
+        {
+            offHint(hintMail, textMail);
+        }
+
+        private void textMail_Leave(object sender, EventArgs e)
+        {
+            onHint(hintMail, textMail);
+
+        }
+
+        private void textTel_Enter(object sender, EventArgs e)
+        {
+            offHint(hintTel, textTel);
+        }
+
+        private void textTel_Leave(object sender, EventArgs e)
+        {
+            onHint(hintTel, textTel);
         }
     }
 }
