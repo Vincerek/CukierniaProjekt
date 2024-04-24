@@ -20,6 +20,7 @@ namespace CukierniaProjekt
         public WybierzTort()
         {
             InitializeComponent();
+
         }
 
         private void WybierzTort_Load(object sender, EventArgs e)
