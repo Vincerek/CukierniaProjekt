@@ -114,6 +114,9 @@
     <EmbeddedResource Include="WybierzTort.resx">
       <DependentUpon>WybierzTort.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia.resx">
+      <DependentUpon>Zamowienia.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

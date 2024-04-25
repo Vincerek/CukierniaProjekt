@@ -60,7 +60,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1282, 653);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1282, 699);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // textImie
@@ -70,10 +70,10 @@
             this.textImie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textImie.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textImie.ForeColor = System.Drawing.Color.DarkGray;
-            this.textImie.Location = new System.Drawing.Point(0, 30);
+            this.textImie.Location = new System.Drawing.Point(0, 37);
             this.textImie.Margin = new System.Windows.Forms.Padding(0);
             this.textImie.Name = "textImie";
-            this.textImie.Size = new System.Drawing.Size(254, 36);
+            this.textImie.Size = new System.Drawing.Size(254, 30);
             this.textImie.TabIndex = 0;
             this.textImie.Text = "Podaj imię";
             this.textImie.TextChanged += new System.EventHandler(this.textImie_TextChanged);
@@ -87,10 +87,10 @@
             this.textNazwisko.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textNazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textNazwisko.ForeColor = System.Drawing.Color.DarkGray;
-            this.textNazwisko.Location = new System.Drawing.Point(0, 127);
+            this.textNazwisko.Location = new System.Drawing.Point(0, 141);
             this.textNazwisko.Margin = new System.Windows.Forms.Padding(0);
             this.textNazwisko.Name = "textNazwisko";
-            this.textNazwisko.Size = new System.Drawing.Size(254, 36);
+            this.textNazwisko.Size = new System.Drawing.Size(254, 30);
             this.textNazwisko.TabIndex = 1;
             this.textNazwisko.Text = "Podaj nazwisko";
             this.textNazwisko.Enter += new System.EventHandler(this.textNazwisko_Enter);
@@ -103,10 +103,10 @@
             this.textMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textMail.ForeColor = System.Drawing.Color.DarkGray;
-            this.textMail.Location = new System.Drawing.Point(0, 224);
+            this.textMail.Location = new System.Drawing.Point(0, 245);
             this.textMail.Margin = new System.Windows.Forms.Padding(0);
             this.textMail.Name = "textMail";
-            this.textMail.Size = new System.Drawing.Size(254, 36);
+            this.textMail.Size = new System.Drawing.Size(254, 30);
             this.textMail.TabIndex = 2;
             this.textMail.Text = "Podaj e-mail";
             this.textMail.Enter += new System.EventHandler(this.textMail_Enter);
@@ -119,10 +119,10 @@
             this.textTel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textTel.ForeColor = System.Drawing.Color.DarkGray;
-            this.textTel.Location = new System.Drawing.Point(0, 321);
+            this.textTel.Location = new System.Drawing.Point(0, 349);
             this.textTel.Margin = new System.Windows.Forms.Padding(0);
             this.textTel.Name = "textTel";
-            this.textTel.Size = new System.Drawing.Size(254, 36);
+            this.textTel.Size = new System.Drawing.Size(254, 30);
             this.textTel.TabIndex = 3;
             this.textTel.Text = "Podaj numer telefonu";
             this.textTel.Enter += new System.EventHandler(this.textTel_Enter);
@@ -138,7 +138,7 @@
             this.btnZamow.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnZamow.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnZamow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnZamow.Location = new System.Drawing.Point(869, 477);
+            this.btnZamow.Location = new System.Drawing.Point(869, 514);
             this.btnZamow.Name = "btnZamow";
             this.btnZamow.Size = new System.Drawing.Size(184, 86);
             this.btnZamow.TabIndex = 4;
@@ -151,7 +151,7 @@
             this.label1.Location = new System.Drawing.Point(641, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(641, 97);
+            this.label1.Size = new System.Drawing.Size(641, 104);
             this.label1.TabIndex = 5;
             this.label1.Text = "Zamówienie";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 653);
+            this.ClientSize = new System.Drawing.Size(1282, 699);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Zamowienia";
             this.Text = "Zamowienia";
