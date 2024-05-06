@@ -88,5 +88,11 @@ namespace CukierniaProjekt
             ActiveButton(sender);
             OpenChildForm(new Kontakt());
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender);
+            OpenChildForm(new Status());
+        }
     }
 }

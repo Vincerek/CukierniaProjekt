@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelTop = new System.Windows.Forms.Panel();
             this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.btnKontakt = new FontAwesome.Sharp.IconButton();
             this.btnStworzCiasto = new FontAwesome.Sharp.IconButton();
             this.btnNaszeCIasta = new FontAwesome.Sharp.IconButton();
             this.btnAktualnosci = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelTop.SuspendLayout();
             this.tlpMenu.SuspendLayout();
@@ -63,7 +63,7 @@
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tlpMenu.Controls.Add(this.btnKontakt, 4, 0);
             this.tlpMenu.Controls.Add(this.btnStworzCiasto, 3, 0);
             this.tlpMenu.Controls.Add(this.btnNaszeCIasta, 2, 0);
@@ -78,6 +78,16 @@
             this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMenu.Size = new System.Drawing.Size(1451, 75);
             this.tlpMenu.TabIndex = 0;
+            // 
+            // panelMain
+            // 
+            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(0, 75);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1451, 509);
+            this.panelMain.TabIndex = 2;
             // 
             // btnKontakt
             // 
@@ -147,7 +157,7 @@
             this.btnNaszeCIasta.Name = "btnNaszeCIasta";
             this.btnNaszeCIasta.Size = new System.Drawing.Size(278, 75);
             this.btnNaszeCIasta.TabIndex = 4;
-            this.btnNaszeCIasta.Text = "Nasze ciasta";
+            this.btnNaszeCIasta.Text = "Nasze Ciasta";
             this.btnNaszeCIasta.UseVisualStyleBackColor = false;
             this.btnNaszeCIasta.Click += new System.EventHandler(this.btnNaszeCiasta_Click);
             // 
@@ -162,7 +172,7 @@
             this.btnAktualnosci.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAktualnosci.Font = new System.Drawing.Font("Inter", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAktualnosci.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
-            this.btnAktualnosci.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            this.btnAktualnosci.IconChar = FontAwesome.Sharp.IconChar.House;
             this.btnAktualnosci.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnAktualnosci.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnAktualnosci.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -171,7 +181,7 @@
             this.btnAktualnosci.Name = "btnAktualnosci";
             this.btnAktualnosci.Size = new System.Drawing.Size(278, 75);
             this.btnAktualnosci.TabIndex = 3;
-            this.btnAktualnosci.Text = "Aktualności";
+            this.btnAktualnosci.Text = "O Nas";
             this.btnAktualnosci.UseVisualStyleBackColor = false;
             this.btnAktualnosci.Click += new System.EventHandler(this.btnAktualnosci_Click);
             // 
@@ -187,16 +197,6 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // panelMain
-            // 
-            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 75);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1451, 509);
-            this.panelMain.TabIndex = 2;
-            // 
             // iconButton1
             // 
             this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
@@ -207,7 +207,7 @@
             this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.List;
             this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.Location = new System.Drawing.Point(1378, 3);
@@ -215,6 +215,7 @@
             this.iconButton1.Size = new System.Drawing.Size(70, 69);
             this.iconButton1.TabIndex = 9;
             this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // Main
             // 

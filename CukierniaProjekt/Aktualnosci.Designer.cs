@@ -75,7 +75,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 274F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 274F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1425, 641);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1456, 644);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -92,14 +92,14 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1404, 234);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1435, 234);
             this.tableLayoutPanel3.TabIndex = 6;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1054, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(1085, 0);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(350, 234);
@@ -115,7 +115,7 @@
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(1048, 228);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(1079, 228);
             this.flowLayoutPanel3.TabIndex = 1;
             // 
             // label3
@@ -126,9 +126,9 @@
             this.label3.Location = new System.Drawing.Point(40, 20);
             this.label3.Margin = new System.Windows.Forms.Padding(40, 20, 3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 49);
+            this.label3.Size = new System.Drawing.Size(295, 49);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Artkuł3";
+            this.label3.Text = "Dołącz do nas";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -139,9 +139,10 @@
             this.label4.Location = new System.Drawing.Point(10, 89);
             this.label4.Margin = new System.Windows.Forms.Padding(10, 20, 3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1001, 112);
+            this.label4.Size = new System.Drawing.Size(900, 56);
             this.label4.TabIndex = 2;
-            this.label4.Text = resources.GetString("label4.Text");
+            this.label4.Text = "Dołącz do nas i odkryj niezwykły świat PixelCake, gdzie każdy kawałek jest słodki" +
+    "m wspomnieniem, a każdy kęs to czysta przyjemność dla podniebienia.";
             // 
             // tableLayoutPanel2
             // 
@@ -157,14 +158,14 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1404, 234);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1435, 234);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1054, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(1085, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(350, 234);
@@ -180,7 +181,7 @@
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1048, 228);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1079, 228);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // label1
@@ -191,9 +192,9 @@
             this.label1.Location = new System.Drawing.Point(40, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(40, 20, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 49);
+            this.label1.Size = new System.Drawing.Size(132, 49);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Artkuł1";
+            this.label1.Text = "O nas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -204,7 +205,7 @@
             this.label2.Location = new System.Drawing.Point(10, 89);
             this.label2.Margin = new System.Windows.Forms.Padding(10, 20, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1001, 112);
+            this.label2.Size = new System.Drawing.Size(1065, 84);
             this.label2.TabIndex = 2;
             this.label2.Text = resources.GetString("label2.Text");
             // 
@@ -222,14 +223,14 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1404, 234);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1435, 234);
             this.tableLayoutPanel4.TabIndex = 5;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1054, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(1085, 0);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(350, 234);
@@ -245,7 +246,7 @@
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(1048, 228);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1079, 228);
             this.flowLayoutPanel4.TabIndex = 1;
             // 
             // label5
@@ -256,9 +257,9 @@
             this.label5.Location = new System.Drawing.Point(40, 20);
             this.label5.Margin = new System.Windows.Forms.Padding(40, 20, 3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(169, 49);
+            this.label5.Size = new System.Drawing.Size(295, 49);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Artkuł2";
+            this.label5.Text = "Dlaczego my?";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -269,7 +270,7 @@
             this.label6.Location = new System.Drawing.Point(10, 89);
             this.label6.Margin = new System.Windows.Forms.Padding(10, 20, 3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1001, 112);
+            this.label6.Size = new System.Drawing.Size(1047, 84);
             this.label6.TabIndex = 2;
             this.label6.Text = resources.GetString("label6.Text");
             // 
@@ -277,7 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1425, 641);
+            this.ClientSize = new System.Drawing.Size(1456, 644);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
