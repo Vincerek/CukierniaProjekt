@@ -38,6 +38,7 @@
             this.dataOdbioru = new System.Windows.Forms.DateTimePicker();
             this.btnWroc = new FontAwesome.Sharp.IconButton();
             this.lokalOdbioru = new System.Windows.Forms.ComboBox();
+            this.panelSzczegZamow = new System.Windows.Forms.FlowLayoutPanel();
             this.panelZamow.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             this.panelZamow.Controls.Add(this.dataOdbioru, 0, 4);
             this.panelZamow.Controls.Add(this.btnZamow, 1, 5);
             this.panelZamow.Controls.Add(this.lokalOdbioru, 0, 5);
+            this.panelZamow.Controls.Add(this.panelSzczegZamow, 1, 1);
             this.panelZamow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelZamow.Location = new System.Drawing.Point(0, 0);
             this.panelZamow.Margin = new System.Windows.Forms.Padding(0);
@@ -174,6 +176,9 @@
             this.dataOdbioru.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dataOdbioru.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.dataOdbioru.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.dataOdbioru.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.dataOdbioru.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.dataOdbioru.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
             this.dataOdbioru.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataOdbioru.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dataOdbioru.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -223,6 +228,16 @@
             this.lokalOdbioru.TabIndex = 8;
             this.lokalOdbioru.Text = "Lokalizacja odbioru";
             // 
+            // panelSzczegZamow
+            // 
+            this.panelZamow.SetColumnSpan(this.panelSzczegZamow, 3);
+            this.panelSzczegZamow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSzczegZamow.Location = new System.Drawing.Point(323, 107);
+            this.panelSzczegZamow.Name = "panelSzczegZamow";
+            this.panelZamow.SetRowSpan(this.panelSzczegZamow, 4);
+            this.panelSzczegZamow.Size = new System.Drawing.Size(956, 445);
+            this.panelSzczegZamow.TabIndex = 9;
+            // 
             // Zamowienia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -250,5 +265,6 @@
         private System.Windows.Forms.DateTimePicker dataOdbioru;
         private FontAwesome.Sharp.IconButton btnWroc;
         private System.Windows.Forms.ComboBox lokalOdbioru;
+        private System.Windows.Forms.FlowLayoutPanel panelSzczegZamow;
     }
 }
