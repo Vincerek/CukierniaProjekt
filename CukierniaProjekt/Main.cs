@@ -94,5 +94,11 @@ namespace CukierniaProjekt
             ActiveButton(sender);
             OpenChildForm(new Status());
         }
+
+        private void btnKoszyk_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender);
+            OpenChildForm(new Zamowienia());
+        }
     }
 }

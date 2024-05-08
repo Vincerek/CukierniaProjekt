@@ -54,11 +54,6 @@ namespace CukierniaProjekt
             onHint(hintImie, textImie);
         }
 
-        private void textImie_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textNazwisko_Enter(object sender, EventArgs e)
         {
             offHint(hintNazwisko, textNazwisko);
@@ -77,7 +72,6 @@ namespace CukierniaProjekt
         private void textMail_Leave(object sender, EventArgs e)
         {
             onHint(hintMail, textMail);
-
         }
 
         private void textTel_Enter(object sender, EventArgs e)
@@ -88,6 +82,34 @@ namespace CukierniaProjekt
         private void textTel_Leave(object sender, EventArgs e)
         {
             onHint(hintTel, textTel);
+        }
+
+        private void Zamowienia_Load(object sender, EventArgs e)
+        {
+            //Ustawianie ograniczeń daty odbioru po załadowaniu formularza
+            //(minimalna 5dni od aktualnej daty, maksymalna rok do przodu)
+            int todayD = DateTime.Now.Day;
+            int todayM = DateTime.Now.Month;
+            int todayY = DateTime.Now.Year;
+            dataOdbioru.MinDate = new DateTime(todayY,todayM,todayD+5);
+            dataOdbioru.MaxDate = new DateTime(todayY + 1, todayM, todayD);
+            
+        }
+
+        private void btnWroc_Click(object sender, EventArgs e)
+        {
+            //powrót do formularza z wyborem tortów w celu kontynuowania zakupów
+            WybierzTort wybierzTort = new WybierzTort();
+            var panelContainer = this.Parent as Panel;
+            var form1 = panelContainer.TopLevelControl as Form;
+            wybierzTort.TopLevel = false;
+            wybierzTort.FormBorderStyle = FormBorderStyle.None;
+            wybierzTort.Dock = DockStyle.Fill;
+            ((Panel)form1.Controls.Find("panelMain", true)[0]).Controls.Add(wybierzTort);
+            wybierzTort.BringToFront();
+            wybierzTort.Show();
+            //przesył tortów dodanych do koszyka do bazy danych
+
         }
     }
 }

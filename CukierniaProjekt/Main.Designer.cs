@@ -31,13 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelTop = new System.Windows.Forms.Panel();
             this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.btnKontakt = new FontAwesome.Sharp.IconButton();
             this.btnStworzCiasto = new FontAwesome.Sharp.IconButton();
             this.btnNaszeCIasta = new FontAwesome.Sharp.IconButton();
             this.btnAktualnosci = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.btnKoszyk = new FontAwesome.Sharp.IconButton();
             this.panelTop.SuspendLayout();
             this.tlpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,12 +58,13 @@
             // tlpMenu
             // 
             this.tlpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
-            this.tlpMenu.ColumnCount = 6;
+            this.tlpMenu.ColumnCount = 7;
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263F));
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tlpMenu.Controls.Add(this.btnKontakt, 4, 0);
             this.tlpMenu.Controls.Add(this.btnStworzCiasto, 3, 0);
@@ -70,6 +72,7 @@
             this.tlpMenu.Controls.Add(this.btnAktualnosci, 1, 0);
             this.tlpMenu.Controls.Add(this.pictureBox1, 0, 0);
             this.tlpMenu.Controls.Add(this.iconButton1, 5, 0);
+            this.tlpMenu.Controls.Add(this.btnKoszyk, 6, 0);
             this.tlpMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMenu.Location = new System.Drawing.Point(0, 0);
             this.tlpMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -78,16 +81,6 @@
             this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMenu.Size = new System.Drawing.Size(1451, 75);
             this.tlpMenu.TabIndex = 0;
-            // 
-            // panelMain
-            // 
-            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 75);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1451, 509);
-            this.panelMain.TabIndex = 2;
             // 
             // btnKontakt
             // 
@@ -98,16 +91,16 @@
             this.btnKontakt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnKontakt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnKontakt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKontakt.Font = new System.Drawing.Font("Inter", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKontakt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnKontakt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnKontakt.IconChar = FontAwesome.Sharp.IconChar.Phone;
             this.btnKontakt.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnKontakt.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnKontakt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKontakt.Location = new System.Drawing.Point(1097, 0);
+            this.btnKontakt.Location = new System.Drawing.Point(1040, 0);
             this.btnKontakt.Margin = new System.Windows.Forms.Padding(0);
             this.btnKontakt.Name = "btnKontakt";
-            this.btnKontakt.Size = new System.Drawing.Size(278, 75);
+            this.btnKontakt.Size = new System.Drawing.Size(259, 75);
             this.btnKontakt.TabIndex = 7;
             this.btnKontakt.Text = "Kontakt";
             this.btnKontakt.UseVisualStyleBackColor = false;
@@ -122,16 +115,16 @@
             this.btnStworzCiasto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnStworzCiasto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnStworzCiasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStworzCiasto.Font = new System.Drawing.Font("Inter", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnStworzCiasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnStworzCiasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnStworzCiasto.IconChar = FontAwesome.Sharp.IconChar.Wrench;
             this.btnStworzCiasto.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnStworzCiasto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStworzCiasto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStworzCiasto.Location = new System.Drawing.Point(819, 0);
+            this.btnStworzCiasto.Location = new System.Drawing.Point(781, 0);
             this.btnStworzCiasto.Margin = new System.Windows.Forms.Padding(0);
             this.btnStworzCiasto.Name = "btnStworzCiasto";
-            this.btnStworzCiasto.Size = new System.Drawing.Size(278, 75);
+            this.btnStworzCiasto.Size = new System.Drawing.Size(259, 75);
             this.btnStworzCiasto.TabIndex = 5;
             this.btnStworzCiasto.Text = "Stwórz Ciasto";
             this.btnStworzCiasto.UseVisualStyleBackColor = false;
@@ -146,16 +139,16 @@
             this.btnNaszeCIasta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnNaszeCIasta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnNaszeCIasta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNaszeCIasta.Font = new System.Drawing.Font("Inter", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNaszeCIasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNaszeCIasta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnNaszeCIasta.IconChar = FontAwesome.Sharp.IconChar.CakeCandles;
             this.btnNaszeCIasta.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnNaszeCIasta.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnNaszeCIasta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNaszeCIasta.Location = new System.Drawing.Point(541, 0);
+            this.btnNaszeCIasta.Location = new System.Drawing.Point(522, 0);
             this.btnNaszeCIasta.Margin = new System.Windows.Forms.Padding(0);
             this.btnNaszeCIasta.Name = "btnNaszeCIasta";
-            this.btnNaszeCIasta.Size = new System.Drawing.Size(278, 75);
+            this.btnNaszeCIasta.Size = new System.Drawing.Size(259, 75);
             this.btnNaszeCIasta.TabIndex = 4;
             this.btnNaszeCIasta.Text = "Nasze Ciasta";
             this.btnNaszeCIasta.UseVisualStyleBackColor = false;
@@ -170,7 +163,7 @@
             this.btnAktualnosci.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnAktualnosci.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnAktualnosci.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAktualnosci.Font = new System.Drawing.Font("Inter", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAktualnosci.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAktualnosci.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnAktualnosci.IconChar = FontAwesome.Sharp.IconChar.House;
             this.btnAktualnosci.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
@@ -179,7 +172,7 @@
             this.btnAktualnosci.Location = new System.Drawing.Point(263, 0);
             this.btnAktualnosci.Margin = new System.Windows.Forms.Padding(0);
             this.btnAktualnosci.Name = "btnAktualnosci";
-            this.btnAktualnosci.Size = new System.Drawing.Size(278, 75);
+            this.btnAktualnosci.Size = new System.Drawing.Size(259, 75);
             this.btnAktualnosci.TabIndex = 3;
             this.btnAktualnosci.Text = "O Nas";
             this.btnAktualnosci.UseVisualStyleBackColor = false;
@@ -210,12 +203,39 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.List;
             this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(1378, 3);
+            this.iconButton1.Location = new System.Drawing.Point(1302, 3);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(70, 69);
             this.iconButton1.TabIndex = 9;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // panelMain
+            // 
+            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(0, 75);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1451, 509);
+            this.panelMain.TabIndex = 2;
+            // 
+            // btnKoszyk
+            // 
+            this.btnKoszyk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnKoszyk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKoszyk.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKoszyk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKoszyk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.btnKoszyk.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+            this.btnKoszyk.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
+            this.btnKoszyk.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnKoszyk.Location = new System.Drawing.Point(1378, 3);
+            this.btnKoszyk.Name = "btnKoszyk";
+            this.btnKoszyk.Size = new System.Drawing.Size(70, 69);
+            this.btnKoszyk.TabIndex = 10;
+            this.btnKoszyk.UseVisualStyleBackColor = false;
+            this.btnKoszyk.Click += new System.EventHandler(this.btnKoszyk_Click);
             // 
             // Main
             // 
@@ -246,6 +266,7 @@
         private FontAwesome.Sharp.IconButton btnKontakt;
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnKoszyk;
     }
 }
 

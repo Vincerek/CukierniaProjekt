@@ -46,10 +46,7 @@ namespace CukierniaProjekt
             zdjCiast.BackgroundImage = listaCiast.Images[indexCiast];
         }
 
-        private void btnDalej_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnDalej_Click_1(object sender, EventArgs e)
         {
