@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panelZamow = new System.Windows.Forms.TableLayoutPanel();
+            this.btnWroc = new FontAwesome.Sharp.IconButton();
             this.textImie = new System.Windows.Forms.TextBox();
             this.textNazwisko = new System.Windows.Forms.TextBox();
             this.textMail = new System.Windows.Forms.TextBox();
             this.textTel = new System.Windows.Forms.TextBox();
-            this.btnZamow = new FontAwesome.Sharp.IconButton();
             this.szczeg = new System.Windows.Forms.Label();
             this.dataOdbioru = new System.Windows.Forms.DateTimePicker();
-            this.btnWroc = new FontAwesome.Sharp.IconButton();
+            this.btnZamow = new FontAwesome.Sharp.IconButton();
             this.lokalOdbioru = new System.Windows.Forms.ComboBox();
             this.panelSzczegZamow = new System.Windows.Forms.FlowLayoutPanel();
             this.panelZamow.SuspendLayout();
@@ -73,6 +73,27 @@
             this.panelZamow.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.panelZamow.Size = new System.Drawing.Size(1282, 699);
             this.panelZamow.TabIndex = 0;
+            // 
+            // btnWroc
+            // 
+            this.btnWroc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.btnWroc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnWroc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWroc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWroc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
+            this.btnWroc.IconChar = FontAwesome.Sharp.IconChar.TruckFast;
+            this.btnWroc.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
+            this.btnWroc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnWroc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnWroc.Location = new System.Drawing.Point(670, 585);
+            this.btnWroc.Margin = new System.Windows.Forms.Padding(30);
+            this.btnWroc.Name = "btnWroc";
+            this.btnWroc.Size = new System.Drawing.Size(260, 84);
+            this.btnWroc.TabIndex = 7;
+            this.btnWroc.Text = "Wróć do zakupów";
+            this.btnWroc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnWroc.UseVisualStyleBackColor = false;
+            this.btnWroc.Click += new System.EventHandler(this.btnWroc_Click);
             // 
             // textImie
             // 
@@ -138,25 +159,6 @@
             this.textTel.Enter += new System.EventHandler(this.textTel_Enter);
             this.textTel.Leave += new System.EventHandler(this.textTel_Leave);
             // 
-            // btnZamow
-            // 
-            this.btnZamow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
-            this.btnZamow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnZamow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnZamow.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnZamow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
-            this.btnZamow.IconChar = FontAwesome.Sharp.IconChar.TruckFast;
-            this.btnZamow.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
-            this.btnZamow.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnZamow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnZamow.Location = new System.Drawing.Point(350, 585);
-            this.btnZamow.Margin = new System.Windows.Forms.Padding(30);
-            this.btnZamow.Name = "btnZamow";
-            this.btnZamow.Size = new System.Drawing.Size(260, 84);
-            this.btnZamow.TabIndex = 4;
-            this.btnZamow.Text = "Zamów";
-            this.btnZamow.UseVisualStyleBackColor = false;
-            // 
             // szczeg
             // 
             this.szczeg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
@@ -188,26 +190,24 @@
             this.dataOdbioru.Size = new System.Drawing.Size(260, 36);
             this.dataOdbioru.TabIndex = 6;
             // 
-            // btnWroc
+            // btnZamow
             // 
-            this.btnWroc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
-            this.btnWroc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnWroc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWroc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnWroc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
-            this.btnWroc.IconChar = FontAwesome.Sharp.IconChar.TruckFast;
-            this.btnWroc.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
-            this.btnWroc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnWroc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnWroc.Location = new System.Drawing.Point(670, 585);
-            this.btnWroc.Margin = new System.Windows.Forms.Padding(30);
-            this.btnWroc.Name = "btnWroc";
-            this.btnWroc.Size = new System.Drawing.Size(260, 84);
-            this.btnWroc.TabIndex = 7;
-            this.btnWroc.Text = "Wróć do zakupów";
-            this.btnWroc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnWroc.UseVisualStyleBackColor = false;
-            this.btnWroc.Click += new System.EventHandler(this.btnWroc_Click);
+            this.btnZamow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.btnZamow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnZamow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnZamow.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnZamow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
+            this.btnZamow.IconChar = FontAwesome.Sharp.IconChar.TruckFast;
+            this.btnZamow.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
+            this.btnZamow.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnZamow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnZamow.Location = new System.Drawing.Point(350, 585);
+            this.btnZamow.Margin = new System.Windows.Forms.Padding(30);
+            this.btnZamow.Name = "btnZamow";
+            this.btnZamow.Size = new System.Drawing.Size(260, 84);
+            this.btnZamow.TabIndex = 4;
+            this.btnZamow.Text = "Zamów";
+            this.btnZamow.UseVisualStyleBackColor = false;
             // 
             // lokalOdbioru
             // 
