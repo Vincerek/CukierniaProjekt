@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.panelNaszeCiasta = new System.Windows.Forms.TableLayoutPanel();
-            this.infOCiescie = new System.Windows.Forms.Label();
-            this.nazwaCiasta = new System.Windows.Forms.Label();
             this.bazaPrawo = new FontAwesome.Sharp.IconButton();
             this.bazaLewo = new FontAwesome.Sharp.IconButton();
             this.smakPrawo = new FontAwesome.Sharp.IconButton();
             this.posypkaPrawo = new FontAwesome.Sharp.IconButton();
             this.btnDalej = new FontAwesome.Sharp.IconButton();
+            this.infOCiescie = new System.Windows.Forms.Label();
             this.smakLewo = new FontAwesome.Sharp.IconButton();
+            this.nazwaCiasta = new System.Windows.Forms.Label();
             this.posypkaLewo = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.zdjCiasto = new System.Windows.Forms.PictureBox();
             this.panelNaszeCiasta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zdjCiasto)).BeginInit();
             this.SuspendLayout();
             // 
             // panelNaszeCiasta
@@ -58,7 +58,7 @@
             this.panelNaszeCiasta.Controls.Add(this.smakLewo, 3, 1);
             this.panelNaszeCiasta.Controls.Add(this.nazwaCiasta, 0, 0);
             this.panelNaszeCiasta.Controls.Add(this.posypkaLewo, 0, 1);
-            this.panelNaszeCiasta.Controls.Add(this.pictureBox1, 1, 1);
+            this.panelNaszeCiasta.Controls.Add(this.zdjCiasto, 1, 1);
             this.panelNaszeCiasta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelNaszeCiasta.Location = new System.Drawing.Point(0, 0);
             this.panelNaszeCiasta.Margin = new System.Windows.Forms.Padding(0);
@@ -71,37 +71,6 @@
             this.panelNaszeCiasta.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.panelNaszeCiasta.Size = new System.Drawing.Size(1177, 402);
             this.panelNaszeCiasta.TabIndex = 1;
-            // 
-            // infOCiescie
-            // 
-            this.infOCiescie.AutoSize = true;
-            this.infOCiescie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
-            this.panelNaszeCiasta.SetColumnSpan(this.infOCiescie, 2);
-            this.infOCiescie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.infOCiescie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.infOCiescie.ForeColor = System.Drawing.Color.White;
-            this.infOCiescie.Location = new System.Drawing.Point(0, 320);
-            this.infOCiescie.Margin = new System.Windows.Forms.Padding(0);
-            this.infOCiescie.Name = "infOCiescie";
-            this.infOCiescie.Size = new System.Drawing.Size(823, 82);
-            this.infOCiescie.TabIndex = 4;
-            this.infOCiescie.Text = "Informacje o cieście";
-            // 
-            // nazwaCiasta
-            // 
-            this.nazwaCiasta.AutoSize = true;
-            this.nazwaCiasta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
-            this.panelNaszeCiasta.SetColumnSpan(this.nazwaCiasta, 3);
-            this.nazwaCiasta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nazwaCiasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.nazwaCiasta.ForeColor = System.Drawing.Color.White;
-            this.nazwaCiasta.Location = new System.Drawing.Point(0, 0);
-            this.nazwaCiasta.Margin = new System.Windows.Forms.Padding(0);
-            this.nazwaCiasta.Name = "nazwaCiasta";
-            this.nazwaCiasta.Size = new System.Drawing.Size(1177, 80);
-            this.nazwaCiasta.TabIndex = 0;
-            this.nazwaCiasta.Text = "Nazwa Ciasta";
-            this.nazwaCiasta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bazaPrawo
             // 
@@ -119,6 +88,7 @@
             this.bazaPrawo.Size = new System.Drawing.Size(354, 80);
             this.bazaPrawo.TabIndex = 11;
             this.bazaPrawo.UseVisualStyleBackColor = false;
+            this.bazaPrawo.Click += new System.EventHandler(this.bazaPrawo_Click);
             // 
             // bazaLewo
             // 
@@ -136,6 +106,7 @@
             this.bazaLewo.Size = new System.Drawing.Size(353, 80);
             this.bazaLewo.TabIndex = 10;
             this.bazaLewo.UseVisualStyleBackColor = false;
+            this.bazaLewo.Click += new System.EventHandler(this.bazaLewo_Click);
             // 
             // smakPrawo
             // 
@@ -153,6 +124,7 @@
             this.smakPrawo.Size = new System.Drawing.Size(354, 80);
             this.smakPrawo.TabIndex = 9;
             this.smakPrawo.UseVisualStyleBackColor = false;
+            this.smakPrawo.Click += new System.EventHandler(this.smakPrawo_Click);
             // 
             // posypkaPrawo
             // 
@@ -170,6 +142,7 @@
             this.posypkaPrawo.Size = new System.Drawing.Size(354, 80);
             this.posypkaPrawo.TabIndex = 8;
             this.posypkaPrawo.UseVisualStyleBackColor = false;
+            this.posypkaPrawo.Click += new System.EventHandler(this.posypkaPrawo_Click);
             // 
             // btnDalej
             // 
@@ -190,6 +163,22 @@
             this.btnDalej.TabIndex = 6;
             this.btnDalej.Text = "Dalej";
             this.btnDalej.UseVisualStyleBackColor = false;
+            this.btnDalej.Click += new System.EventHandler(this.btnDalej_Click);
+            // 
+            // infOCiescie
+            // 
+            this.infOCiescie.AutoSize = true;
+            this.infOCiescie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.panelNaszeCiasta.SetColumnSpan(this.infOCiescie, 2);
+            this.infOCiescie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.infOCiescie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.infOCiescie.ForeColor = System.Drawing.Color.White;
+            this.infOCiescie.Location = new System.Drawing.Point(0, 320);
+            this.infOCiescie.Margin = new System.Windows.Forms.Padding(0);
+            this.infOCiescie.Name = "infOCiescie";
+            this.infOCiescie.Size = new System.Drawing.Size(823, 82);
+            this.infOCiescie.TabIndex = 4;
+            this.infOCiescie.Text = "Informacje o cieście";
             // 
             // smakLewo
             // 
@@ -207,6 +196,23 @@
             this.smakLewo.Size = new System.Drawing.Size(353, 80);
             this.smakLewo.TabIndex = 2;
             this.smakLewo.UseVisualStyleBackColor = false;
+            this.smakLewo.Click += new System.EventHandler(this.smakLewo_Click);
+            // 
+            // nazwaCiasta
+            // 
+            this.nazwaCiasta.AutoSize = true;
+            this.nazwaCiasta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.panelNaszeCiasta.SetColumnSpan(this.nazwaCiasta, 3);
+            this.nazwaCiasta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nazwaCiasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nazwaCiasta.ForeColor = System.Drawing.Color.White;
+            this.nazwaCiasta.Location = new System.Drawing.Point(0, 0);
+            this.nazwaCiasta.Margin = new System.Windows.Forms.Padding(0);
+            this.nazwaCiasta.Name = "nazwaCiasta";
+            this.nazwaCiasta.Size = new System.Drawing.Size(1177, 80);
+            this.nazwaCiasta.TabIndex = 0;
+            this.nazwaCiasta.Text = "Nazwa Ciasta";
+            this.nazwaCiasta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // posypkaLewo
             // 
@@ -224,20 +230,20 @@
             this.posypkaLewo.Size = new System.Drawing.Size(353, 80);
             this.posypkaLewo.TabIndex = 1;
             this.posypkaLewo.UseVisualStyleBackColor = false;
+            this.posypkaLewo.Click += new System.EventHandler(this.posypkaLewo_Click);
             // 
-            // pictureBox1
+            // zdjCiasto
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::CukierniaProjekt.Properties.Resources.CzekoladaBiszkoptCzekolada;
-            this.pictureBox1.Location = new System.Drawing.Point(353, 80);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.panelNaszeCiasta.SetRowSpan(this.pictureBox1, 3);
-            this.pictureBox1.Size = new System.Drawing.Size(470, 240);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.zdjCiasto.BackColor = System.Drawing.Color.White;
+            this.zdjCiasto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zdjCiasto.Location = new System.Drawing.Point(353, 80);
+            this.zdjCiasto.Margin = new System.Windows.Forms.Padding(0);
+            this.zdjCiasto.Name = "zdjCiasto";
+            this.panelNaszeCiasta.SetRowSpan(this.zdjCiasto, 3);
+            this.zdjCiasto.Size = new System.Drawing.Size(470, 240);
+            this.zdjCiasto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.zdjCiasto.TabIndex = 7;
+            this.zdjCiasto.TabStop = false;
             // 
             // StwórzTort
             // 
@@ -251,7 +257,7 @@
             this.Load += new System.EventHandler(this.StwórzTort_Load);
             this.panelNaszeCiasta.ResumeLayout(false);
             this.panelNaszeCiasta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zdjCiasto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -268,6 +274,6 @@
         private FontAwesome.Sharp.IconButton bazaLewo;
         private FontAwesome.Sharp.IconButton smakPrawo;
         private FontAwesome.Sharp.IconButton posypkaPrawo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox zdjCiasto;
     }
 }
