@@ -63,6 +63,16 @@ namespace CukierniaProjekt.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CzekoladaBiszkoptCzekolada {
+            get {
+                object obj = ResourceManager.GetObject("CzekoladaBiszkoptCzekolada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_Cukierkowe_urojenia {
             get {
                 object obj = ResourceManager.GetObject("Logo Cukierkowe urojenia", resourceCulture);
