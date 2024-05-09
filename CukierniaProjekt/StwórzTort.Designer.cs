@@ -50,6 +50,7 @@
             this.Controls.Add(this.label1);
             this.Name = "StwórzTort";
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.StwórzTort_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
