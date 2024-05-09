@@ -148,6 +148,7 @@
     <EmbeddedResource Include="Zamowienia.resx">
       <DependentUpon>Zamowienia.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Baza\cukierniaCiasta.db" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -168,9 +169,7 @@
   <ItemGroup>
     <None Include="Resources\CzekoladaBiszkoptCzekolada.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Baza\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
