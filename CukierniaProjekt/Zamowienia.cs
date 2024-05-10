@@ -93,7 +93,11 @@ namespace CukierniaProjekt
             int todayY = DateTime.Now.Year;
             dataOdbioru.MinDate = new DateTime(todayY,todayM,todayD+5);
             dataOdbioru.MaxDate = new DateTime(todayY + 1, todayM, todayD);
+
             
+
+            
+
         }
 
         private void btnWroc_Click(object sender, EventArgs e)
