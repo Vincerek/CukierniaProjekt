@@ -84,6 +84,12 @@
     <Compile Include="Status.Designer.cs">
       <DependentUpon>Status.cs</DependentUpon>
     </Compile>
+    <Compile Include="wierszZamowien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="wierszZamowien.Designer.cs">
+      <DependentUpon>wierszZamowien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Zamowienia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="wierszZamowien.resx">
+      <DependentUpon>wierszZamowien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WybierzTort.resx">
       <DependentUpon>WybierzTort.cs</DependentUpon>
     </EmbeddedResource>
