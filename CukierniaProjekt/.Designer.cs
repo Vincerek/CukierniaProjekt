@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WybierzTort));
             this.panelNaszeCiasta = new System.Windows.Forms.TableLayoutPanel();
+            this.btnDalej = new FontAwesome.Sharp.IconButton();
             this.infOCiescie = new System.Windows.Forms.Label();
+            this.btnPrawo = new FontAwesome.Sharp.IconButton();
             this.nazwaCiasta = new System.Windows.Forms.Label();
             this.btnLewo = new FontAwesome.Sharp.IconButton();
             this.zdjCiast = new System.Windows.Forms.Panel();
             this.listaCiast = new System.Windows.Forms.ImageList(this.components);
-            this.btnPrawo = new FontAwesome.Sharp.IconButton();
-            this.btnDalej = new FontAwesome.Sharp.IconButton();
             this.panelNaszeCiasta.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,27 @@
             this.panelNaszeCiasta.Size = new System.Drawing.Size(896, 341);
             this.panelNaszeCiasta.TabIndex = 0;
             // 
+            // btnDalej
+            // 
+            this.btnDalej.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.btnDalej.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDalej.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDalej.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDalej.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
+            this.btnDalej.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            this.btnDalej.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
+            this.btnDalej.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDalej.IconSize = 40;
+            this.btnDalej.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDalej.Location = new System.Drawing.Point(761, 238);
+            this.btnDalej.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDalej.Name = "btnDalej";
+            this.btnDalej.Size = new System.Drawing.Size(135, 103);
+            this.btnDalej.TabIndex = 6;
+            this.btnDalej.Text = "Dalej";
+            this.btnDalej.UseVisualStyleBackColor = false;
+            this.btnDalej.Click += new System.EventHandler(this.btnDalej_Click_1);
+            // 
             // infOCiescie
             // 
             this.infOCiescie.AutoSize = true;
@@ -72,13 +93,31 @@
             this.panelNaszeCiasta.SetColumnSpan(this.infOCiescie, 2);
             this.infOCiescie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infOCiescie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.infOCiescie.ForeColor = System.Drawing.Color.White;
+            this.infOCiescie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.infOCiescie.Location = new System.Drawing.Point(0, 238);
             this.infOCiescie.Margin = new System.Windows.Forms.Padding(0);
             this.infOCiescie.Name = "infOCiescie";
             this.infOCiescie.Size = new System.Drawing.Size(761, 103);
             this.infOCiescie.TabIndex = 4;
             this.infOCiescie.Text = "Informacje o cieście";
+            // 
+            // btnPrawo
+            // 
+            this.btnPrawo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.btnPrawo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrawo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrawo.ForeColor = System.Drawing.Color.White;
+            this.btnPrawo.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
+            this.btnPrawo.IconColor = System.Drawing.Color.White;
+            this.btnPrawo.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnPrawo.IconSize = 60;
+            this.btnPrawo.Location = new System.Drawing.Point(761, 68);
+            this.btnPrawo.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPrawo.Name = "btnPrawo";
+            this.btnPrawo.Size = new System.Drawing.Size(135, 170);
+            this.btnPrawo.TabIndex = 2;
+            this.btnPrawo.UseVisualStyleBackColor = false;
+            this.btnPrawo.Click += new System.EventHandler(this.btnPrawo_Click);
             // 
             // nazwaCiasta
             // 
@@ -87,7 +126,7 @@
             this.panelNaszeCiasta.SetColumnSpan(this.nazwaCiasta, 3);
             this.nazwaCiasta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nazwaCiasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.nazwaCiasta.ForeColor = System.Drawing.Color.White;
+            this.nazwaCiasta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.nazwaCiasta.Location = new System.Drawing.Point(0, 0);
             this.nazwaCiasta.Margin = new System.Windows.Forms.Padding(0);
             this.nazwaCiasta.Name = "nazwaCiasta";
@@ -130,45 +169,6 @@
             this.listaCiast.Images.SetKeyName(0, "ciasto3.png");
             this.listaCiast.Images.SetKeyName(1, "ciasto2.png");
             this.listaCiast.Images.SetKeyName(2, "ciasto1.jpg");
-            // 
-            // btnPrawo
-            // 
-            this.btnPrawo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
-            this.btnPrawo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPrawo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrawo.ForeColor = System.Drawing.Color.White;
-            this.btnPrawo.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
-            this.btnPrawo.IconColor = System.Drawing.Color.White;
-            this.btnPrawo.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnPrawo.IconSize = 60;
-            this.btnPrawo.Location = new System.Drawing.Point(761, 68);
-            this.btnPrawo.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPrawo.Name = "btnPrawo";
-            this.btnPrawo.Size = new System.Drawing.Size(135, 170);
-            this.btnPrawo.TabIndex = 2;
-            this.btnPrawo.UseVisualStyleBackColor = false;
-            this.btnPrawo.Click += new System.EventHandler(this.btnPrawo_Click);
-            // 
-            // btnDalej
-            // 
-            this.btnDalej.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
-            this.btnDalej.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDalej.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDalej.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDalej.ForeColor = System.Drawing.Color.White;
-            this.btnDalej.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.btnDalej.IconColor = System.Drawing.Color.White;
-            this.btnDalej.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDalej.IconSize = 40;
-            this.btnDalej.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDalej.Location = new System.Drawing.Point(761, 238);
-            this.btnDalej.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDalej.Name = "btnDalej";
-            this.btnDalej.Size = new System.Drawing.Size(135, 103);
-            this.btnDalej.TabIndex = 6;
-            this.btnDalej.Text = "Dalej";
-            this.btnDalej.UseVisualStyleBackColor = false;
-            this.btnDalej.Click += new System.EventHandler(this.btnDalej_Click_1);
             // 
             // WybierzTort
             // 
