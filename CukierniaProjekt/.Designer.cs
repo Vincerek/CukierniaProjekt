@@ -33,11 +33,11 @@
             this.panelNaszeCiasta = new System.Windows.Forms.TableLayoutPanel();
             this.infOCiescie = new System.Windows.Forms.Label();
             this.nazwaCiasta = new System.Windows.Forms.Label();
+            this.btnLewo = new FontAwesome.Sharp.IconButton();
             this.zdjCiast = new System.Windows.Forms.Panel();
             this.listaCiast = new System.Windows.Forms.ImageList(this.components);
-            this.btnDalej = new FontAwesome.Sharp.IconButton();
             this.btnPrawo = new FontAwesome.Sharp.IconButton();
-            this.btnLewo = new FontAwesome.Sharp.IconButton();
+            this.btnDalej = new FontAwesome.Sharp.IconButton();
             this.panelNaszeCiasta.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,8 +93,26 @@
             this.nazwaCiasta.Name = "nazwaCiasta";
             this.nazwaCiasta.Size = new System.Drawing.Size(896, 68);
             this.nazwaCiasta.TabIndex = 0;
-            this.nazwaCiasta.Text = "Nazwa Ciasta";
+            this.nazwaCiasta.Text = "Nazwa Ciasta\r\nCena: ";
             this.nazwaCiasta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnLewo
+            // 
+            this.btnLewo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.btnLewo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLewo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLewo.ForeColor = System.Drawing.Color.White;
+            this.btnLewo.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
+            this.btnLewo.IconColor = System.Drawing.Color.White;
+            this.btnLewo.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnLewo.IconSize = 60;
+            this.btnLewo.Location = new System.Drawing.Point(0, 68);
+            this.btnLewo.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLewo.Name = "btnLewo";
+            this.btnLewo.Size = new System.Drawing.Size(134, 170);
+            this.btnLewo.TabIndex = 1;
+            this.btnLewo.UseVisualStyleBackColor = false;
+            this.btnLewo.Click += new System.EventHandler(this.btnLewo_Click);
             // 
             // zdjCiast
             // 
@@ -112,6 +130,24 @@
             this.listaCiast.Images.SetKeyName(0, "ciasto3.png");
             this.listaCiast.Images.SetKeyName(1, "ciasto2.png");
             this.listaCiast.Images.SetKeyName(2, "ciasto1.jpg");
+            // 
+            // btnPrawo
+            // 
+            this.btnPrawo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.btnPrawo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrawo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrawo.ForeColor = System.Drawing.Color.White;
+            this.btnPrawo.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
+            this.btnPrawo.IconColor = System.Drawing.Color.White;
+            this.btnPrawo.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnPrawo.IconSize = 60;
+            this.btnPrawo.Location = new System.Drawing.Point(761, 68);
+            this.btnPrawo.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPrawo.Name = "btnPrawo";
+            this.btnPrawo.Size = new System.Drawing.Size(135, 170);
+            this.btnPrawo.TabIndex = 2;
+            this.btnPrawo.UseVisualStyleBackColor = false;
+            this.btnPrawo.Click += new System.EventHandler(this.btnPrawo_Click);
             // 
             // btnDalej
             // 
@@ -134,42 +170,6 @@
             this.btnDalej.UseVisualStyleBackColor = false;
             this.btnDalej.Click += new System.EventHandler(this.btnDalej_Click_1);
             // 
-            // btnPrawo
-            // 
-            this.btnPrawo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
-            this.btnPrawo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPrawo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrawo.ForeColor = System.Drawing.Color.White;
-            this.btnPrawo.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
-            this.btnPrawo.IconColor = System.Drawing.Color.White;
-            this.btnPrawo.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnPrawo.IconSize = 60;
-            this.btnPrawo.Location = new System.Drawing.Point(761, 68);
-            this.btnPrawo.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPrawo.Name = "btnPrawo";
-            this.btnPrawo.Size = new System.Drawing.Size(135, 170);
-            this.btnPrawo.TabIndex = 2;
-            this.btnPrawo.UseVisualStyleBackColor = false;
-            this.btnPrawo.Click += new System.EventHandler(this.btnPrawo_Click);
-            // 
-            // btnLewo
-            // 
-            this.btnLewo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
-            this.btnLewo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLewo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLewo.ForeColor = System.Drawing.Color.White;
-            this.btnLewo.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
-            this.btnLewo.IconColor = System.Drawing.Color.White;
-            this.btnLewo.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnLewo.IconSize = 60;
-            this.btnLewo.Location = new System.Drawing.Point(0, 68);
-            this.btnLewo.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLewo.Name = "btnLewo";
-            this.btnLewo.Size = new System.Drawing.Size(134, 170);
-            this.btnLewo.TabIndex = 1;
-            this.btnLewo.UseVisualStyleBackColor = false;
-            this.btnLewo.Click += new System.EventHandler(this.btnLewo_Click);
-            // 
             // WybierzTort
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,7 +178,7 @@
             this.ClientSize = new System.Drawing.Size(896, 341);
             this.ControlBox = false;
             this.Controls.Add(this.panelNaszeCiasta);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WybierzTort";
             this.Load += new System.EventHandler(this.WybierzTort_Load);
             this.panelNaszeCiasta.ResumeLayout(false);
@@ -191,11 +191,11 @@
 
         private System.Windows.Forms.TableLayoutPanel panelNaszeCiasta;
         private System.Windows.Forms.Label nazwaCiasta;
-        private FontAwesome.Sharp.IconButton btnPrawo;
         private FontAwesome.Sharp.IconButton btnLewo;
         private System.Windows.Forms.Panel zdjCiast;
         private System.Windows.Forms.Label infOCiescie;
-        private FontAwesome.Sharp.IconButton btnDalej;
         private System.Windows.Forms.ImageList listaCiast;
+        private FontAwesome.Sharp.IconButton btnDalej;
+        private FontAwesome.Sharp.IconButton btnPrawo;
     }
 }

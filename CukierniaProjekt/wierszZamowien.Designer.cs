@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.wiersz = new System.Windows.Forms.TableLayoutPanel();
-            this.nazwa = new System.Windows.Forms.Label();
             this.cena = new System.Windows.Forms.Label();
+            this.nazwa = new System.Windows.Forms.Label();
             this.btnUsun = new FontAwesome.Sharp.IconButton();
             this.zdj = new System.Windows.Forms.PictureBox();
             this.sztuki = new System.Windows.Forms.NumericUpDown();
@@ -43,9 +43,9 @@
             // 
             this.wiersz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
             this.wiersz.ColumnCount = 5;
-            this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.wiersz.Controls.Add(this.cena, 2, 0);
@@ -58,9 +58,22 @@
             this.wiersz.Name = "wiersz";
             this.wiersz.RowCount = 1;
             this.wiersz.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.wiersz.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.wiersz.Size = new System.Drawing.Size(716, 74);
             this.wiersz.TabIndex = 0;
+            // 
+            // cena
+            // 
+            this.cena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
+            this.cena.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.cena.Location = new System.Drawing.Point(429, 0);
+            this.cena.Margin = new System.Windows.Forms.Padding(0);
+            this.cena.Name = "cena";
+            this.cena.Size = new System.Drawing.Size(107, 74);
+            this.cena.TabIndex = 6;
+            this.cena.Text = "Cena";
+            this.cena.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // nazwa
             // 
@@ -71,24 +84,10 @@
             this.nazwa.Location = new System.Drawing.Point(0, 0);
             this.nazwa.Margin = new System.Windows.Forms.Padding(0);
             this.nazwa.Name = "nazwa";
-            this.nazwa.Size = new System.Drawing.Size(250, 74);
+            this.nazwa.Size = new System.Drawing.Size(322, 74);
             this.nazwa.TabIndex = 1;
             this.nazwa.Text = "Nazwa Ciasta";
             this.nazwa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cena
-            // 
-            this.cena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
-            this.cena.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
-            this.cena.Location = new System.Drawing.Point(464, 0);
-            this.cena.Margin = new System.Windows.Forms.Padding(0);
-            this.cena.Name = "cena";
-            this.cena.Size = new System.Drawing.Size(71, 74);
-            this.cena.TabIndex = 6;
-            this.cena.Text = "Cena";
-            this.cena.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnUsun
             // 
@@ -99,10 +98,10 @@
             this.btnUsun.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
             this.btnUsun.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUsun.IconSize = 35;
-            this.btnUsun.Location = new System.Drawing.Point(642, 0);
+            this.btnUsun.Location = new System.Drawing.Point(643, 0);
             this.btnUsun.Margin = new System.Windows.Forms.Padding(0);
             this.btnUsun.Name = "btnUsun";
-            this.btnUsun.Size = new System.Drawing.Size(74, 74);
+            this.btnUsun.Size = new System.Drawing.Size(73, 74);
             this.btnUsun.TabIndex = 7;
             this.btnUsun.UseVisualStyleBackColor = true;
             // 
@@ -110,10 +109,10 @@
             // 
             this.zdj.Dock = System.Windows.Forms.DockStyle.Fill;
             this.zdj.Image = global::CukierniaProjekt.Properties.Resources.Logo_Cukierkowe_urojenia;
-            this.zdj.Location = new System.Drawing.Point(250, 0);
+            this.zdj.Location = new System.Drawing.Point(322, 0);
             this.zdj.Margin = new System.Windows.Forms.Padding(0);
             this.zdj.Name = "zdj";
-            this.zdj.Size = new System.Drawing.Size(214, 74);
+            this.zdj.Size = new System.Drawing.Size(107, 74);
             this.zdj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.zdj.TabIndex = 8;
             this.zdj.TabStop = false;
@@ -125,7 +124,7 @@
             this.sztuki.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sztuki.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sztuki.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
-            this.sztuki.Location = new System.Drawing.Point(535, 25);
+            this.sztuki.Location = new System.Drawing.Point(536, 25);
             this.sztuki.Margin = new System.Windows.Forms.Padding(0, 25, 0, 25);
             this.sztuki.Maximum = new decimal(new int[] {
             10,
