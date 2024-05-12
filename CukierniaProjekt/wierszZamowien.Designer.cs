@@ -104,6 +104,7 @@
             this.btnUsun.Size = new System.Drawing.Size(73, 74);
             this.btnUsun.TabIndex = 7;
             this.btnUsun.UseVisualStyleBackColor = true;
+            this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
             // 
             // zdj
             // 
@@ -145,6 +146,7 @@
             0,
             0,
             0});
+            this.sztuki.ValueChanged += new System.EventHandler(this.sztuki_ValueChanged);
             // 
             // wierszZamowien
             // 

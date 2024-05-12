@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panelNaszeCiasta = new System.Windows.Forms.TableLayoutPanel();
+            this.baz = new System.Windows.Forms.Label();
+            this.sm = new System.Windows.Forms.Label();
             this.bazaPrawo = new FontAwesome.Sharp.IconButton();
             this.bazaLewo = new FontAwesome.Sharp.IconButton();
             this.smakPrawo = new FontAwesome.Sharp.IconButton();
             this.posypkaPrawo = new FontAwesome.Sharp.IconButton();
             this.btnDalej = new FontAwesome.Sharp.IconButton();
             this.infOCiescie = new System.Windows.Forms.Label();
+            this.smakLewo = new FontAwesome.Sharp.IconButton();
             this.nazwaCiasta = new System.Windows.Forms.Label();
             this.posypkaLewo = new FontAwesome.Sharp.IconButton();
             this.zdjCiasto = new System.Windows.Forms.PictureBox();
-            this.smakLewo = new FontAwesome.Sharp.IconButton();
             this.pos = new System.Windows.Forms.Label();
-            this.sm = new System.Windows.Forms.Label();
-            this.baz = new System.Windows.Forms.Label();
             this.panelNaszeCiasta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zdjCiasto)).BeginInit();
             this.SuspendLayout();
@@ -76,8 +76,36 @@
             this.panelNaszeCiasta.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.panelNaszeCiasta.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.panelNaszeCiasta.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.panelNaszeCiasta.Size = new System.Drawing.Size(883, 327);
+            this.panelNaszeCiasta.Size = new System.Drawing.Size(1177, 402);
             this.panelNaszeCiasta.TabIndex = 1;
+            // 
+            // baz
+            // 
+            this.baz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.baz.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.baz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.baz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
+            this.baz.Location = new System.Drawing.Point(0, 240);
+            this.baz.Margin = new System.Windows.Forms.Padding(0);
+            this.baz.Name = "baz";
+            this.baz.Size = new System.Drawing.Size(235, 80);
+            this.baz.TabIndex = 14;
+            this.baz.Text = "Baza";
+            this.baz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sm
+            // 
+            this.sm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.sm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
+            this.sm.Location = new System.Drawing.Point(0, 160);
+            this.sm.Margin = new System.Windows.Forms.Padding(0);
+            this.sm.Name = "sm";
+            this.sm.Size = new System.Drawing.Size(235, 80);
+            this.sm.TabIndex = 13;
+            this.sm.Text = "Smak";
+            this.sm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bazaPrawo
             // 
@@ -89,10 +117,10 @@
             this.bazaPrawo.IconColor = System.Drawing.Color.White;
             this.bazaPrawo.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.bazaPrawo.IconSize = 60;
-            this.bazaPrawo.Location = new System.Drawing.Point(705, 195);
+            this.bazaPrawo.Location = new System.Drawing.Point(940, 240);
             this.bazaPrawo.Margin = new System.Windows.Forms.Padding(0);
             this.bazaPrawo.Name = "bazaPrawo";
-            this.bazaPrawo.Size = new System.Drawing.Size(178, 65);
+            this.bazaPrawo.Size = new System.Drawing.Size(237, 80);
             this.bazaPrawo.TabIndex = 11;
             this.bazaPrawo.UseVisualStyleBackColor = false;
             this.bazaPrawo.Click += new System.EventHandler(this.bazaPrawo_Click);
@@ -107,10 +135,10 @@
             this.bazaLewo.IconColor = System.Drawing.Color.White;
             this.bazaLewo.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.bazaLewo.IconSize = 60;
-            this.bazaLewo.Location = new System.Drawing.Point(176, 195);
+            this.bazaLewo.Location = new System.Drawing.Point(235, 240);
             this.bazaLewo.Margin = new System.Windows.Forms.Padding(0);
             this.bazaLewo.Name = "bazaLewo";
-            this.bazaLewo.Size = new System.Drawing.Size(176, 65);
+            this.bazaLewo.Size = new System.Drawing.Size(235, 80);
             this.bazaLewo.TabIndex = 10;
             this.bazaLewo.UseVisualStyleBackColor = false;
             this.bazaLewo.Click += new System.EventHandler(this.bazaLewo_Click);
@@ -125,10 +153,10 @@
             this.smakPrawo.IconColor = System.Drawing.Color.White;
             this.smakPrawo.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.smakPrawo.IconSize = 60;
-            this.smakPrawo.Location = new System.Drawing.Point(705, 130);
+            this.smakPrawo.Location = new System.Drawing.Point(940, 160);
             this.smakPrawo.Margin = new System.Windows.Forms.Padding(0);
             this.smakPrawo.Name = "smakPrawo";
-            this.smakPrawo.Size = new System.Drawing.Size(178, 65);
+            this.smakPrawo.Size = new System.Drawing.Size(237, 80);
             this.smakPrawo.TabIndex = 9;
             this.smakPrawo.UseVisualStyleBackColor = false;
             this.smakPrawo.Click += new System.EventHandler(this.smakPrawo_Click);
@@ -143,10 +171,10 @@
             this.posypkaPrawo.IconColor = System.Drawing.Color.White;
             this.posypkaPrawo.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.posypkaPrawo.IconSize = 60;
-            this.posypkaPrawo.Location = new System.Drawing.Point(705, 65);
+            this.posypkaPrawo.Location = new System.Drawing.Point(940, 80);
             this.posypkaPrawo.Margin = new System.Windows.Forms.Padding(0);
             this.posypkaPrawo.Name = "posypkaPrawo";
-            this.posypkaPrawo.Size = new System.Drawing.Size(178, 65);
+            this.posypkaPrawo.Size = new System.Drawing.Size(237, 80);
             this.posypkaPrawo.TabIndex = 8;
             this.posypkaPrawo.UseVisualStyleBackColor = false;
             this.posypkaPrawo.Click += new System.EventHandler(this.posypkaPrawo_Click);
@@ -158,17 +186,17 @@
             this.btnDalej.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDalej.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDalej.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
-            this.btnDalej.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            this.btnDalej.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
             this.btnDalej.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnDalej.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDalej.IconSize = 40;
+            this.btnDalej.IconSize = 35;
             this.btnDalej.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDalej.Location = new System.Drawing.Point(705, 260);
+            this.btnDalej.Location = new System.Drawing.Point(940, 320);
             this.btnDalej.Margin = new System.Windows.Forms.Padding(0);
             this.btnDalej.Name = "btnDalej";
-            this.btnDalej.Size = new System.Drawing.Size(178, 67);
+            this.btnDalej.Size = new System.Drawing.Size(237, 82);
             this.btnDalej.TabIndex = 6;
-            this.btnDalej.Text = "Dalej";
+            this.btnDalej.Text = "Dodaj do koszyka";
             this.btnDalej.UseVisualStyleBackColor = false;
             this.btnDalej.Click += new System.EventHandler(this.btnDalej_Click);
             // 
@@ -180,12 +208,30 @@
             this.infOCiescie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infOCiescie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.infOCiescie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
-            this.infOCiescie.Location = new System.Drawing.Point(0, 260);
+            this.infOCiescie.Location = new System.Drawing.Point(0, 320);
             this.infOCiescie.Margin = new System.Windows.Forms.Padding(0);
             this.infOCiescie.Name = "infOCiescie";
-            this.infOCiescie.Size = new System.Drawing.Size(705, 67);
+            this.infOCiescie.Size = new System.Drawing.Size(940, 82);
             this.infOCiescie.TabIndex = 4;
             this.infOCiescie.Text = "Informacje o cieście";
+            // 
+            // smakLewo
+            // 
+            this.smakLewo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.smakLewo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.smakLewo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.smakLewo.ForeColor = System.Drawing.Color.White;
+            this.smakLewo.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
+            this.smakLewo.IconColor = System.Drawing.Color.White;
+            this.smakLewo.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.smakLewo.IconSize = 60;
+            this.smakLewo.Location = new System.Drawing.Point(235, 160);
+            this.smakLewo.Margin = new System.Windows.Forms.Padding(0);
+            this.smakLewo.Name = "smakLewo";
+            this.smakLewo.Size = new System.Drawing.Size(235, 80);
+            this.smakLewo.TabIndex = 2;
+            this.smakLewo.UseVisualStyleBackColor = false;
+            this.smakLewo.Click += new System.EventHandler(this.smakLewo_Click);
             // 
             // nazwaCiasta
             // 
@@ -198,9 +244,9 @@
             this.nazwaCiasta.Location = new System.Drawing.Point(0, 0);
             this.nazwaCiasta.Margin = new System.Windows.Forms.Padding(0);
             this.nazwaCiasta.Name = "nazwaCiasta";
-            this.nazwaCiasta.Size = new System.Drawing.Size(883, 65);
+            this.nazwaCiasta.Size = new System.Drawing.Size(1177, 80);
             this.nazwaCiasta.TabIndex = 0;
-            this.nazwaCiasta.Text = "Nazwa Ciasta";
+            this.nazwaCiasta.Text = "Nazwa Ciasta\r\nCena:";
             this.nazwaCiasta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // posypkaLewo
@@ -213,10 +259,10 @@
             this.posypkaLewo.IconColor = System.Drawing.Color.White;
             this.posypkaLewo.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.posypkaLewo.IconSize = 60;
-            this.posypkaLewo.Location = new System.Drawing.Point(176, 65);
+            this.posypkaLewo.Location = new System.Drawing.Point(235, 80);
             this.posypkaLewo.Margin = new System.Windows.Forms.Padding(0);
             this.posypkaLewo.Name = "posypkaLewo";
-            this.posypkaLewo.Size = new System.Drawing.Size(176, 65);
+            this.posypkaLewo.Size = new System.Drawing.Size(235, 80);
             this.posypkaLewo.TabIndex = 1;
             this.posypkaLewo.UseVisualStyleBackColor = false;
             this.posypkaLewo.Click += new System.EventHandler(this.posypkaLewo_Click);
@@ -225,32 +271,14 @@
             // 
             this.zdjCiasto.BackColor = System.Drawing.Color.White;
             this.zdjCiasto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zdjCiasto.Location = new System.Drawing.Point(352, 65);
+            this.zdjCiasto.Location = new System.Drawing.Point(470, 80);
             this.zdjCiasto.Margin = new System.Windows.Forms.Padding(0);
             this.zdjCiasto.Name = "zdjCiasto";
             this.panelNaszeCiasta.SetRowSpan(this.zdjCiasto, 3);
-            this.zdjCiasto.Size = new System.Drawing.Size(353, 195);
+            this.zdjCiasto.Size = new System.Drawing.Size(470, 240);
             this.zdjCiasto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.zdjCiasto.TabIndex = 7;
             this.zdjCiasto.TabStop = false;
-            // 
-            // smakLewo
-            // 
-            this.smakLewo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
-            this.smakLewo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.smakLewo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.smakLewo.ForeColor = System.Drawing.Color.White;
-            this.smakLewo.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
-            this.smakLewo.IconColor = System.Drawing.Color.White;
-            this.smakLewo.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.smakLewo.IconSize = 60;
-            this.smakLewo.Location = new System.Drawing.Point(176, 130);
-            this.smakLewo.Margin = new System.Windows.Forms.Padding(0);
-            this.smakLewo.Name = "smakLewo";
-            this.smakLewo.Size = new System.Drawing.Size(176, 65);
-            this.smakLewo.TabIndex = 2;
-            this.smakLewo.UseVisualStyleBackColor = false;
-            this.smakLewo.Click += new System.EventHandler(this.smakLewo_Click);
             // 
             // pos
             // 
@@ -258,50 +286,22 @@
             this.pos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.pos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
-            this.pos.Location = new System.Drawing.Point(0, 65);
+            this.pos.Location = new System.Drawing.Point(0, 80);
             this.pos.Margin = new System.Windows.Forms.Padding(0);
             this.pos.Name = "pos";
-            this.pos.Size = new System.Drawing.Size(176, 65);
+            this.pos.Size = new System.Drawing.Size(235, 80);
             this.pos.TabIndex = 12;
             this.pos.Text = "Posypka";
             this.pos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // sm
-            // 
-            this.sm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
-            this.sm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
-            this.sm.Location = new System.Drawing.Point(0, 130);
-            this.sm.Margin = new System.Windows.Forms.Padding(0);
-            this.sm.Name = "sm";
-            this.sm.Size = new System.Drawing.Size(176, 65);
-            this.sm.TabIndex = 13;
-            this.sm.Text = "Smak";
-            this.sm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // baz
-            // 
-            this.baz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
-            this.baz.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.baz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.baz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
-            this.baz.Location = new System.Drawing.Point(0, 195);
-            this.baz.Margin = new System.Windows.Forms.Padding(0);
-            this.baz.Name = "baz";
-            this.baz.Size = new System.Drawing.Size(176, 65);
-            this.baz.TabIndex = 14;
-            this.baz.Text = "Baza";
-            this.baz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // StwórzTort
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 327);
+            this.ClientSize = new System.Drawing.Size(1177, 402);
             this.ControlBox = false;
             this.Controls.Add(this.panelNaszeCiasta);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "StwórzTort";
             this.ShowIcon = false;
             this.Load += new System.EventHandler(this.StwórzTort_Load);

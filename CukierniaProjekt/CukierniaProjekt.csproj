@@ -78,6 +78,12 @@
     <Compile Include="Aktualnosci.Designer.cs">
       <DependentUpon>Aktualnosci.cs</DependentUpon>
     </Compile>
+    <Compile Include="okienkoKoszyk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="okienkoKoszyk.Designer.cs">
+      <DependentUpon>okienkoKoszyk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Status.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     <EmbeddedResource Include="Kontakt.resx">
       <DependentUpon>Kontakt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="okienkoKoszyk.resx">
+      <DependentUpon>okienkoKoszyk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Status.resx">
       <DependentUpon>Status.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,7 +166,7 @@
     <EmbeddedResource Include="Zamowienia.resx">
       <DependentUpon>Zamowienia.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Baza\cukierniaCiasta.db" />
+    <None Include="Baza\CukierniaCiasta.db" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

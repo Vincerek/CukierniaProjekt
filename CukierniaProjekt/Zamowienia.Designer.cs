@@ -231,6 +231,7 @@
             // 
             // szczegZamow
             // 
+            this.szczegZamow.AutoScroll = true;
             this.panelZamow.SetColumnSpan(this.szczegZamow, 3);
             this.szczegZamow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.szczegZamow.Location = new System.Drawing.Point(240, 85);
@@ -246,7 +247,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 568);
             this.Controls.Add(this.panelZamow);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Zamowienia";
             this.Text = "Zamowienia";
             this.Load += new System.EventHandler(this.Zamowienia_Load);

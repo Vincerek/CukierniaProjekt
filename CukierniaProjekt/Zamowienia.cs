@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,10 @@ namespace CukierniaProjekt
 {
     public partial class Zamowienia : Form
     {
+        public static string publicNazwa;
+        public static int publicCena;
+        public static byte[] publicZdj;
+
         string hintImie;
         string hintNazwisko;
         string hintMail;
@@ -24,6 +30,7 @@ namespace CukierniaProjekt
             hintNazwisko = textNazwisko.Text;
             hintMail = textMail.Text;
             hintTel = textTel.Text;
+           
 
         }
         public void onHint(string hint, TextBox textBox)
@@ -83,7 +90,31 @@ namespace CukierniaProjekt
         {
             onHint(hintTel, textTel);
         }
+        public void bazaOdczyt()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
+            {
+                connection.Open();
+                //string query = $"SELECT * FROM koszykTemp";
+                string query = $"SELECT * FROM StworzoneCiasta INNER JOIN koszykTemp on StworzoneCiasta.Id = koszykTemp.idCiasta;";
 
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            publicNazwa = reader["Nazwa Ciasta"].ToString();
+                            publicZdj = reader["Zdjecie"] as byte[] ?? null;
+                            wierszZamowien wierszZamowien= new wierszZamowien();  
+                            wierszZamowien.Dock = DockStyle.Top;
+                            szczegZamow.Controls.Add(wierszZamowien);
+                        }
+                    }
+                }
+                connection.Close();
+            }
+        }
         private void Zamowienia_Load(object sender, EventArgs e)
         {
             //Ustawianie ograniczeń daty odbioru po załadowaniu formularza
@@ -93,12 +124,16 @@ namespace CukierniaProjekt
             int todayY = DateTime.Now.Year;
             dataOdbioru.MinDate = new DateTime(todayY,todayM,todayD+5);
             dataOdbioru.MaxDate = new DateTime(todayY + 1, todayM, todayD);
+            bazaOdczyt();
 
-            wierszZamowien wierszZamowien= new wierszZamowien();  
-            wierszZamowien.Dock = DockStyle.Top;
-            szczegZamow.Controls.Add(wierszZamowien);
 
-            
+
+
+            //wierszZamowien wierszZamowien= new wierszZamowien();  
+            //wierszZamowien.Dock = DockStyle.Top;
+            //szczegZamow.Controls.Add(wierszZamowien);
+
+
 
         }
 
