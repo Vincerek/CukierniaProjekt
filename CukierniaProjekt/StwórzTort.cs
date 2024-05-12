@@ -131,6 +131,7 @@ namespace CukierniaProjekt
                         if (reader.Read())
                         {
                             nazwaCiasta.Text = reader["Nazwa Ciasta"].ToString();
+                            infOCiescie.Text = reader["Opis"].ToString();
 
                             byte[] pic = reader["Zdjecie"] as byte[] ?? null;
                             if (pic != null)
