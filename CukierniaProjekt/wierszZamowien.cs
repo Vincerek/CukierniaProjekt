@@ -16,5 +16,15 @@ namespace CukierniaProjekt
         {
             InitializeComponent();
         }
+
+        private void btnUsun_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void sztuki_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

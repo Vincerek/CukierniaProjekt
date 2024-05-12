@@ -27,8 +27,8 @@ namespace CukierniaProjekt
         String[] smakTab = { "czekolada", "toffi", "truskawka" };
         String[] bazaTab = { "biszkopt", "brownie" };
 
-        String zapytanie = $"SELECT * FROM StworzoneCiasta WHERE Posypka = \"kokos\" AND Smak = \"czekolada\" AND Baza=\"biszkopt\";";
-        //zapytanie = $"SELECT * FROM StworzoneCiasta WHERE Posypka = \"kokos\" AND Smak = \"czekolada\" AND Baza=\"biszkopt\";";
+        
+        
         public StwórzTort()
         {
             InitializeComponent();
@@ -150,15 +150,10 @@ namespace CukierniaProjekt
 
         private void btnDalej_Click(object sender, EventArgs e)
         {
-            Zamowienia zamowienia = new Zamowienia();
-            var panelContainer = this.Parent as Panel;
-            var form1 = panelContainer.TopLevelControl as Form;
-            zamowienia.TopLevel = false;
-            zamowienia.FormBorderStyle = FormBorderStyle.None;
-            zamowienia.Dock = DockStyle.Fill;
-            ((Panel)form1.Controls.Find("panelMain", true)[0]).Controls.Add(zamowienia);
-            zamowienia.BringToFront();
-            zamowienia.Show();
+            Main main = new Main();
+            
+            okienkoKoszyk okienko = new okienkoKoszyk();
+            okienko.ShowDialog();
             
         }
 

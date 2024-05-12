@@ -94,9 +94,11 @@ namespace CukierniaProjekt
             dataOdbioru.MinDate = new DateTime(todayY,todayM,todayD+5);
             dataOdbioru.MaxDate = new DateTime(todayY + 1, todayM, todayD);
 
-            wierszZamowien wierszZamowien= new wierszZamowien();  
-            wierszZamowien.Dock = DockStyle.Top;
-            szczegZamow.Controls.Add(wierszZamowien);
+
+
+            //wierszZamowien wierszZamowien= new wierszZamowien();  
+            //wierszZamowien.Dock = DockStyle.Top;
+            //szczegZamow.Controls.Add(wierszZamowien);
 
             
 
