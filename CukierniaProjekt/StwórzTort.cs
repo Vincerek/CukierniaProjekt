@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
@@ -11,6 +12,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Markup;
 
 namespace CukierniaProjekt
 {
@@ -18,10 +20,12 @@ namespace CukierniaProjekt
 
     public partial class StwórzTort : Form
     {
-        PictureBox zdjCiastoTemp;
+        
         int indexPosypka = 0;
         int indexSmak = 0;
         int indexBaza = 0;
+
+        object aktualneId;
 
         String[] posypkaTab = { "czekolada", "kolorowa", "kokos" };
         String[] smakTab = { "czekolada", "toffi", "truskawka" };
@@ -32,8 +36,6 @@ namespace CukierniaProjekt
         public StwórzTort()
         {
             InitializeComponent();
-            zdjCiastoTemp = zdjCiasto;
-
         }
 
         public void inkrementacjaTablicyPosypek()
@@ -46,7 +48,7 @@ namespace CukierniaProjekt
             {
                 indexPosypka = 0;
             }
-            baza();
+            bazaOdczyt();
         }
         public void dekrementacjaTablicyPosypek()
         {
@@ -58,7 +60,7 @@ namespace CukierniaProjekt
             {
                 indexPosypka = posypkaTab.Length - 1;
             }
-            baza();
+            bazaOdczyt();
         }
         public void inkrementacjaTablicySmak()
         {
@@ -70,7 +72,7 @@ namespace CukierniaProjekt
             {
                 indexSmak = 0;
             }
-            baza();
+            bazaOdczyt();
         }
         public void dekrementacjaTablicySmak() { 
             if (indexSmak < 0)
@@ -81,7 +83,7 @@ namespace CukierniaProjekt
             {
                 indexSmak = smakTab.Length-1;
             }
-            baza();
+            bazaOdczyt();
         }
         public void inkrementacjaTablicyBaz()
         {
@@ -93,7 +95,7 @@ namespace CukierniaProjekt
             {
                 indexBaza = 0;
             }
-            baza();
+            bazaOdczyt();
         }
         public void dekrementacjaTablicyBaz()
         {
@@ -105,19 +107,19 @@ namespace CukierniaProjekt
             {
                 indexBaza = bazaTab.Length-1;
             }
-            baza();
+            bazaOdczyt();
         }
 
         private void StwórzTort_Load(object sender, EventArgs e)
         {
-            baza();
+            bazaOdczyt();
         }
         PictureBox pictures(Image obrazu)
         {
             zdjCiasto.Image = obrazu;
             return zdjCiasto;
         }
-        public void baza()
+        public void bazaOdczyt()
         {
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
             {
@@ -130,6 +132,7 @@ namespace CukierniaProjekt
                     {
                         if (reader.Read())
                         {
+                            aktualneId = reader["id"];
                             nazwaCiasta.Text = reader["Nazwa Ciasta"].ToString();
                             infOCiescie.Text = reader["Opis"].ToString();
 
@@ -149,12 +152,41 @@ namespace CukierniaProjekt
             }
         }
 
+
+        public void bazaZapis()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
+            {
+                connection.Open();
+                string query = $"INSERT INTO koszykTemp (idCiasta)\r\nVALUES( {aktualneId});";
+                SQLiteCommand cmd = connection.CreateCommand();
+                cmd.CommandText = query;
+                
+                int result = cmd.ExecuteNonQuery();
+                //sprawdzanie czy insert się wykonał
+                if (result == 1)
+                {
+                    //MessageBox.Show("dziala");
+                    connection.Close();
+                }
+                else
+                {
+                    //MessageBox.Show("Błąd");
+                }
+                connection.Close();
+            }
+        }
+
+
         private void btnDalej_Click(object sender, EventArgs e)
         {
             Main main = new Main();
             
             okienkoKoszyk okienko = new okienkoKoszyk();
             okienko.ShowDialog();
+
+            //MessageBox.Show(aktualneId + "");
+            bazaZapis();
             
         }
 

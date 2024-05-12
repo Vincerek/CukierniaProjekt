@@ -231,6 +231,7 @@
             // 
             // szczegZamow
             // 
+            this.szczegZamow.AutoScroll = true;
             this.panelZamow.SetColumnSpan(this.szczegZamow, 3);
             this.szczegZamow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.szczegZamow.Location = new System.Drawing.Point(320, 104);

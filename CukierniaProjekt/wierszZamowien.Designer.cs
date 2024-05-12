@@ -55,7 +55,7 @@
             this.wiersz.Controls.Add(this.sztuki, 3, 0);
             this.wiersz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wiersz.Location = new System.Drawing.Point(0, 0);
-            this.wiersz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.wiersz.Margin = new System.Windows.Forms.Padding(4);
             this.wiersz.Name = "wiersz";
             this.wiersz.RowCount = 1;
             this.wiersz.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
