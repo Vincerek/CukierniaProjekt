@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Markup;
+using static System.Data.Entity.Infrastructure.Design.Executor;
 
 namespace CukierniaProjekt
 {
@@ -25,6 +26,7 @@ namespace CukierniaProjekt
         int indexSmak = 0;
         int indexBaza = 0;
 
+        
         object aktualneId;
 
         String[] posypkaTab = { "czekolada", "kolorowa", "kokos" };
@@ -158,20 +160,52 @@ namespace CukierniaProjekt
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
             {
                 connection.Open();
-                string query = $"INSERT INTO koszykTemp (idCiasta)\r\nVALUES( {aktualneId});";
-                SQLiteCommand cmd = connection.CreateCommand();
-                cmd.CommandText = query;
-                
-                int result = cmd.ExecuteNonQuery();
-                //sprawdzanie czy insert się wykonał
-                if (result == 1)
+                string queryTemp = $"SELECT idCiasta FROM koszykTemp WHERE idCiasta={aktualneId};";
+                using (SQLiteCommand command = new SQLiteCommand(queryTemp, connection))
                 {
-                    //MessageBox.Show("dziala");
-                    connection.Close();
-                }
-                else
-                {
-                    //MessageBox.Show("Błąd");
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string query = $"UPDATE koszykTemp SET sztuki = sztuki+1 WHERE idCiasta = {aktualneId};";
+                            SQLiteCommand cmd = connection.CreateCommand();
+                            cmd.CommandText = query;
+
+                            int result = cmd.ExecuteNonQuery();
+                            //sprawdzanie czy insert się wykonał
+                            if (result == 1)
+                            {
+                                //MessageBox.Show("dziala");
+                                connection.Close();
+                            }
+                            else
+                            {
+                                //MessageBox.Show("Błąd");
+                            }
+
+
+                            //
+
+                        }
+                        else
+                        {
+                            string query = $"INSERT INTO koszykTemp (idCiasta)\r\nVALUES( {aktualneId});";
+                            SQLiteCommand cmd = connection.CreateCommand();
+                            cmd.CommandText = query;
+
+                            int result = cmd.ExecuteNonQuery();
+                            //sprawdzanie czy insert się wykonał
+                            if (result == 1)
+                            {
+                                //MessageBox.Show("dziala");
+                                connection.Close();
+                            }
+                            else
+                            {
+                                //MessageBox.Show("Błąd");
+                            }
+                        }
+                    }
                 }
                 connection.Close();
             }
@@ -180,14 +214,11 @@ namespace CukierniaProjekt
 
         private void btnDalej_Click(object sender, EventArgs e)
         {
-            Main main = new Main();
-            
+
             okienkoKoszyk okienko = new okienkoKoszyk();
             okienko.ShowDialog();
-
-            //MessageBox.Show(aktualneId + "");
             bazaZapis();
-            
+
         }
 
         private void posypkaLewo_Click(object sender, EventArgs e)
