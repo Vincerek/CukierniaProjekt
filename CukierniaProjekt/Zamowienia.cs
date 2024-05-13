@@ -15,9 +15,9 @@ namespace CukierniaProjekt
 {
     public partial class Zamowienia : Form
     {
-        public static string publicNazwa;
-        public static int publicCena;
-        public static byte[] publicZdj;
+        public static string staticNazwa;
+        public static long staticCena;
+        public static byte[] staticZdj;
 
         string hintImie;
         string hintNazwisko;
@@ -95,7 +95,7 @@ namespace CukierniaProjekt
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
             {
                 connection.Open();
-                //string query = $"SELECT * FROM koszykTemp";
+                szczegZamow.Controls.Clear();
                 string query = $"SELECT * FROM StworzoneCiasta INNER JOIN koszykTemp on StworzoneCiasta.Id = koszykTemp.idCiasta;";
 
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
@@ -104,9 +104,12 @@ namespace CukierniaProjekt
                     {
                         while (reader.Read())
                         {
-                            publicNazwa = reader["Nazwa Ciasta"].ToString();
-                            publicZdj = reader["Zdjecie"] as byte[] ?? null;
-                            wierszZamowien wierszZamowien= new wierszZamowien();  
+                            
+                            staticNazwa = reader["Nazwa Ciasta"].ToString();
+                            staticZdj = reader["Zdjecie"] as byte[] ?? null;
+                            staticCena = (long)reader["Cena"];
+                            wierszZamowien wierszZamowien= new wierszZamowien();
+                            wierszZamowien.Tag = reader["Id"];
                             wierszZamowien.Dock = DockStyle.Top;
                             szczegZamow.Controls.Add(wierszZamowien);
                         }
@@ -124,17 +127,7 @@ namespace CukierniaProjekt
             int todayY = DateTime.Now.Year;
             dataOdbioru.MinDate = new DateTime(todayY,todayM,todayD+5);
             dataOdbioru.MaxDate = new DateTime(todayY + 1, todayM, todayD);
-            bazaOdczyt();
-
-
-
-
-            //wierszZamowien wierszZamowien= new wierszZamowien();  
-            //wierszZamowien.Dock = DockStyle.Top;
-            //szczegZamow.Controls.Add(wierszZamowien);
-
-
-
+            bazaOdczyt();            
         }
 
         private void btnWroc_Click(object sender, EventArgs e)
