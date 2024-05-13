@@ -214,6 +214,7 @@
             // 
             this.lokalOdbioru.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
             this.lokalOdbioru.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lokalOdbioru.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lokalOdbioru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lokalOdbioru.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lokalOdbioru.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
@@ -227,7 +228,6 @@
             this.lokalOdbioru.Name = "lokalOdbioru";
             this.lokalOdbioru.Size = new System.Drawing.Size(280, 37);
             this.lokalOdbioru.TabIndex = 8;
-            this.lokalOdbioru.Text = "Lokalizacja odbioru";
             // 
             // szczegZamow
             // 
