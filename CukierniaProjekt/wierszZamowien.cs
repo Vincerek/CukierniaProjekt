@@ -25,7 +25,7 @@ namespace CukierniaProjekt
             //przypisywanie wartości zmiennym potrzebnym do wyświetlenia informacji w wierszu za pomocą zmiennych statycznych
             //z formularza Zamowienia
             nazwa.Text = Zamowienia.staticNazwa;
-            cena.Text = Zamowienia.staticCena.ToString() + " zł";
+            
             byte[] zdj = Zamowienia.staticZdj;
             if (zdj != null)
             {
@@ -75,9 +75,26 @@ namespace CukierniaProjekt
 
         private void sztuki_ValueChanged(object sender, EventArgs e)
         {
-            long value=(long)sztuki.Value;
-            //SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db");
-            //connection.Open();
+            long value = (long)sztuki.Value;
+            /*
+            using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
+            {
+                connection.Open();
+                string query = $"UPDATE koszykTemp SET sztuki = {value} WHERE idCiasta = {this.Tag};";
+                SQLiteCommand cmd = connection.CreateCommand();
+                cmd.CommandText = query;
+                int result = cmd.ExecuteNonQuery();
+                //sprawdzanie czy update się wykonał
+                if (result == 1)
+                {
+                    connection.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Błąd");
+                }
+                connection.Close();
+            }*/
         }
 
         private void wierszZamowien_Load(object sender, EventArgs e)
@@ -93,11 +110,14 @@ namespace CukierniaProjekt
                         if (reader.Read())
                         {
                             sztuki.Value = (long)reader["sztuki"];
+                            cena.Text = (Zamowienia.staticCena * (long)reader["sztuki"]).ToString() + " zł";
+                            connection.Close();
                         }
                     }
                 }
                 connection.Close();
             }
+            
         }
     }
 }

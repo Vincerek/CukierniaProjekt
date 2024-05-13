@@ -16,7 +16,7 @@ namespace CukierniaProjekt
     public partial class Zamowienia : Form
     {
         public static string staticNazwa;
-        public static string staticCena;
+        public static long staticCena;
         public static byte[] staticZdj;
 
         string hintImie;
@@ -107,7 +107,7 @@ namespace CukierniaProjekt
                             
                             staticNazwa = reader["Nazwa Ciasta"].ToString();
                             staticZdj = reader["Zdjecie"] as byte[] ?? null;
-                            staticCena = reader["Cena"].ToString();
+                            staticCena = (long)reader["Cena"];
                             wierszZamowien wierszZamowien= new wierszZamowien();
                             wierszZamowien.Tag = reader["Id"];
                             wierszZamowien.Dock = DockStyle.Top;

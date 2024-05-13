@@ -183,13 +183,10 @@ namespace CukierniaProjekt
                                 //MessageBox.Show("Błąd");
                             }
 
-
-                            //
-
                         }
                         else
                         {
-                            string query = $"INSERT INTO koszykTemp (idCiasta)\r\nVALUES( {aktualneId});";
+                            string query = $"INSERT INTO koszykTemp (idCiasta, sztuki) VALUES( {aktualneId}, 1);";
                             SQLiteCommand cmd = connection.CreateCommand();
                             cmd.CommandText = query;
 
