@@ -41,7 +41,7 @@
             // 
             // wiersz
             // 
-            this.wiersz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
+            this.wiersz.BackColor = System.Drawing.Color.White;
             this.wiersz.ColumnCount = 5;
             this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -55,7 +55,7 @@
             this.wiersz.Controls.Add(this.sztuki, 3, 0);
             this.wiersz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wiersz.Location = new System.Drawing.Point(0, 0);
-            this.wiersz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.wiersz.Margin = new System.Windows.Forms.Padding(4);
             this.wiersz.Name = "wiersz";
             this.wiersz.RowCount = 1;
             this.wiersz.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -64,9 +64,9 @@
             // 
             // cena
             // 
-            this.cena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
+            this.cena.BackColor = System.Drawing.Color.White;
             this.cena.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cena.Font = new System.Drawing.Font("Inter Medium", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
             this.cena.Location = new System.Drawing.Point(572, 0);
             this.cena.Margin = new System.Windows.Forms.Padding(0);
@@ -78,9 +78,9 @@
             // 
             // nazwa
             // 
-            this.nazwa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
+            this.nazwa.BackColor = System.Drawing.Color.White;
             this.nazwa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nazwa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nazwa.Font = new System.Drawing.Font("Inter Medium", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.nazwa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
             this.nazwa.Location = new System.Drawing.Point(0, 0);
             this.nazwa.Margin = new System.Windows.Forms.Padding(0);
@@ -93,6 +93,7 @@
             // btnUsun
             // 
             this.btnUsun.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnUsun.FlatAppearance.BorderSize = 0;
             this.btnUsun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsun.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
             this.btnUsun.IconChar = FontAwesome.Sharp.IconChar.Trash;
@@ -109,8 +110,8 @@
             // 
             // zdj
             // 
+            this.zdj.BackColor = System.Drawing.Color.White;
             this.zdj.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zdj.Image = global::CukierniaProjekt.Properties.Resources.Logo_Cukierkowe_urojenia;
             this.zdj.Location = new System.Drawing.Point(429, 0);
             this.zdj.Margin = new System.Windows.Forms.Padding(0);
             this.zdj.Name = "zdj";
@@ -121,7 +122,7 @@
             // 
             // sztuki
             // 
-            this.sztuki.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
+            this.sztuki.BackColor = System.Drawing.Color.White;
             this.sztuki.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sztuki.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sztuki.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -129,7 +130,7 @@
             this.sztuki.Location = new System.Drawing.Point(715, 31);
             this.sztuki.Margin = new System.Windows.Forms.Padding(0, 31, 0, 31);
             this.sztuki.Maximum = new decimal(new int[] {
-            10,
+            20,
             0,
             0,
             0});

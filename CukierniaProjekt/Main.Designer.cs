@@ -259,7 +259,7 @@
         #endregion
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.TableLayoutPanel tlpMenu;
-        private System.Windows.Forms.Panel panelMain;
+        public System.Windows.Forms.Panel panelMain;
         private FontAwesome.Sharp.IconButton btnNaszeCIasta;
         private FontAwesome.Sharp.IconButton btnAktualnosci;
         private FontAwesome.Sharp.IconButton btnStworzCiasto;

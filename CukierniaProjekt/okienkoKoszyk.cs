@@ -14,6 +14,7 @@ namespace CukierniaProjekt
 {
     public partial class okienkoKoszyk : Form
     {
+        public bool koszyk = false;
         public okienkoKoszyk()
         {
             InitializeComponent();
@@ -53,25 +54,27 @@ namespace CukierniaProjekt
 
         private void btnKoszyk_Click(object sender, EventArgs e)
         {
+            //Zamowienia zamowienia = new Zamowienia();
+            koszyk = true;
+
+            //var panelContainer = this.Parent as Panel;
+            //var form1 = panelContainer.TopLevelControl as Form;
+            //Main main = new Main();
+            //zamowienia.TopLevel = false;
+            //zamowienia.FormBorderStyle = FormBorderStyle.None;
+            //zamowienia.Dock = DockStyle.Fill;
+
+            //((Panel)main.Controls.Find("panelMain", true)[0]).Controls.Add(zamowienia);
+            //main.panelMain.Controls.Add(zamowienia);
+            //zamowienia.BringToFront();
+            //zamowienia.Show();
+
             this.Close();
-            /*
-            Zamowienia zamowienia = new Zamowienia();
-            var panelContainer = this.Parent as Panel;
-            var form1 = panelContainer.TopLevelControl as Form;
-            zamowienia.TopLevel = false;
-            zamowienia.FormBorderStyle = FormBorderStyle.None;
-            zamowienia.Dock = DockStyle.Fill;
-            ((Panel)form1.Controls.Find("panelMain", true)[0]).Controls.Add(zamowienia);
-            zamowienia.BringToFront();
-            zamowienia.Show();
-            */
-
-
-
         }
 
         private void btnWroc_Click(object sender, EventArgs e)
         {
+            koszyk = false;
             this.Close();
         }
     }

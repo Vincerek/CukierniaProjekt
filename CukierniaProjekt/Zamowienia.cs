@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace CukierniaProjekt
 {
@@ -30,8 +29,6 @@ namespace CukierniaProjekt
             hintNazwisko = textNazwisko.Text;
             hintMail = textMail.Text;
             hintTel = textTel.Text;
-           
-
         }
         public void onHint(string hint, TextBox textBox)
         {
@@ -144,6 +141,23 @@ namespace CukierniaProjekt
             wybierzTort.Show();
             //przesył tortów dodanych do koszyka do bazy danych
 
+        }
+
+        private void btnZamow_Click(object sender, EventArgs e)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
+            {
+                connection.Open();
+                string query = "DELETE FROM koszykTemp";
+
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                { 
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+            MessageBox.Show("Pomyślnie zamówiono ciasta, Płatność przy odbiorze");
+            bazaOdczyt();
         }
     }
 }
