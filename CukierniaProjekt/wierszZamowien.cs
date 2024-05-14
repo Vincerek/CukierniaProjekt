@@ -85,6 +85,7 @@ namespace CukierniaProjekt
                 cmd.CommandText = query;
                 int result = cmd.ExecuteNonQuery();
                 //sprawdzanie czy update się wykonał
+                
                 if (result == 1)
                 {
                     connection.Close();
@@ -94,7 +95,9 @@ namespace CukierniaProjekt
                     MessageBox.Show("Błąd");
                 }
                 connection.Close();
-            }*/
+                
+            }
+            */
         }
 
         private void wierszZamowien_Load(object sender, EventArgs e)
