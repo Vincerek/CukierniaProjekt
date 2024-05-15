@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(okienkoKoszyk));
             this.okienko = new System.Windows.Forms.TableLayoutPanel();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.btnKoszyk = new FontAwesome.Sharp.IconButton();
             this.btnWroc = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnKoszyk = new FontAwesome.Sharp.IconButton();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.okienko.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
@@ -55,40 +55,21 @@
             this.okienko.RowCount = 2;
             this.okienko.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.okienko.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.okienko.Size = new System.Drawing.Size(464, 186);
+            this.okienko.Size = new System.Drawing.Size(348, 151);
             this.okienko.TabIndex = 0;
             // 
-            // btnWroc
+            // logo
             // 
-            this.btnWroc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
-            this.btnWroc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnWroc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWroc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnWroc.ForeColor = System.Drawing.Color.White;
-            this.btnWroc.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
-            this.btnWroc.IconColor = System.Drawing.Color.White;
-            this.btnWroc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnWroc.IconSize = 40;
-            this.btnWroc.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnWroc.Location = new System.Drawing.Point(25, 80);
-            this.btnWroc.Margin = new System.Windows.Forms.Padding(25);
-            this.btnWroc.Name = "btnWroc";
-            this.btnWroc.Size = new System.Drawing.Size(182, 81);
-            this.btnWroc.TabIndex = 1;
-            this.btnWroc.Text = "Wróć do zakupów";
-            this.btnWroc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnWroc.UseVisualStyleBackColor = false;
-            this.btnWroc.Click += new System.EventHandler(this.btnWroc_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(232, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(232, 55);
-            this.panel1.TabIndex = 2;
+            this.logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.logo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
+            this.logo.Location = new System.Drawing.Point(0, 0);
+            this.logo.Margin = new System.Windows.Forms.Padding(0);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(174, 45);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo.TabIndex = 11;
+            this.logo.TabStop = false;
             // 
             // btnKoszyk
             // 
@@ -102,36 +83,56 @@
             this.btnKoszyk.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnKoszyk.IconSize = 40;
             this.btnKoszyk.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnKoszyk.Location = new System.Drawing.Point(257, 80);
-            this.btnKoszyk.Margin = new System.Windows.Forms.Padding(25);
+            this.btnKoszyk.Location = new System.Drawing.Point(193, 65);
+            this.btnKoszyk.Margin = new System.Windows.Forms.Padding(19, 20, 19, 20);
             this.btnKoszyk.Name = "btnKoszyk";
-            this.btnKoszyk.Size = new System.Drawing.Size(182, 81);
+            this.btnKoszyk.Size = new System.Drawing.Size(136, 66);
             this.btnKoszyk.TabIndex = 3;
             this.btnKoszyk.Text = "Przejdź do koszyka";
             this.btnKoszyk.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnKoszyk.UseVisualStyleBackColor = false;
             this.btnKoszyk.Click += new System.EventHandler(this.btnKoszyk_Click);
             // 
-            // logo
+            // btnWroc
             // 
-            this.logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
-            this.logo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.Location = new System.Drawing.Point(0, 0);
-            this.logo.Margin = new System.Windows.Forms.Padding(0);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(232, 55);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logo.TabIndex = 11;
-            this.logo.TabStop = false;
+            this.btnWroc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.btnWroc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnWroc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWroc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWroc.ForeColor = System.Drawing.Color.White;
+            this.btnWroc.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            this.btnWroc.IconColor = System.Drawing.Color.White;
+            this.btnWroc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnWroc.IconSize = 40;
+            this.btnWroc.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnWroc.Location = new System.Drawing.Point(19, 65);
+            this.btnWroc.Margin = new System.Windows.Forms.Padding(19, 20, 19, 20);
+            this.btnWroc.Name = "btnWroc";
+            this.btnWroc.Size = new System.Drawing.Size(136, 66);
+            this.btnWroc.TabIndex = 1;
+            this.btnWroc.Text = "Kontynuuj zakupy";
+            this.btnWroc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnWroc.UseVisualStyleBackColor = false;
+            this.btnWroc.Click += new System.EventHandler(this.btnWroc_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(174, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(174, 45);
+            this.panel1.TabIndex = 2;
             // 
             // okienkoKoszyk
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 186);
+            this.ClientSize = new System.Drawing.Size(348, 151);
             this.ControlBox = false;
             this.Controls.Add(this.okienko);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "okienkoKoszyk";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.okienko.ResumeLayout(false);

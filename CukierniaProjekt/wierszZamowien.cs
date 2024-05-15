@@ -41,6 +41,9 @@ namespace CukierniaProjekt
         //funkcja służąca do usuwania danego wiersza po kliknieciu przycisku
         public void bazaUsun()
         {
+            Zamowienia zamowienia= new Zamowienia();
+            string[] slowa = cena.Text.Split(' ');
+            zamowienia.wartoscKoszyk =- Double.Parse(slowa[0]);
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
             {
                 connection.Open();

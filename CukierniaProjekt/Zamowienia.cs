@@ -22,6 +22,7 @@ namespace CukierniaProjekt
         string hintNazwisko;
         string hintMail;
         string hintTel;
+        public double wartoscKoszyk;
         public Zamowienia()
         {
             InitializeComponent();
@@ -105,6 +106,8 @@ namespace CukierniaProjekt
                             staticNazwa = reader["Nazwa Ciasta"].ToString();
                             staticZdj = reader["Zdjecie"] as byte[] ?? null;
                             staticCena = (long)reader["Cena"];
+                            wartoscKoszyk += staticCena;
+                            lbkoszyk.Text = "wartosc koszyka: " + wartoscKoszyk + " zl";
                             wierszZamowien wierszZamowien= new wierszZamowien();
                             wierszZamowien.Tag = reader["Id"];
                             wierszZamowien.Dock = DockStyle.Top;
@@ -157,6 +160,7 @@ namespace CukierniaProjekt
                 connection.Close();
             }
             MessageBox.Show("Pomyślnie zamówiono ciasta, Płatność przy odbiorze");
+            wartoscKoszyk = 0;
             bazaOdczyt();
         }
     }
