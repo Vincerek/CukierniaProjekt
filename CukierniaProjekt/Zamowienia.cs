@@ -38,7 +38,6 @@ namespace CukierniaProjekt
                 textBox.Text = hint;
                 textBox.ForeColor = Color.DarkGray;
             }
-
         }
         public void offHint(string hint, TextBox textBox)
         {
@@ -100,14 +99,13 @@ namespace CukierniaProjekt
                 {
                     using (SQLiteDataReader reader = command.ExecuteReader())
                     {
+                        wartoscKoszyk = 0;
                         while (reader.Read())
                         {
-                            
                             staticNazwa = reader["Nazwa Ciasta"].ToString();
                             staticZdj = reader["Zdjecie"] as byte[] ?? null;
                             staticCena = (long)reader["Cena"];
-                            wartoscKoszyk += staticCena;
-                            lbkoszyk.Text = "wartosc koszyka: " + wartoscKoszyk + " zl";
+                            wartoscKoszyk += staticCena*(long)reader["sztuki"];
                             wierszZamowien wierszZamowien= new wierszZamowien();
                             wierszZamowien.Tag = reader["Id"];
                             wierszZamowien.Dock = DockStyle.Top;
@@ -116,6 +114,8 @@ namespace CukierniaProjekt
                     }
                 }
                 connection.Close();
+                lbkoszyk.Text = "wartosc koszyka: " + wartoscKoszyk + " zl";
+
             }
         }
         private void Zamowienia_Load(object sender, EventArgs e)
@@ -162,6 +162,10 @@ namespace CukierniaProjekt
             MessageBox.Show("Pomyślnie zamówiono ciasta, Płatność przy odbiorze");
             wartoscKoszyk = 0;
             bazaOdczyt();
+            textImie.Text = string.Empty;
+            textMail.Text = string.Empty;
+            textNazwisko.Text = string.Empty;
+            textTel.Text = string.Empty;
         }
     }
 }

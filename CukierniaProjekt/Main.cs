@@ -15,17 +15,17 @@ namespace CukierniaProjekt
     public partial class Main : Form
     {
         private Form currentChildForm;
-        private IconButton currentBtn;
+        public IconButton currentBtn;
         public Main()
         {
             InitializeComponent();
             //Otwieranie aktualności jako strony początkowej
             OpenChildForm(new Aktualnosci());
-            //OpenChildForm(new Zamowienia());
             //ustawieie btnAktualnosci jako aktywny na start
             ActiveButton(btnAktualnosci);
         }
         //Funkcja odpowiadająca za otwieranie formatki wewnątrz panelu formatki Main
+        
         public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
@@ -48,9 +48,7 @@ namespace CukierniaProjekt
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                //currentBtn.ForeColor = System.Drawing.Color.FromArgb(227, 23, 67);
                 currentBtn.Font = new Font(currentBtn.Font, FontStyle.Bold);
-                //currentBtn.IconColor = System.Drawing.Color.FromArgb(227, 23, 67);
             }
         }
         //zdejmowanie wyrużnienia przycisku
@@ -58,9 +56,7 @@ namespace CukierniaProjekt
         {
             if (currentBtn != null)
             {
-                currentBtn.ForeColor = System.Drawing.Color.FromArgb(53, 28, 117);
                 currentBtn.Font = new Font(currentBtn.Font, FontStyle.Regular);
-                currentBtn.IconColor = System.Drawing.Color.FromArgb(53, 28, 117);
             }
         }
 
@@ -69,7 +65,6 @@ namespace CukierniaProjekt
             ActiveButton(sender);
             OpenChildForm(new Aktualnosci());
         }
-
 
         private void btnNaszeCiasta_Click(object sender, EventArgs e)
         {

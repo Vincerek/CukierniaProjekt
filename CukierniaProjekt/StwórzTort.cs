@@ -218,11 +218,13 @@ namespace CukierniaProjekt
             {
                 Zamowienia zamowienia = new Zamowienia();
                 var panelContainer = this.Parent as Panel;
-                var form1 = panelContainer.TopLevelControl as Form;
+                var Main = panelContainer.TopLevelControl as Form;
                 zamowienia.TopLevel = false;
                 zamowienia.FormBorderStyle = FormBorderStyle.None;
                 zamowienia.Dock = DockStyle.Fill;
-                ((Panel)form1.Controls.Find("panelMain", true)[0]).Controls.Add(zamowienia);
+                ((Panel)Main.Controls.Find("panelMain", true)[0]).Controls.Add(zamowienia);
+                (Main.Controls.Find("btnNaszeCiasta", true)[0]).Font = new Font((Main.Controls.Find("btnNaszeCiasta", true)[0]).Font, FontStyle.Regular);
+
                 zamowienia.BringToFront();
                 zamowienia.Show();
                 this.Close();
