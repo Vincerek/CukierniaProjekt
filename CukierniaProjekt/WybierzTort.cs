@@ -162,7 +162,7 @@ namespace CukierniaProjekt
                 zamowienia.FormBorderStyle = FormBorderStyle.None;
                 zamowienia.Dock = DockStyle.Fill;
                 ((Panel)Main.Controls.Find("panelMain", true)[0]).Controls.Add(zamowienia);
-                (Main.Controls.Find("btnStworzCiasto", true)[0]).Font = new Font((Main.Controls.Find("btnStworzCiasto", true)[0]).Font, FontStyle.Regular);
+                (Main.Controls.Find("btnNaszeCIasta", true)[0]).Font = new Font((Main.Controls.Find("btnNaszeCIasta", true)[0]).Font, FontStyle.Regular);
                 zamowienia.BringToFront();
                 zamowienia.Show();
                 this.Close();
