@@ -19,6 +19,10 @@ namespace CukierniaProjekt
             zdj.Image = obrazu;
             return zdj;
         }
+        long value;
+        int cenaTemp;
+        int cenaDanegoCiasta;
+        
         public wierszZamowien()
         {
             InitializeComponent();
@@ -34,8 +38,10 @@ namespace CukierniaProjekt
                     pictures(Image.FromStream(mstream));
                 }
             }
+
             
-            
+
+
         }
 
         //funkcja służąca do usuwania danego wiersza po kliknieciu przycisku
@@ -61,6 +67,38 @@ namespace CukierniaProjekt
                 connection.Close();
             }
         }
+
+        public void bazaUpdate(long value,int cenaTemp)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
+            {
+                connection.Open();
+                string query = $"UPDATE koszykTemp SET sztuki = {value} WHERE idCiasta = {this.Tag};";
+                SQLiteCommand cmd = connection.CreateCommand();
+                cmd.CommandText = query;
+                int result = cmd.ExecuteNonQuery();
+                //sprawdzanie czy update się wykonał
+
+                if (result == 1)
+                {
+                    connection.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Błąd");
+                }
+                connection.Close();
+
+            }
+            sztuki.Text = value.ToString();
+            cena.Text = cenaTemp.ToString()+" zł";
+            Zamowienia zamowienia = this.ParentForm as Zamowienia;
+            if (zamowienia != null)
+            {
+                zamowienia.odswiezCene();
+            }
+        }
+
         private void btnUsun_Click(object sender, EventArgs e)
         {
             bazaUsun();
@@ -73,37 +111,15 @@ namespace CukierniaProjekt
 
         }
 
-        private void sztuki_ValueChanged(object sender, EventArgs e)
-        {
-            long value = (long)sztuki.Value;
-            /*
-            using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
-            {
-                connection.Open();
-                string query = $"UPDATE koszykTemp SET sztuki = {value} WHERE idCiasta = {this.Tag};";
-                SQLiteCommand cmd = connection.CreateCommand();
-                cmd.CommandText = query;
-                int result = cmd.ExecuteNonQuery();
-                //sprawdzanie czy update się wykonał
-                
-                if (result == 1)
-                {
-                    connection.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Błąd");
-                }
-                connection.Close();
-                
-            }
-            */
-        }
+        
+
+        
 
         private void wierszZamowien_Load(object sender, EventArgs e)
         {
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
             {
+
                 connection.Open();
                 string queryTemp = $"SELECT sztuki FROM koszykTemp WHERE idCiasta={this.Tag};";
                 using (SQLiteCommand command = new SQLiteCommand(queryTemp, connection))
@@ -112,8 +128,11 @@ namespace CukierniaProjekt
                     {
                         if (reader.Read())
                         {
-                            sztuki.Value = (long)reader["sztuki"];
+                            value = (long)reader["sztuki"];
+                            sztuki.Text = value.ToString();
                             cena.Text = (Zamowienia.staticCena * (long)reader["sztuki"]).ToString() + " zł";
+                            cenaTemp = (int)(Zamowienia.staticCena * (long)reader["sztuki"]);
+                            cenaDanegoCiasta = (int)(Zamowienia.staticCena);
 
                             connection.Close();
                         }
@@ -121,7 +140,21 @@ namespace CukierniaProjekt
                 }
                 connection.Close();
             }
-            
+
+        }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            value++;
+            cenaTemp += cenaDanegoCiasta;
+            bazaUpdate(value,cenaTemp);
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            value--;
+            cenaTemp -= cenaDanegoCiasta;
+            bazaUpdate(value,cenaTemp);
         }
     }
 }

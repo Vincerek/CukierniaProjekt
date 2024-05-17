@@ -15,6 +15,7 @@ namespace CukierniaProjekt
     public partial class Zamowienia : Form
     {
         public static string staticNazwa;
+        public static bool czyPusty=false;
         public static long staticCena;
         public static byte[] staticZdj;
 
@@ -31,6 +32,7 @@ namespace CukierniaProjekt
             hintMail = textMail.Text;
             hintTel = textTel.Text;
         }
+        
         public void onHint(string hint, TextBox textBox)
         {
             if (string.IsNullOrWhiteSpace(textBox.Text))
@@ -86,6 +88,32 @@ namespace CukierniaProjekt
         private void textTel_Leave(object sender, EventArgs e)
         {
             onHint(hintTel, textTel);
+        }
+        
+        public void odswiezCene()
+        {
+            long wart;
+            using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
+            {
+                connection.Open();
+                string query = $"SELECT Cena*sztuki AS wartosc FROM StworzoneCiasta INNER JOIN koszykTemp on StworzoneCiasta.Id = koszykTemp.idCiasta;";
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        wart=0;
+                        while (reader.Read())
+                        {
+                            wart += (long)reader["wartosc"];
+                        }
+                        connection.Close();
+                    }
+                }
+            }
+            //MessageBox.Show(wart+"");
+
+            lbkoszyk.Text = "Wartość koszyka: "+wart + " zł";
+
         }
         public void bazaOdczyt()
         {
@@ -148,24 +176,36 @@ namespace CukierniaProjekt
 
         private void btnZamow_Click(object sender, EventArgs e)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
+            if (wartoscKoszyk > 0)
             {
-                connection.Open();
-                string query = "DELETE FROM koszykTemp";
+                using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
+                {
+                    connection.Open();
+                    string query = "DELETE FROM koszykTemp";
 
-                using (SQLiteCommand command = new SQLiteCommand(query, connection))
-                { 
-                    command.ExecuteNonQuery();
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    connection.Close();
                 }
-                connection.Close();
+                //MessageBox.Show("Pomyślnie zamówiono ciasta, Płatność przy odbiorze");
+                
+
+                wartoscKoszyk = 0;
+                bazaOdczyt();
+                textImie.Text = string.Empty;
+                textMail.Text = string.Empty;
+                textNazwisko.Text = string.Empty;
+                textTel.Text = string.Empty;
             }
-            MessageBox.Show("Pomyślnie zamówiono ciasta, Płatność przy odbiorze");
-            wartoscKoszyk = 0;
-            bazaOdczyt();
-            textImie.Text = string.Empty;
-            textMail.Text = string.Empty;
-            textNazwisko.Text = string.Empty;
-            textTel.Text = string.Empty;
+            else
+            {
+                czyPusty = true;
+            }
+            okienkoZamowienie okienko = new okienkoZamowienie();
+            okienko.ShowDialog();
+
         }
     }
 }

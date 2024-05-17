@@ -37,8 +37,8 @@
             this.dataOdbioru = new System.Windows.Forms.DateTimePicker();
             this.lokalOdbioru = new System.Windows.Forms.ComboBox();
             this.szczegZamow = new System.Windows.Forms.Panel();
-            this.btnZamow = new FontAwesome.Sharp.IconButton();
             this.lbkoszyk = new System.Windows.Forms.Label();
+            this.btnZamow = new FontAwesome.Sharp.IconButton();
             this.panelZamow.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -202,6 +202,20 @@
             this.szczegZamow.Size = new System.Drawing.Size(728, 425);
             this.szczegZamow.TabIndex = 9;
             // 
+            // lbkoszyk
+            // 
+            this.lbkoszyk.AutoSize = true;
+            this.lbkoszyk.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbkoszyk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbkoszyk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
+            this.lbkoszyk.Location = new System.Drawing.Point(488, 523);
+            this.lbkoszyk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbkoszyk.Name = "lbkoszyk";
+            this.lbkoszyk.Size = new System.Drawing.Size(234, 136);
+            this.lbkoszyk.TabIndex = 10;
+            this.lbkoszyk.Text = "wartosc koszyka:";
+            this.lbkoszyk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnZamow
             // 
             this.btnZamow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
@@ -222,20 +236,6 @@
             this.btnZamow.Text = "Zamów";
             this.btnZamow.UseVisualStyleBackColor = false;
             this.btnZamow.Click += new System.EventHandler(this.btnZamow_Click);
-            // 
-            // lbkoszyk
-            // 
-            this.lbkoszyk.AutoSize = true;
-            this.lbkoszyk.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbkoszyk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbkoszyk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
-            this.lbkoszyk.Location = new System.Drawing.Point(488, 523);
-            this.lbkoszyk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbkoszyk.Name = "lbkoszyk";
-            this.lbkoszyk.Size = new System.Drawing.Size(234, 136);
-            this.lbkoszyk.TabIndex = 10;
-            this.lbkoszyk.Text = "wartosc koszyka:";
-            this.lbkoszyk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Zamowienia
             // 
