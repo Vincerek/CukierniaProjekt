@@ -31,28 +31,33 @@
             this.wiersz = new System.Windows.Forms.TableLayoutPanel();
             this.cena = new System.Windows.Forms.Label();
             this.nazwa = new System.Windows.Forms.Label();
-            this.sztuki = new System.Windows.Forms.NumericUpDown();
             this.btnUsun = new FontAwesome.Sharp.IconButton();
             this.zdj = new System.Windows.Forms.PictureBox();
+            this.btnMinus = new FontAwesome.Sharp.IconButton();
+            this.btnPlus = new FontAwesome.Sharp.IconButton();
+            this.sztuki = new System.Windows.Forms.Label();
             this.wiersz.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sztuki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zdj)).BeginInit();
             this.SuspendLayout();
             // 
             // wiersz
             // 
             this.wiersz.BackColor = System.Drawing.Color.White;
-            this.wiersz.ColumnCount = 5;
+            this.wiersz.ColumnCount = 7;
             this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.wiersz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.wiersz.Controls.Add(this.cena, 2, 0);
             this.wiersz.Controls.Add(this.nazwa, 0, 0);
-            this.wiersz.Controls.Add(this.btnUsun, 4, 0);
+            this.wiersz.Controls.Add(this.btnUsun, 6, 0);
             this.wiersz.Controls.Add(this.zdj, 1, 0);
-            this.wiersz.Controls.Add(this.sztuki, 3, 0);
+            this.wiersz.Controls.Add(this.btnMinus, 3, 0);
+            this.wiersz.Controls.Add(this.btnPlus, 5, 0);
+            this.wiersz.Controls.Add(this.sztuki, 4, 0);
             this.wiersz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wiersz.Location = new System.Drawing.Point(0, 0);
             this.wiersz.Margin = new System.Windows.Forms.Padding(4);
@@ -90,36 +95,6 @@
             this.nazwa.Text = "Nazwa Ciasta";
             this.nazwa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // sztuki
-            // 
-            this.sztuki.BackColor = System.Drawing.Color.White;
-            this.sztuki.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sztuki.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sztuki.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sztuki.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
-            this.sztuki.Location = new System.Drawing.Point(715, 31);
-            this.sztuki.Margin = new System.Windows.Forms.Padding(0, 31, 0, 31);
-            this.sztuki.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.sztuki.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.sztuki.Name = "sztuki";
-            this.sztuki.Size = new System.Drawing.Size(143, 26);
-            this.sztuki.TabIndex = 9;
-            this.sztuki.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sztuki.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.sztuki.ValueChanged += new System.EventHandler(this.sztuki_ValueChanged);
-            // 
             // btnUsun
             // 
             this.btnUsun.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -130,10 +105,10 @@
             this.btnUsun.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
             this.btnUsun.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUsun.IconSize = 35;
-            this.btnUsun.Location = new System.Drawing.Point(858, 0);
+            this.btnUsun.Location = new System.Drawing.Point(856, 0);
             this.btnUsun.Margin = new System.Windows.Forms.Padding(0);
             this.btnUsun.Name = "btnUsun";
-            this.btnUsun.Size = new System.Drawing.Size(97, 91);
+            this.btnUsun.Size = new System.Drawing.Size(99, 91);
             this.btnUsun.TabIndex = 7;
             this.btnUsun.UseVisualStyleBackColor = true;
             this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
@@ -150,6 +125,47 @@
             this.zdj.TabIndex = 8;
             this.zdj.TabStop = false;
             // 
+            // btnMinus
+            // 
+            this.btnMinus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMinus.IconChar = FontAwesome.Sharp.IconChar.CircleMinus;
+            this.btnMinus.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.btnMinus.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinus.IconSize = 40;
+            this.btnMinus.Location = new System.Drawing.Point(715, 0);
+            this.btnMinus.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMinus.Name = "btnMinus";
+            this.btnMinus.Size = new System.Drawing.Size(47, 91);
+            this.btnMinus.TabIndex = 10;
+            this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
+            // 
+            // btnPlus
+            // 
+            this.btnPlus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPlus.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnPlus.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.btnPlus.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPlus.IconSize = 40;
+            this.btnPlus.Location = new System.Drawing.Point(809, 0);
+            this.btnPlus.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPlus.Name = "btnPlus";
+            this.btnPlus.Size = new System.Drawing.Size(47, 91);
+            this.btnPlus.TabIndex = 11;
+            this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
+            // 
+            // sztuki
+            // 
+            this.sztuki.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sztuki.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sztuki.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.sztuki.Location = new System.Drawing.Point(765, 0);
+            this.sztuki.Name = "sztuki";
+            this.sztuki.Size = new System.Drawing.Size(41, 91);
+            this.sztuki.TabIndex = 12;
+            this.sztuki.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // wierszZamowien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -160,7 +176,6 @@
             this.Size = new System.Drawing.Size(955, 91);
             this.Load += new System.EventHandler(this.wierszZamowien_Load);
             this.wiersz.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sztuki)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zdj)).EndInit();
             this.ResumeLayout(false);
 
@@ -173,6 +188,8 @@
         private System.Windows.Forms.Label cena;
         private FontAwesome.Sharp.IconButton btnUsun;
         private System.Windows.Forms.PictureBox zdj;
-        private System.Windows.Forms.NumericUpDown sztuki;
+        private FontAwesome.Sharp.IconButton btnMinus;
+        private FontAwesome.Sharp.IconButton btnPlus;
+        private System.Windows.Forms.Label sztuki;
     }
 }
