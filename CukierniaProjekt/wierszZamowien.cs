@@ -19,6 +19,7 @@ namespace CukierniaProjekt
             zdj.Image = obrazu;
             return zdj;
         }
+        
         public wierszZamowien()
         {
             InitializeComponent();
@@ -34,8 +35,10 @@ namespace CukierniaProjekt
                     pictures(Image.FromStream(mstream));
                 }
             }
+
             
-            
+
+
         }
 
         //funkcja służąca do usuwania danego wiersza po kliknieciu przycisku
@@ -75,8 +78,8 @@ namespace CukierniaProjekt
 
         private void sztuki_ValueChanged(object sender, EventArgs e)
         {
-            long value = (long)sztuki.Value;
             /*
+            long value = (long)sztuki.Value;
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
             {
                 connection.Open();
@@ -96,14 +99,15 @@ namespace CukierniaProjekt
                 }
                 connection.Close();
                 
-            }
-            */
+            }*/
+            
         }
 
         private void wierszZamowien_Load(object sender, EventArgs e)
         {
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
             {
+
                 connection.Open();
                 string queryTemp = $"SELECT sztuki FROM koszykTemp WHERE idCiasta={this.Tag};";
                 using (SQLiteCommand command = new SQLiteCommand(queryTemp, connection))
@@ -121,7 +125,7 @@ namespace CukierniaProjekt
                 }
                 connection.Close();
             }
-            
+
         }
     }
 }

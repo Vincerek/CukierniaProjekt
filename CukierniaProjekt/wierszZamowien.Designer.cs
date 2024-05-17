@@ -31,12 +31,12 @@
             this.wiersz = new System.Windows.Forms.TableLayoutPanel();
             this.cena = new System.Windows.Forms.Label();
             this.nazwa = new System.Windows.Forms.Label();
+            this.sztuki = new System.Windows.Forms.NumericUpDown();
             this.btnUsun = new FontAwesome.Sharp.IconButton();
             this.zdj = new System.Windows.Forms.PictureBox();
-            this.sztuki = new System.Windows.Forms.NumericUpDown();
             this.wiersz.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.zdj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sztuki)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zdj)).BeginInit();
             this.SuspendLayout();
             // 
             // wiersz
@@ -66,7 +66,7 @@
             // 
             this.cena.BackColor = System.Drawing.Color.White;
             this.cena.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cena.Font = new System.Drawing.Font("Inter", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
             this.cena.Location = new System.Drawing.Point(572, 0);
             this.cena.Margin = new System.Windows.Forms.Padding(0);
@@ -80,7 +80,7 @@
             // 
             this.nazwa.BackColor = System.Drawing.Color.White;
             this.nazwa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nazwa.Font = new System.Drawing.Font("Inter", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nazwa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.nazwa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
             this.nazwa.Location = new System.Drawing.Point(0, 0);
             this.nazwa.Margin = new System.Windows.Forms.Padding(0);
@@ -89,36 +89,6 @@
             this.nazwa.TabIndex = 1;
             this.nazwa.Text = "Nazwa Ciasta";
             this.nazwa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnUsun
-            // 
-            this.btnUsun.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnUsun.FlatAppearance.BorderSize = 0;
-            this.btnUsun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsun.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
-            this.btnUsun.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnUsun.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
-            this.btnUsun.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnUsun.IconSize = 35;
-            this.btnUsun.Location = new System.Drawing.Point(858, 0);
-            this.btnUsun.Margin = new System.Windows.Forms.Padding(0);
-            this.btnUsun.Name = "btnUsun";
-            this.btnUsun.Size = new System.Drawing.Size(97, 91);
-            this.btnUsun.TabIndex = 7;
-            this.btnUsun.UseVisualStyleBackColor = true;
-            this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
-            // 
-            // zdj
-            // 
-            this.zdj.BackColor = System.Drawing.Color.White;
-            this.zdj.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zdj.Location = new System.Drawing.Point(429, 0);
-            this.zdj.Margin = new System.Windows.Forms.Padding(0);
-            this.zdj.Name = "zdj";
-            this.zdj.Size = new System.Drawing.Size(143, 91);
-            this.zdj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.zdj.TabIndex = 8;
-            this.zdj.TabStop = false;
             // 
             // sztuki
             // 
@@ -150,6 +120,36 @@
             0});
             this.sztuki.ValueChanged += new System.EventHandler(this.sztuki_ValueChanged);
             // 
+            // btnUsun
+            // 
+            this.btnUsun.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnUsun.FlatAppearance.BorderSize = 0;
+            this.btnUsun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsun.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
+            this.btnUsun.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnUsun.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.btnUsun.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUsun.IconSize = 35;
+            this.btnUsun.Location = new System.Drawing.Point(858, 0);
+            this.btnUsun.Margin = new System.Windows.Forms.Padding(0);
+            this.btnUsun.Name = "btnUsun";
+            this.btnUsun.Size = new System.Drawing.Size(97, 91);
+            this.btnUsun.TabIndex = 7;
+            this.btnUsun.UseVisualStyleBackColor = true;
+            this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
+            // 
+            // zdj
+            // 
+            this.zdj.BackColor = System.Drawing.Color.White;
+            this.zdj.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zdj.Location = new System.Drawing.Point(429, 0);
+            this.zdj.Margin = new System.Windows.Forms.Padding(0);
+            this.zdj.Name = "zdj";
+            this.zdj.Size = new System.Drawing.Size(143, 91);
+            this.zdj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.zdj.TabIndex = 8;
+            this.zdj.TabStop = false;
+            // 
             // wierszZamowien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -160,8 +160,8 @@
             this.Size = new System.Drawing.Size(955, 91);
             this.Load += new System.EventHandler(this.wierszZamowien_Load);
             this.wiersz.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.zdj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sztuki)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zdj)).EndInit();
             this.ResumeLayout(false);
 
         }

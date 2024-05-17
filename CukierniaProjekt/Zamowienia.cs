@@ -15,6 +15,7 @@ namespace CukierniaProjekt
     public partial class Zamowienia : Form
     {
         public static string staticNazwa;
+        public static bool czyPusty=false;
         public static long staticCena;
         public static byte[] staticZdj;
 
@@ -148,24 +149,36 @@ namespace CukierniaProjekt
 
         private void btnZamow_Click(object sender, EventArgs e)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
+            if (wartoscKoszyk > 0)
             {
-                connection.Open();
-                string query = "DELETE FROM koszykTemp";
+                using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
+                {
+                    connection.Open();
+                    string query = "DELETE FROM koszykTemp";
 
-                using (SQLiteCommand command = new SQLiteCommand(query, connection))
-                { 
-                    command.ExecuteNonQuery();
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    connection.Close();
                 }
-                connection.Close();
+                //MessageBox.Show("Pomyślnie zamówiono ciasta, Płatność przy odbiorze");
+                
+
+                wartoscKoszyk = 0;
+                bazaOdczyt();
+                textImie.Text = string.Empty;
+                textMail.Text = string.Empty;
+                textNazwisko.Text = string.Empty;
+                textTel.Text = string.Empty;
             }
-            MessageBox.Show("Pomyślnie zamówiono ciasta, Płatność przy odbiorze");
-            wartoscKoszyk = 0;
-            bazaOdczyt();
-            textImie.Text = string.Empty;
-            textMail.Text = string.Empty;
-            textNazwisko.Text = string.Empty;
-            textTel.Text = string.Empty;
+            else
+            {
+                czyPusty = true;
+            }
+            okienkoZamowienie okienko = new okienkoZamowienie();
+            okienko.ShowDialog();
+
         }
     }
 }

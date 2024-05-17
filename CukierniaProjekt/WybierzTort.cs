@@ -15,45 +15,40 @@ namespace CukierniaProjekt
 {
     public partial class WybierzTort : Form
     {
-        int indexCiastMin;
         int indexCiast;
-        int indexCiastMax;
 
         object aktualneId;
 
-        String[] posypkaTab = { "czekolada", "kolorowa" };
-        String[] smakTab = { "czekolada", "toffi" };
-        String[] bazaTab = { "biszkopt", "brownie" };
 
         public WybierzTort()
         {
             InitializeComponent();
+            indexCiast = 19;
             bazaOdczyt();
-            indexCiast = 0;
         }
 
         private void btnPrawo_Click(object sender, EventArgs e)
         {
-            if (indexCiast < posypkaTab.Length - 1)
+            if (indexCiast < 26)
             {
                 indexCiast++;
             }
             else
             {
-                indexCiast = 0;
+                indexCiast = 19;
             }
             bazaOdczyt();
         }
 
         private void btnLewo_Click(object sender, EventArgs e)
         {
-            if(indexCiast > 0)
+            if(indexCiast > 18)
             {
                 indexCiast--;
             }
             else
             {
-                indexCiast = posypkaTab.Length - 1; ;
+                indexCiast = 25;
             }
             bazaOdczyt();
         }
@@ -68,7 +63,7 @@ namespace CukierniaProjekt
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
             {
                 connection.Open();
-                string query = $"SELECT * FROM StworzoneCiasta WHERE Posypka = \"{posypkaTab[indexCiast]}\" AND Smak = \"{smakTab[indexCiast]}\" AND Baza=\"{bazaTab[indexCiast]}\";";
+                string query = $"SELECT * FROM StworzoneCiasta WHERE Id={indexCiast};";
 
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {

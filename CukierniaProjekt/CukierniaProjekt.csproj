@@ -86,6 +86,12 @@
     <Compile Include="okienkoKoszyk.Designer.cs">
       <DependentUpon>okienkoKoszyk.cs</DependentUpon>
     </Compile>
+    <Compile Include="okienkoZamowienie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="okienkoZamowienie.Designer.cs">
+      <DependentUpon>okienkoZamowienie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Status.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="okienkoKoszyk.resx">
       <DependentUpon>okienkoKoszyk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="okienkoZamowienie.resx">
+      <DependentUpon>okienkoZamowienie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Status.resx">
       <DependentUpon>Status.cs</DependentUpon>
