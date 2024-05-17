@@ -135,7 +135,7 @@ namespace CukierniaProjekt
                         if (reader.Read())
                         {
                             aktualneId = reader["id"];
-                            nazwaCiasta.Text = reader["Nazwa Ciasta"].ToString();
+                            nazwaCiasta.Text = reader["Nazwa Ciasta"].ToString() + "\n" + reader["cena"] + " zł";
                             infOCiescie.Text = reader["Opis"].ToString();
 
                             byte[] pic = reader["Zdjecie"] as byte[] ?? null;

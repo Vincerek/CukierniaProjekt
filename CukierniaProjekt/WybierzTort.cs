@@ -29,26 +29,28 @@ namespace CukierniaProjekt
 
         private void btnPrawo_Click(object sender, EventArgs e)
         {
-            if (indexCiast < 26)
+            if (indexCiast == 26)
             {
-                indexCiast++;
+                indexCiast = 19;
+                
             }
             else
             {
-                indexCiast = 19;
+                indexCiast++;
             }
             bazaOdczyt();
         }
 
         private void btnLewo_Click(object sender, EventArgs e)
         {
-            if(indexCiast > 18)
+            if(indexCiast == 18)
             {
-                indexCiast--;
+                
+                indexCiast = 25;
             }
             else
             {
-                indexCiast = 25;
+                indexCiast--;
             }
             bazaOdczyt();
         }
@@ -72,7 +74,7 @@ namespace CukierniaProjekt
                         if (reader.Read())
                         {
                             aktualneId = reader["id"];
-                            nazwaCiasta.Text = reader["Nazwa Ciasta"].ToString();
+                            nazwaCiasta.Text = reader["Nazwa Ciasta"].ToString() + "\n" + reader["cena"]+" zł";
                             infOCiescie.Text = reader["Opis"].ToString();
 
                             byte[] pic = reader["Zdjecie"] as byte[] ?? null;
