@@ -14,11 +14,13 @@ namespace CukierniaProjekt
 {
     public partial class wierszZamowien : UserControl
     {
+        //funkcja potrzebna do wyświetlania obrazu z bazy danych
         PictureBox pictures(Image obrazu)
         {
             zdj.Image = obrazu;
             return zdj;
         }
+        //zmienne do aktualizowania cen i ilości ciast
         long value;
         int cenaTemp;
         int cenaDanegoCiasta;
@@ -29,7 +31,6 @@ namespace CukierniaProjekt
             //przypisywanie wartości zmiennym potrzebnym do wyświetlenia informacji w wierszu za pomocą zmiennych statycznych
             //z formularza Zamowienia
             nazwa.Text = Zamowienia.staticNazwa;
-            
             byte[] zdj = Zamowienia.staticZdj;
             if (zdj != null)
             {
@@ -38,10 +39,6 @@ namespace CukierniaProjekt
                     pictures(Image.FromStream(mstream));
                 }
             }
-
-            
-
-
         }
 
         //funkcja służąca do usuwania danego wiersza po kliknieciu przycisku
@@ -67,7 +64,7 @@ namespace CukierniaProjekt
                 connection.Close();
             }
         }
-
+        //funkcja aktualizująca ilość sztuk ciast w tabeli koszykTemp oraz wyswietlajaca zaktualiozwane dane o cenie i ilości sztuk
         public void bazaUpdate(long value,int cenaTemp)
         {
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
@@ -98,7 +95,7 @@ namespace CukierniaProjekt
                 zamowienia.odswiezCene();
             }
         }
-
+        //obsługa przycisku usuwającego dany wiersz z koszyka
         private void btnUsun_Click(object sender, EventArgs e)
         {
             bazaUsun();
@@ -108,13 +105,10 @@ namespace CukierniaProjekt
             {
                 zamowienia.bazaOdczyt();
             }
-
         }
-
         
-
-        
-
+        //wyświetlanie po załadowaniu kontrolki danych takich jak nazwa ciasta,cena, ilość sztuk w koszyku na
+        //podstawie id przekazywanego za pomocą tagu kontrolki
         private void wierszZamowien_Load(object sender, EventArgs e)
         {
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
@@ -142,14 +136,14 @@ namespace CukierniaProjekt
             }
 
         }
-
+        //przycisk zwiększający ilość sztuk
         private void btnPlus_Click(object sender, EventArgs e)
         {
             value++;
             cenaTemp += cenaDanegoCiasta;
             bazaUpdate(value,cenaTemp);
         }
-
+        //przycisk zmniejszający ilość sztuk
         private void btnMinus_Click(object sender, EventArgs e)
         {
             value--;

@@ -14,10 +14,15 @@ namespace CukierniaProjekt
 {
     public partial class Zamowienia : Form
     {
+        //zmienne statyczne odczytywane w kontrolce  użytkownika wierszZamowien
         public static string staticNazwa;
-        public static bool czyPusty=false;
+        
         public static long staticCena;
         public static byte[] staticZdj;
+
+        //zmienna statyczna potrzebna do sprawdzenia czy koszyk jest pusty i do wyświetlenia odpowiedniego komunikatu w okienku okienkoKoszyk
+        public static bool czyPusty = false;
+
 
         string hintImie;
         string hintNazwisko;
@@ -89,7 +94,7 @@ namespace CukierniaProjekt
         {
             onHint(hintTel, textTel);
         }
-        
+        //funkcja odświeżająca cenę całościową ciast w koszyku
         public void odswiezCene()
         {
             long wart;
@@ -110,11 +115,10 @@ namespace CukierniaProjekt
                     }
                 }
             }
-            //MessageBox.Show(wart+"");
-
             lbkoszyk.Text = "Wartość koszyka: "+wart + " zł";
-
         }
+        //funkcja odczytująca dane z tabeli ciasta połączoenj relacja z koszyk temp i wyświetlanie jeden pod drugim wiersze
+        //z informacjami o ciastach dodanych do koszyka
         public void bazaOdczyt()
         {
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
@@ -143,9 +147,9 @@ namespace CukierniaProjekt
                 }
                 connection.Close();
                 lbkoszyk.Text = "wartosc koszyka: " + wartoscKoszyk + " zl";
-
             }
         }
+
         private void Zamowienia_Load(object sender, EventArgs e)
         {
             //Ustawianie ograniczeń daty odbioru po załadowaniu formularza
@@ -155,24 +159,11 @@ namespace CukierniaProjekt
             int todayY = DateTime.Now.Year;
             dataOdbioru.MinDate = new DateTime(todayY,todayM,todayD+5);
             dataOdbioru.MaxDate = new DateTime(todayY + 1, todayM, todayD);
+            //wywołanie funkcji wyswietlajacej dane w koszyku
             bazaOdczyt();            
         }
 
-        private void btnWroc_Click(object sender, EventArgs e)
-        {
-            //powrót do formularza z wyborem tortów w celu kontynuowania zakupów
-            WybierzTort wybierzTort = new WybierzTort();
-            var panelContainer = this.Parent as Panel;
-            var form1 = panelContainer.TopLevelControl as Form;
-            wybierzTort.TopLevel = false;
-            wybierzTort.FormBorderStyle = FormBorderStyle.None;
-            wybierzTort.Dock = DockStyle.Fill;
-            ((Panel)form1.Controls.Find("panelMain", true)[0]).Controls.Add(wybierzTort);
-            wybierzTort.BringToFront();
-            wybierzTort.Show();
-            //przesył tortów dodanych do koszyka do bazy danych
-
-        }
+        
 
         private void btnZamow_Click(object sender, EventArgs e)
         {
