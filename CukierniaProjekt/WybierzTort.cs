@@ -29,29 +29,25 @@ namespace CukierniaProjekt
 
         private void btnPrawo_Click(object sender, EventArgs e)
         {
+            indexCiast++;
             if (indexCiast == 26)
             {
                 indexCiast = 19;
                 
             }
-            else
-            {
-                indexCiast++;
-            }
+            
             bazaOdczyt();
         }
 
         private void btnLewo_Click(object sender, EventArgs e)
         {
-            if(indexCiast == 18)
+            indexCiast--;
+            if (indexCiast == 18)
             {
                 
                 indexCiast = 25;
             }
-            else
-            {
-                indexCiast--;
-            }
+            
             bazaOdczyt();
         }
         PictureBox pictures(Image obrazu)
