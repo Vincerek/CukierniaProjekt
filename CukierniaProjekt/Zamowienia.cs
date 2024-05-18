@@ -238,7 +238,12 @@ namespace CukierniaProjekt
                 }
                 if (!System.Text.RegularExpressions.Regex.IsMatch(textTel.Text, "^[0-9]{3}-?[0-9]{3}-?[0-9]{3}$"))
                 {
-                    sB.Append("Numer telefonu jest nie poprawny, powinien składać się z 9 cyfr\n");
+                    sB.Append("Numer telefonu jest nie poprawny, poprawmy format to 111-222-333\n");
+                    regex = false;
+                }
+                if (lokalOdbioru.SelectedValue == null)
+                {
+                    sB.Append("Wybierz lokal do odebrania zamówienia");
                     regex = false;
                 }
                 if (!regex) 
