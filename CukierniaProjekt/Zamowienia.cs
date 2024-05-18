@@ -45,7 +45,7 @@ namespace CukierniaProjekt
         {
             if (textBox.Text == hint)
             {
-                textBox.Text = null;
+                textBox.Text = "";
                 textBox.ForeColor = Color.Black;
             }
         }
@@ -176,36 +176,77 @@ namespace CukierniaProjekt
 
         private void btnZamow_Click(object sender, EventArgs e)
         {
-            if (wartoscKoszyk > 0)
+            if (regexCheck())
             {
-                using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
+
+                if (wartoscKoszyk > 0)
                 {
-                    connection.Open();
-                    string query = "DELETE FROM koszykTemp";
-
-                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
                     {
-                        command.ExecuteNonQuery();
+                        connection.Open();
+                        string query = "DELETE FROM koszykTemp";
+
+                        using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                        {
+                            command.ExecuteNonQuery();
+                        }
+                        connection.Close();
                     }
-                    connection.Close();
+                    //MessageBox.Show("Pomyślnie zamówiono ciasta, Płatność przy odbiorze");
+
+
+                    wartoscKoszyk = 0;
+                    bazaOdczyt();
+                    textImie.Text = string.Empty;
+                    textMail.Text = string.Empty;
+                    textNazwisko.Text = string.Empty;
+                    textTel.Text = string.Empty;
                 }
-                //MessageBox.Show("Pomyślnie zamówiono ciasta, Płatność przy odbiorze");
-                
-
-                wartoscKoszyk = 0;
-                bazaOdczyt();
-                textImie.Text = string.Empty;
-                textMail.Text = string.Empty;
-                textNazwisko.Text = string.Empty;
-                textTel.Text = string.Empty;
+                else
+                {
+                    czyPusty = true;
+                }
+                okienkoZamowienie okienko = new okienkoZamowienie();
+                okienko.ShowDialog();
             }
-            else
-            {
-                czyPusty = true;
-            }
-            okienkoZamowienie okienko = new okienkoZamowienie();
-            okienko.ShowDialog();
+        }
 
+        private void textImie_TextChanged(object sender, EventArgs e)
+        {            
+
+        }
+
+        bool regexCheck()
+        {
+            bool regex = true;
+            String s = "";
+            StringBuilder sB = new StringBuilder(s);
+                if (!System.Text.RegularExpressions.Regex.IsMatch(textImie.Text, "^[a-zA-Z]+$"))
+                {
+                    sB.Append("Imię powinno zawierać tylko litery\n");
+                    regex = false;
+                }
+                if (!System.Text.RegularExpressions.Regex.IsMatch(textNazwisko.Text, "^[a-zA-Z]+$"))
+                {
+                    sB.Append("Nazwisko powinno zawierać tylko litery\n");
+                    regex = false;
+                }
+                if(!System.Text.RegularExpressions.Regex.IsMatch(textMail.Text, "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"))
+                {
+                    sB.Append("Mail nie poprawny, przykład: \"adam@gmail.com\" \n");
+                    regex = false;
+                }
+                if (!System.Text.RegularExpressions.Regex.IsMatch(textTel.Text, "^[0-9]{3}-?[0-9]{3}-?[0-9]{3}$"))
+                {
+                    sB.Append("Numer telefonu jest nie poprawny, powinien składać się z 9 cyfr\n");
+                    regex = false;
+                }
+                if (!regex) 
+                {
+                    s = sB.ToString();
+                    MessageBox.Show(s);
+                }
+            return regex;
         }
     }
 }
