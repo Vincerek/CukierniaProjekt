@@ -179,19 +179,10 @@ namespace CukierniaProjekt
 
         private void btnZamow_Click(object sender, EventArgs e)
         {
-
-            
-
-
-            //MessageBox.Show(idCiast);
             if (regexCheck())
             {
-
                 if (wartoscKoszyk > 0)
                 {
-
-
-                    //MessageBox.Show("Pomyślnie zamówiono ciasta, Płatność przy odbiorze");
                     using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
                     {
                         connection.Open();
@@ -200,9 +191,6 @@ namespace CukierniaProjekt
                         {
                             command.ExecuteNonQuery();
                         }
-
-                        
-                            //connection.Open();
                             string queryTemp = $"SELECT * FROM Zamowienia WHERE mail='{textMail.Text}';";
                             using (SQLiteCommand command = new SQLiteCommand(queryTemp, connection))
                             {
@@ -227,7 +215,6 @@ namespace CukierniaProjekt
                                         image.Alignment = Element.ALIGN_CENTER;
                                         document.Add(image);
 
-
                                         Paragraph p1 = new Paragraph($"\n\nImie i nazwisko zamawiającego: {reader["imie"]} {reader["nazwisko"]}", helvetica16);
                                         document.Add(p1);
 
@@ -242,7 +229,6 @@ namespace CukierniaProjekt
 
                                         string[] ciasta = reader["idCiast"].ToString().Split(';');
                                         string[] sztuki = reader["iloscCiast"].ToString().Split(';');
-                                        string[] wiersz;
                                         for (int i = 0; i < ciasta.Length - 1; i++)
                                         {
                                             string query = $"SELECT * FROM StworzoneCiasta WHERE Id={ciasta[i]};";
@@ -257,7 +243,6 @@ namespace CukierniaProjekt
                                                     }
                                                 }
                                             }
-
                                         }
                                         Paragraph p5 = new Paragraph($"\n\nW razie pytań proszę kontaktować się z nami telefonicznie lub mailowo: \n     tel: +48 824 123 987\n     tel: +48 765 321 789\n     e-mail: PixelCake@gmail.com", helvetica16);
                                         document.Add(p5);
@@ -272,7 +257,6 @@ namespace CukierniaProjekt
                         }
                         connection.Close();
                     }
-
                     wartoscKoszyk = 0;
                     bazaOdczyt();
                     textImie.Text = string.Empty;
@@ -297,12 +281,7 @@ namespace CukierniaProjekt
                 }
                 okienkoZamowienie okienko = new okienkoZamowienie();
                 okienko.ShowDialog();
-
-
-
-                
             }
-           
         }
 
         private void textImie_TextChanged(object sender, EventArgs e)
@@ -312,7 +291,6 @@ namespace CukierniaProjekt
 
         bool regexCheck()
         {
-           
             bool regex = true;
             String s = "";
             StringBuilder sB = new StringBuilder(s);
