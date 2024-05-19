@@ -21,7 +21,7 @@ namespace CukierniaProjekt
         {
             if (Zamowienia.czyPusty == true) komunikat.Text = "Koszyk jest pusty, musisz dodać ciasto by złożyć zamowienie";
             //dodać cenę po stworzeniu bazy danych z całym zamówieniem
-            else komunikat.Text = $"Dziękujemy za zakupy w naszym sklepie.\r\n\r\nElektroniczny paragon został wysłany na twoją skrzynkę mailową.\r\nPłatność do uregulowania przy odbiorzę: \r\nzł";
+            else komunikat.Text = $"Dziękujemy za zakupy w naszym sklepie.\r\n\r\nElektroniczny paragon został wysłany na twoją skrzynkę mailową.\r\nPłatność przy odbiorzę.";
             
         }
 
