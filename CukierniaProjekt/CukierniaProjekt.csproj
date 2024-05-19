@@ -208,7 +208,7 @@
     <Folder Include="PDF\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\logo_PixelCake.png" />
+    <None Include="Resources\logo_PixelCake.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

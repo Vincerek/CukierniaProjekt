@@ -249,14 +249,17 @@ namespace CukierniaProjekt
                             iTextSharp.text.Font helvetica16 = new iTextSharp.text.Font(helvetica, 16);
                             iTextSharp.text.Font helvetica24 = new iTextSharp.text.Font(helvetica, 24);
 
-                            Paragraph header = new Paragraph("Zamowienie w cukierni internetowej Pixel Cake\n",helvetica24);
+                            Paragraph header = new Paragraph("Zamowienie w cukierni internetowej \n",helvetica24);
                             header.Alignment = Element.ALIGN_CENTER;
                             document.Add(header);
-                            //iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(Resources., System.Drawing.Imaging.ImageFormat.Png);
-                            //document.Add(image); 
+                            iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(Resources.logo_PixelCake, System.Drawing.Imaging.ImageFormat.Png);
+                            image.ScaleAbsoluteHeight(document.PageSize.Height /5);
+                            image.ScaleAbsoluteWidth(document.PageSize.Width /3);
+                            image.Alignment = Element.ALIGN_CENTER;
+                            document.Add(image); 
                             
 
-                            Paragraph p1 = new Paragraph($"\nImie i nazwisko zamawiającego: {reader["imie"]} {reader["nazwisko"]}",helvetica16);
+                            Paragraph p1 = new Paragraph($"\n\nImie i nazwisko zamawiającego: {reader["imie"]} {reader["nazwisko"]}",helvetica16);
                             document.Add(p1);
 
                             Paragraph p2 = new Paragraph($"\nDane kontaktowe zamawiającego: \n\t     Nr. telefonu: {reader["nrTel"]} \n     Adres e-mail: {reader["mail"]}",helvetica16);
@@ -265,7 +268,7 @@ namespace CukierniaProjekt
                             Paragraph p3 = new Paragraph($"\nZamówienie będzie do odbioru dnia {reader["data"]} w naszym lokalu pod adresem: {reader["lokalOdbioru"]}. \nKwota do zapłaty na miejscu przy odbiorze: {reader["cena"]} zł.(Płatność kartą lub gotówką)", helvetica16);
                             p3.Alignment = Element.ALIGN_CENTER;
                             document.Add(p3);
-                            Paragraph p4 = new Paragraph($"\n\nZamówione ciasta:", helvetica16);
+                            Paragraph p4 = new Paragraph($"\n\n\nZamówione ciasta:", helvetica16);
                             document.Add(p4);
 
                             string[] ciasta = reader["idCiast"].ToString().Split(';');
