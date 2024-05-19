@@ -21,25 +21,24 @@ namespace CukierniaProjekt
 
     public partial class StwórzTort : Form
     {
-        
+        //tworzenie zmiennych do poruszania się po tabelach potrzebnych do wyciągania danych z tabeli z ciastami i zapisywania do koszykTemp
         int indexPosypka = 0;
         int indexSmak = 0;
         int indexBaza = 0;
-
-        
         object aktualneId;
 
+        //tabele potrzebne do wyciągania danych z tabeli z ciastami i zapisywania do koszykTemp
         String[] posypkaTab = { "czekolada", "kolorowa", "kokos" };
         String[] smakTab = { "czekolada", "toffi", "truskawka" };
         String[] bazaTab = { "biszkopt", "brownie" };
 
-        
-        
         public StwórzTort()
         {
             InitializeComponent();
         }
 
+        //funkcje inkrementujące i dekrementujące zmienne potrzebne do poruszania się po tabelach i
+        //wyswietlania danych z bazy i wyswietlanie w sliderze
         public void inkrementacjaTablicyPosypek()
         {
             if (indexPosypka < posypkaTab.Length-1)
@@ -111,16 +110,20 @@ namespace CukierniaProjekt
             }
             bazaOdczyt();
         }
-
+        //wyświetlenie danych z bazy w sliderze po zaladowaniu formularza
         private void StwórzTort_Load(object sender, EventArgs e)
         {
             bazaOdczyt();
         }
+
+        //funkcja potrzebna do wyświetlania obrazu z bazy danych
         PictureBox pictures(Image obrazu)
         {
             zdjCiasto.Image = obrazu;
             return zdjCiasto;
         }
+
+        //funkcja wysyłająca zapytanie do bazy danych w celu pobrania rekordu dla danego id i wyświetlająca dane dla tego id w sliderze
         public void bazaOdczyt()
         {
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
@@ -154,7 +157,9 @@ namespace CukierniaProjekt
             }
         }
 
-
+        //funkcja wysyłająca zapytania do bazy danych w celu sprawdzenia czy nie dodaliśmy już do koszyka tego samego ciasta,
+        //w przypadku gdy tak jest zwiększamy o jeden ilość sztuk w przeciwnym przypadku zapisujemy do tabeli koszykTemp id ciasta,
+        //które dodajemy do koszyka i ustawiamy ilosc sztuk na 1
         public void bazaZapis()
         {
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
@@ -208,7 +213,8 @@ namespace CukierniaProjekt
             }
         }
 
-
+        //obsługa przycisku który dodaje ciasto do koszyka i otwiera okienko z zapytaniem czy chcemy przejść do koszyka czy kontynuować zakupy
+        // jak klikniemy przejście do koszyka to funkcja wyswietli formularz Zamówienia
         private void btnDalej_Click(object sender, EventArgs e)
         {
             okienkoKoszyk okienko = new okienkoKoszyk();
@@ -231,6 +237,8 @@ namespace CukierniaProjekt
             }
         }
 
+
+        //obsługa przycisków przewijające dane w sliderze
         private void posypkaLewo_Click(object sender, EventArgs e)
         {
             dekrementacjaTablicyPosypek();
