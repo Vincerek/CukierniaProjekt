@@ -66,11 +66,11 @@
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.tlpMenu.Controls.Add(this.pictureBox1, 0, 0);
             this.tlpMenu.Controls.Add(this.btnKontakt, 4, 0);
             this.tlpMenu.Controls.Add(this.btnStworzCiasto, 3, 0);
             this.tlpMenu.Controls.Add(this.btnNaszeCIasta, 2, 0);
             this.tlpMenu.Controls.Add(this.btnAktualnosci, 1, 0);
-            this.tlpMenu.Controls.Add(this.pictureBox1, 0, 0);
             this.tlpMenu.Controls.Add(this.iconButton1, 5, 0);
             this.tlpMenu.Controls.Add(this.btnKoszyk, 6, 0);
             this.tlpMenu.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -91,7 +91,7 @@
             this.btnKontakt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnKontakt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnKontakt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKontakt.Font = new System.Drawing.Font("Inter", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKontakt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnKontakt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnKontakt.IconChar = FontAwesome.Sharp.IconChar.Phone;
             this.btnKontakt.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
@@ -115,7 +115,7 @@
             this.btnStworzCiasto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnStworzCiasto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnStworzCiasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStworzCiasto.Font = new System.Drawing.Font("Inter", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnStworzCiasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnStworzCiasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnStworzCiasto.IconChar = FontAwesome.Sharp.IconChar.Wrench;
             this.btnStworzCiasto.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
@@ -139,7 +139,7 @@
             this.btnNaszeCIasta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnNaszeCIasta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnNaszeCIasta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNaszeCIasta.Font = new System.Drawing.Font("Inter", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNaszeCIasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNaszeCIasta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnNaszeCIasta.IconChar = FontAwesome.Sharp.IconChar.CakeCandles;
             this.btnNaszeCIasta.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
@@ -163,7 +163,7 @@
             this.btnAktualnosci.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnAktualnosci.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
             this.btnAktualnosci.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAktualnosci.Font = new System.Drawing.Font("Inter", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAktualnosci.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAktualnosci.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
             this.btnAktualnosci.IconChar = FontAwesome.Sharp.IconChar.House;
             this.btnAktualnosci.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
