@@ -87,7 +87,6 @@
             this.textImie.Size = new System.Drawing.Size(184, 36);
             this.textImie.TabIndex = 0;
             this.textImie.Text = "Podaj imię";
-            this.textImie.TextChanged += new System.EventHandler(this.textImie_TextChanged);
             this.textImie.Enter += new System.EventHandler(this.textImie_Enter);
             this.textImie.Leave += new System.EventHandler(this.textImie_Leave);
             // 

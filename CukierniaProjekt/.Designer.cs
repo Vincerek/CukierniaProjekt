@@ -42,9 +42,9 @@
             // panelNaszeCiasta
             // 
             this.panelNaszeCiasta.ColumnCount = 3;
-            this.panelNaszeCiasta.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.panelNaszeCiasta.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.panelNaszeCiasta.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.panelNaszeCiasta.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panelNaszeCiasta.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelNaszeCiasta.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.panelNaszeCiasta.Controls.Add(this.btnDalej, 3, 2);
             this.panelNaszeCiasta.Controls.Add(this.infOCiescie, 0, 2);
             this.panelNaszeCiasta.Controls.Add(this.btnPrawo, 3, 1);
@@ -60,7 +60,6 @@
             this.panelNaszeCiasta.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.panelNaszeCiasta.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panelNaszeCiasta.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.panelNaszeCiasta.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.panelNaszeCiasta.Size = new System.Drawing.Size(1195, 454);
             this.panelNaszeCiasta.TabIndex = 0;
             // 
@@ -76,11 +75,11 @@
             this.btnDalej.IconColor = System.Drawing.Color.White;
             this.btnDalej.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDalej.IconSize = 40;
-            this.btnDalej.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDalej.Location = new System.Drawing.Point(945, 329);
+            this.btnDalej.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDalej.Location = new System.Drawing.Point(845, 329);
             this.btnDalej.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.btnDalej.Name = "btnDalej";
-            this.btnDalej.Size = new System.Drawing.Size(150, 105);
+            this.btnDalej.Size = new System.Drawing.Size(250, 105);
             this.btnDalej.TabIndex = 6;
             this.btnDalej.Text = "Dodaj do koszyka";
             this.btnDalej.UseVisualStyleBackColor = false;
@@ -98,7 +97,7 @@
             this.infOCiescie.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.infOCiescie.Name = "infOCiescie";
             this.infOCiescie.Padding = new System.Windows.Forms.Padding(10);
-            this.infOCiescie.Size = new System.Drawing.Size(845, 105);
+            this.infOCiescie.Size = new System.Drawing.Size(745, 105);
             this.infOCiescie.TabIndex = 4;
             this.infOCiescie.Text = "Informacje o cieście";
             // 
@@ -112,10 +111,10 @@
             this.btnPrawo.IconColor = System.Drawing.Color.White;
             this.btnPrawo.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnPrawo.IconSize = 60;
-            this.btnPrawo.Location = new System.Drawing.Point(945, 102);
+            this.btnPrawo.Location = new System.Drawing.Point(845, 102);
             this.btnPrawo.Margin = new System.Windows.Forms.Padding(0);
             this.btnPrawo.Name = "btnPrawo";
-            this.btnPrawo.Size = new System.Drawing.Size(150, 207);
+            this.btnPrawo.Size = new System.Drawing.Size(250, 207);
             this.btnPrawo.TabIndex = 2;
             this.btnPrawo.UseVisualStyleBackColor = false;
             this.btnPrawo.Click += new System.EventHandler(this.btnPrawo_Click);
@@ -149,7 +148,7 @@
             this.btnLewo.Location = new System.Drawing.Point(100, 102);
             this.btnLewo.Margin = new System.Windows.Forms.Padding(0);
             this.btnLewo.Name = "btnLewo";
-            this.btnLewo.Size = new System.Drawing.Size(149, 207);
+            this.btnLewo.Size = new System.Drawing.Size(248, 207);
             this.btnLewo.TabIndex = 1;
             this.btnLewo.UseVisualStyleBackColor = false;
             this.btnLewo.Click += new System.EventHandler(this.btnLewo_Click);
@@ -158,10 +157,10 @@
             // 
             this.pbCiasto.BackColor = System.Drawing.Color.White;
             this.pbCiasto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCiasto.Location = new System.Drawing.Point(249, 102);
+            this.pbCiasto.Location = new System.Drawing.Point(348, 102);
             this.pbCiasto.Margin = new System.Windows.Forms.Padding(0);
             this.pbCiasto.Name = "pbCiasto";
-            this.pbCiasto.Size = new System.Drawing.Size(696, 207);
+            this.pbCiasto.Size = new System.Drawing.Size(497, 207);
             this.pbCiasto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCiasto.TabIndex = 7;
             this.pbCiasto.TabStop = false;
