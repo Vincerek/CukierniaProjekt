@@ -61,7 +61,7 @@
             this.panelZamow.Controls.Add(this.btnZamow, 3, 5);
             this.panelZamow.Controls.Add(this.lbkoszyk, 2, 5);
             this.panelZamow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelZamow.Location = new System.Drawing.Point(22, 16);
+            this.panelZamow.Location = new System.Drawing.Point(29, 20);
             this.panelZamow.Margin = new System.Windows.Forms.Padding(0);
             this.panelZamow.Name = "panelZamow";
             this.panelZamow.RowCount = 6;
@@ -71,7 +71,7 @@
             this.panelZamow.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.panelZamow.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.panelZamow.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.panelZamow.Size = new System.Drawing.Size(727, 536);
+            this.panelZamow.Size = new System.Drawing.Size(970, 659);
             this.panelZamow.TabIndex = 0;
             // 
             // textImie
@@ -81,10 +81,10 @@
             this.textImie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textImie.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textImie.ForeColor = System.Drawing.Color.DarkGray;
-            this.textImie.Location = new System.Drawing.Point(22, 24);
-            this.textImie.Margin = new System.Windows.Forms.Padding(22, 24, 22, 24);
+            this.textImie.Location = new System.Drawing.Point(29, 30);
+            this.textImie.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
             this.textImie.Name = "textImie";
-            this.textImie.Size = new System.Drawing.Size(137, 30);
+            this.textImie.Size = new System.Drawing.Size(184, 36);
             this.textImie.TabIndex = 0;
             this.textImie.Text = "Podaj imię";
             this.textImie.TextChanged += new System.EventHandler(this.textImie_TextChanged);
@@ -98,10 +98,10 @@
             this.textNazwisko.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textNazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textNazwisko.ForeColor = System.Drawing.Color.DarkGray;
-            this.textNazwisko.Location = new System.Drawing.Point(22, 104);
-            this.textNazwisko.Margin = new System.Windows.Forms.Padding(22, 24, 22, 24);
+            this.textNazwisko.Location = new System.Drawing.Point(29, 128);
+            this.textNazwisko.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
             this.textNazwisko.Name = "textNazwisko";
-            this.textNazwisko.Size = new System.Drawing.Size(137, 30);
+            this.textNazwisko.Size = new System.Drawing.Size(184, 36);
             this.textNazwisko.TabIndex = 1;
             this.textNazwisko.Text = "Podaj nazwisko";
             this.textNazwisko.Enter += new System.EventHandler(this.textNazwisko_Enter);
@@ -114,10 +114,10 @@
             this.textMail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textMail.ForeColor = System.Drawing.Color.DarkGray;
-            this.textMail.Location = new System.Drawing.Point(22, 184);
-            this.textMail.Margin = new System.Windows.Forms.Padding(22, 24, 22, 24);
+            this.textMail.Location = new System.Drawing.Point(29, 226);
+            this.textMail.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
             this.textMail.Name = "textMail";
-            this.textMail.Size = new System.Drawing.Size(137, 30);
+            this.textMail.Size = new System.Drawing.Size(184, 36);
             this.textMail.TabIndex = 2;
             this.textMail.Text = "Podaj e-mail";
             this.textMail.Enter += new System.EventHandler(this.textMail_Enter);
@@ -130,10 +130,10 @@
             this.textTel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textTel.ForeColor = System.Drawing.Color.DarkGray;
-            this.textTel.Location = new System.Drawing.Point(22, 264);
-            this.textTel.Margin = new System.Windows.Forms.Padding(22, 24, 22, 24);
+            this.textTel.Location = new System.Drawing.Point(29, 324);
+            this.textTel.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
             this.textTel.Name = "textTel";
-            this.textTel.Size = new System.Drawing.Size(137, 30);
+            this.textTel.Size = new System.Drawing.Size(184, 36);
             this.textTel.TabIndex = 3;
             this.textTel.Text = "Podaj numer telefonu";
             this.textTel.Enter += new System.EventHandler(this.textTel_Enter);
@@ -146,10 +146,10 @@
             this.szczeg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.szczeg.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.szczeg.ForeColor = System.Drawing.Color.White;
-            this.szczeg.Location = new System.Drawing.Point(181, 0);
+            this.szczeg.Location = new System.Drawing.Point(242, 0);
             this.szczeg.Margin = new System.Windows.Forms.Padding(0);
             this.szczeg.Name = "szczeg";
-            this.szczeg.Size = new System.Drawing.Size(546, 80);
+            this.szczeg.Size = new System.Drawing.Size(728, 98);
             this.szczeg.TabIndex = 5;
             this.szczeg.Text = "Szczegóły Zamówienia";
             this.szczeg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -165,10 +165,10 @@
             this.dataOdbioru.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataOdbioru.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dataOdbioru.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dataOdbioru.Location = new System.Drawing.Point(22, 344);
-            this.dataOdbioru.Margin = new System.Windows.Forms.Padding(22, 24, 22, 24);
+            this.dataOdbioru.Location = new System.Drawing.Point(29, 422);
+            this.dataOdbioru.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
             this.dataOdbioru.Name = "dataOdbioru";
-            this.dataOdbioru.Size = new System.Drawing.Size(137, 30);
+            this.dataOdbioru.Size = new System.Drawing.Size(184, 36);
             this.dataOdbioru.TabIndex = 6;
             // 
             // lokalOdbioru
@@ -183,10 +183,10 @@
             "ul. Maurycego Beniowskiego 20/22, 81-226 Gdynia",
             "al. Jana Pawła II 3, 81-345 Gdynia",
             "ul. Morska 81/87, 81-225 Gdynia"});
-            this.lokalOdbioru.Location = new System.Drawing.Point(15, 451);
-            this.lokalOdbioru.Margin = new System.Windows.Forms.Padding(15, 24, 15, 24);
+            this.lokalOdbioru.Location = new System.Drawing.Point(20, 553);
+            this.lokalOdbioru.Margin = new System.Windows.Forms.Padding(20, 30, 20, 30);
             this.lokalOdbioru.Name = "lokalOdbioru";
-            this.lokalOdbioru.Size = new System.Drawing.Size(332, 30);
+            this.lokalOdbioru.Size = new System.Drawing.Size(441, 37);
             this.lokalOdbioru.TabIndex = 8;
             // 
             // szczegZamow
@@ -195,12 +195,12 @@
             this.szczegZamow.BackColor = System.Drawing.Color.White;
             this.panelZamow.SetColumnSpan(this.szczegZamow, 3);
             this.szczegZamow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.szczegZamow.Location = new System.Drawing.Point(181, 80);
+            this.szczegZamow.Location = new System.Drawing.Point(242, 98);
             this.szczegZamow.Margin = new System.Windows.Forms.Padding(0);
             this.szczegZamow.Name = "szczegZamow";
-            this.szczegZamow.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.szczegZamow.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.panelZamow.SetRowSpan(this.szczegZamow, 4);
-            this.szczegZamow.Size = new System.Drawing.Size(546, 347);
+            this.szczegZamow.Size = new System.Drawing.Size(728, 425);
             this.szczegZamow.TabIndex = 9;
             // 
             // btnZamow
@@ -215,10 +215,10 @@
             this.btnZamow.IconColor = System.Drawing.Color.White;
             this.btnZamow.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnZamow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnZamow.Location = new System.Drawing.Point(543, 427);
+            this.btnZamow.Location = new System.Drawing.Point(726, 523);
             this.btnZamow.Margin = new System.Windows.Forms.Padding(0);
             this.btnZamow.Name = "btnZamow";
-            this.btnZamow.Size = new System.Drawing.Size(184, 109);
+            this.btnZamow.Size = new System.Drawing.Size(244, 136);
             this.btnZamow.TabIndex = 4;
             this.btnZamow.Text = "Zamów";
             this.btnZamow.UseVisualStyleBackColor = false;
@@ -230,23 +230,24 @@
             this.lbkoszyk.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbkoszyk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lbkoszyk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(28)))), ((int)(((byte)(117)))));
-            this.lbkoszyk.Location = new System.Drawing.Point(365, 427);
+            this.lbkoszyk.Location = new System.Drawing.Point(488, 523);
+            this.lbkoszyk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbkoszyk.Name = "lbkoszyk";
-            this.lbkoszyk.Size = new System.Drawing.Size(175, 109);
+            this.lbkoszyk.Size = new System.Drawing.Size(234, 136);
             this.lbkoszyk.TabIndex = 10;
             this.lbkoszyk.Text = "wartosc koszyka:";
             this.lbkoszyk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Zamowienia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(234)))));
-            this.ClientSize = new System.Drawing.Size(771, 568);
+            this.ClientSize = new System.Drawing.Size(1028, 699);
             this.Controls.Add(this.panelZamow);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Zamowienia";
-            this.Padding = new System.Windows.Forms.Padding(22, 16, 22, 16);
+            this.Padding = new System.Windows.Forms.Padding(29, 20, 29, 20);
             this.Text = "Zamowienia";
             this.Load += new System.EventHandler(this.Zamowienia_Load);
             this.panelZamow.ResumeLayout(false);
