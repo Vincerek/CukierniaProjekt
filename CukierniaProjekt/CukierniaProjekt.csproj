@@ -98,12 +98,6 @@
     <Compile Include="okienkoZamowienie.Designer.cs">
       <DependentUpon>okienkoZamowienie.cs</DependentUpon>
     </Compile>
-    <Compile Include="Status.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Status.Designer.cs">
-      <DependentUpon>Status.cs</DependentUpon>
-    </Compile>
     <Compile Include="wierszZamowien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,9 +148,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="okienkoZamowienie.resx">
       <DependentUpon>okienkoZamowienie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Status.resx">
-      <DependentUpon>Status.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StwórzTort.resx">
       <DependentUpon>StwórzTort.cs</DependentUpon>

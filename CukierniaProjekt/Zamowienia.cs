@@ -10,11 +10,14 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Runtime.InteropServices;
 
 namespace CukierniaProjekt
 {
@@ -166,10 +169,23 @@ namespace CukierniaProjekt
         //Funkcja tworząca elektroniczny paragon w formacie pdf z informacjami o zamówieniu z tabeli z zamówieniami
         public void pdf()
         {
+            // zwracanie ostatniego dodanego id
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
             {
                 connection.Open();
-                string queryTemp = $"SELECT * FROM Zamowienia WHERE mail='{textMail.Text}';";
+                string queryID = "SELECT idZamowienia FROM Zamowienia;";
+                int id=0;
+                using (SQLiteCommand command = new SQLiteCommand(queryID, connection))
+                {
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            id = int.Parse(reader["idZamowienia"].ToString());
+                        }
+                    }
+                }
+                string queryTemp = $"SELECT * FROM Zamowienia WHERE mail='{textMail.Text}' AND idZamowienia='{id}';";
                 using (SQLiteCommand command = new SQLiteCommand(queryTemp, connection))
                 {
                     using (SQLiteDataReader reader = command.ExecuteReader())
@@ -188,8 +204,7 @@ namespace CukierniaProjekt
                             header.Alignment = Element.ALIGN_CENTER;
                             document.Add(header);
                             iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(Resources.logo_PixelCake, System.Drawing.Imaging.ImageFormat.Png);
-                            image.ScaleAbsoluteHeight(document.PageSize.Height / 4);
-                            image.ScaleAbsoluteWidth(document.PageSize.Width /2);
+                            image.ScalePercent(15);
                             image.Alignment = Element.ALIGN_CENTER;
                             document.Add(image);
 
@@ -207,16 +222,16 @@ namespace CukierniaProjekt
 
                             string[] ciasta = reader["idCiast"].ToString().Split(';');
                             string[] sztuki = reader["iloscCiast"].ToString().Split(';');
-                            for (int i = 0; i < ciasta.Length - 1; i++)
+                            for (int i = 0; i <= ciasta.Length - 1; i++)
                             {
-                                string query = $"SELECT * FROM StworzoneCiasta WHERE Id={ciasta[i]};";
+                                string query = $"SELECT * FROM StworzoneCiasta WHERE Id='{ciasta[i]}';";
                                 using (SQLiteCommand cmd = new SQLiteCommand(query, connection))
                                 {
                                     using (SQLiteDataReader readerTemp = cmd.ExecuteReader())
                                     {
                                         while (readerTemp.Read())
                                         {
-                                            Paragraph ciasto = new Paragraph($"\n-{readerTemp["Nazwa Ciasta"]} {readerTemp["Cena"]} zł X {sztuki[i]}", helvetica16);
+                                            Paragraph ciasto = new Paragraph($"\n-{readerTemp["Nazwa Ciasta"]} - {readerTemp["Cena"]} zł X {sztuki[i]} - {int.Parse(readerTemp["Cena"].ToString()) * int.Parse(sztuki[i])} zł ", helvetica16);
                                             document.Add(ciasto);
                                         }
                                     }
@@ -244,7 +259,37 @@ namespace CukierniaProjekt
             bazaOdczyt();            
         }
 
+        public static void SendMail(string email, string imie, string nazwisko, string data, string lokal)
+        {
+            string fromMail = "pixelcakesbakers@gmail.com";
+            string fromPassword = "lwbc sqcu dodr wkmn";
+            string toMail = email;
+            string toLogin = imie;
 
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress(fromMail);
+            message.Subject = "Zamówienie w PixelCake";
+            message.To.Add(new MailAddress(toMail));
+            message.Body = $"Wtaj {toLogin},<br><p>Dziękujemy za złożenie przez Ciebie zamówienia. Po odbiór zamówienia zapraszamy do lokalu o adresie: {lokal}, w dniu: {data} </p> <p>W załączniku znajdują się wszystkie dane dotyczące twojego zamówienia. </p>";
+            message.IsBodyHtml = true;
+            string attachmentFilePath = $"..\\..\\PDF\\{imie}_{nazwisko}_zamowienie.pdf";
+
+            //dodawanie załącznika do maila
+            if (!string.IsNullOrEmpty(attachmentFilePath))
+            {
+                Attachment attachment = new Attachment(attachmentFilePath);
+                message.Attachments.Add(attachment);
+            }
+
+            var smtpClient = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential(fromMail, fromPassword),
+                EnableSsl = true,
+            };
+
+            smtpClient.Send(message);
+        }
 
         private void btnZamow_Click(object sender, EventArgs e)
         {
@@ -274,6 +319,8 @@ namespace CukierniaProjekt
                         connection.Close();
                     }
                     wartoscKoszyk = 0;
+                    //wysylanie maila;
+                    SendMail(textMail.Text, textImie.Text, textNazwisko.Text, dataOdbioru.Text,lokalOdbioru.Text);
                     //bazaOdczyt();
                     textImie.Text = string.Empty;
                     textMail.Text = string.Empty;
@@ -301,11 +348,6 @@ namespace CukierniaProjekt
                 okienkoZamowienie okienko = new okienkoZamowienie();
                 okienko.ShowDialog();
             }
-        }
-
-        private void textImie_TextChanged(object sender, EventArgs e)
-        {            
-
         }
 
         bool regexCheck()

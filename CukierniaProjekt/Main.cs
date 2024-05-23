@@ -25,7 +25,6 @@ namespace CukierniaProjekt
             ActiveButton(btnAktualnosci);
         }
         //Funkcja odpowiadająca za otwieranie formatki wewnątrz panelu formatki Main
-        
         public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
@@ -59,7 +58,7 @@ namespace CukierniaProjekt
                 currentBtn.Font = new Font(currentBtn.Font, FontStyle.Regular);
             }
         }
-
+        //otwieranie kolejnych okienek
         private void btnAktualnosci_Click(object sender, EventArgs e)
         {
             ActiveButton(sender);
@@ -82,12 +81,6 @@ namespace CukierniaProjekt
         {
             ActiveButton(sender);
             OpenChildForm(new Kontakt());
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender);
-            OpenChildForm(new Status());
         }
 
         private void btnKoszyk_Click(object sender, EventArgs e)
