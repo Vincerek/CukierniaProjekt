@@ -20,16 +20,13 @@ namespace CukierniaProjekt
             InitializeComponent();
         }
        
-
+        //przejście do formularza Zamowienia
         private void btnKoszyk_Click(object sender, EventArgs e)
         {
             koszyk = true;
-
-            
-
             this.Close();
         }
-
+        //zamknięcie okna i pozostanie na formularzu z wyborem ciast
         private void btnWroc_Click(object sender, EventArgs e)
         {
             koszyk = false;

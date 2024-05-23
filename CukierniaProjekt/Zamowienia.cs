@@ -34,10 +34,12 @@ namespace CukierniaProjekt
         string hintNazwisko;
         string hintMail;
         string hintTel;
+        //zmienna przetrzymująca aktualna cenę całościową produktów, które są w koszyku
         public double wartoscKoszyk;
+        //zmienna potrzebna do zapytania do bazy danych przetrzymująca idCiast które są w zamówieniu
         string idCiast;
+        //zmienna potrzebna do zapytania do bazy danych przetrzymująca ilość ciast które są w zamóieniu
         string iloscCiast;
-        string mailPDF;
         public Zamowienia()
         {
             InitializeComponent();
@@ -161,6 +163,73 @@ namespace CukierniaProjekt
                 lbkoszyk.Text = "wartosc koszyka: " + wartoscKoszyk + " zl";
             }
         }
+        //Funkcja tworząca elektroniczny paragon w formacie pdf z informacjami o zamówieniu z tabeli z zamówieniami
+        public void pdf()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
+            {
+                connection.Open();
+                string queryTemp = $"SELECT * FROM Zamowienia WHERE mail='{textMail.Text}';";
+                using (SQLiteCommand command = new SQLiteCommand(queryTemp, connection))
+                {
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Document document = new Document(PageSize.A3);
+                            PdfWriter.GetInstance(document, new FileStream($"..\\..\\PDF\\{reader["imie"]}_{reader["nazwisko"]}_zamowienie.pdf", FileMode.Create));
+                            document.Open();
+
+                            BaseFont helvetica = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1250, BaseFont.EMBEDDED);
+                            iTextSharp.text.Font helvetica16 = new iTextSharp.text.Font(helvetica, 16);
+                            iTextSharp.text.Font helvetica24 = new iTextSharp.text.Font(helvetica, 24);
+
+                            Paragraph header = new Paragraph("Zamowienie w cukierni internetowej \n", helvetica24);
+                            header.Alignment = Element.ALIGN_CENTER;
+                            document.Add(header);
+                            iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(Resources.logo_PixelCake, System.Drawing.Imaging.ImageFormat.Png);
+                            image.ScaleAbsoluteHeight(document.PageSize.Height / 4);
+                            image.ScaleAbsoluteWidth(document.PageSize.Width /2);
+                            image.Alignment = Element.ALIGN_CENTER;
+                            document.Add(image);
+
+                            Paragraph p1 = new Paragraph($"\n\nImie i nazwisko zamawiającego: {reader["imie"]} {reader["nazwisko"]}", helvetica16);
+                            document.Add(p1);
+
+                            Paragraph p2 = new Paragraph($"\nDane kontaktowe zamawiającego: \n\t     Nr. telefonu: {reader["nrTel"]} \n     Adres e-mail: {reader["mail"]}", helvetica16);
+                            document.Add(p2);
+
+                            Paragraph p3 = new Paragraph($"\nZamówienie będzie do odbioru dnia {reader["data"]} w naszym lokalu pod adresem: {reader["lokalOdbioru"]}. \nKwota do zapłaty na miejscu przy odbiorze: {reader["cena"]} zł.(Płatność kartą lub gotówką)", helvetica16);
+                            p3.Alignment = Element.ALIGN_CENTER;
+                            document.Add(p3);
+                            Paragraph p4 = new Paragraph($"\n\n\nZamówione ciasta:", helvetica16);
+                            document.Add(p4);
+
+                            string[] ciasta = reader["idCiast"].ToString().Split(';');
+                            string[] sztuki = reader["iloscCiast"].ToString().Split(';');
+                            for (int i = 0; i < ciasta.Length - 1; i++)
+                            {
+                                string query = $"SELECT * FROM StworzoneCiasta WHERE Id={ciasta[i]};";
+                                using (SQLiteCommand cmd = new SQLiteCommand(query, connection))
+                                {
+                                    using (SQLiteDataReader readerTemp = cmd.ExecuteReader())
+                                    {
+                                        while (readerTemp.Read())
+                                        {
+                                            Paragraph ciasto = new Paragraph($"\n-{readerTemp["Nazwa Ciasta"]} {readerTemp["Cena"]} zł X {sztuki[i]}", helvetica16);
+                                            document.Add(ciasto);
+                                        }
+                                    }
+                                }
+                            }
+                            Paragraph p5 = new Paragraph($"\n\nW razie pytań proszę kontaktować się z nami telefonicznie lub mailowo: \n     tel: +48 824 123 987\n     tel: +48 765 321 789\n     e-mail: PixelCake@gmail.com", helvetica16);
+                            document.Add(p5);
+                            document.Close();
+                        }
+                    }
+                }
+            }
+        }
 
         private void Zamowienia_Load(object sender, EventArgs e)
         {
@@ -179,10 +248,13 @@ namespace CukierniaProjekt
 
         private void btnZamow_Click(object sender, EventArgs e)
         {
+            //warunek sprawdzający poprawność pól tekstowych formularza
             if (regexCheck())
             {
+                //warunek sprawdzający czy koszyk nie jest pusty
                 if (wartoscKoszyk > 0)
                 {
+                    //kwerneda wstawiająca dane zamówienia do tabeli w bazie danych z pól tekstowych i nie tylko z formularza zamówienia
                     using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=..\..\Baza\cukierniaCiasta.db"))
                     {
                         connection.Open();
@@ -191,65 +263,9 @@ namespace CukierniaProjekt
                         {
                             command.ExecuteNonQuery();
                         }
-                            string queryTemp = $"SELECT * FROM Zamowienia WHERE mail='{textMail.Text}';";
-                            using (SQLiteCommand command = new SQLiteCommand(queryTemp, connection))
-                            {
-                                using (SQLiteDataReader reader = command.ExecuteReader())
-                                {
-                                    if (reader.Read())
-                                    {
-                                        Document document = new Document(PageSize.A4.Rotate());
-                                        PdfWriter.GetInstance(document, new FileStream($"..\\..\\PDF\\{reader["imie"]}_{reader["nazwisko"]}_zamowienie.pdf", FileMode.Create));
-                                        document.Open();
-
-                                        BaseFont helvetica = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1250, BaseFont.EMBEDDED);
-                                        iTextSharp.text.Font helvetica16 = new iTextSharp.text.Font(helvetica, 16);
-                                        iTextSharp.text.Font helvetica24 = new iTextSharp.text.Font(helvetica, 24);
-
-                                        Paragraph header = new Paragraph("Zamowienie w cukierni internetowej \n", helvetica24);
-                                        header.Alignment = Element.ALIGN_CENTER;
-                                        document.Add(header);
-                                        iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(Resources.logo_PixelCake, System.Drawing.Imaging.ImageFormat.Png);
-                                        image.ScaleAbsoluteHeight(document.PageSize.Height / 5);
-                                        image.ScaleAbsoluteWidth(document.PageSize.Width / 3);
-                                        image.Alignment = Element.ALIGN_CENTER;
-                                        document.Add(image);
-
-                                        Paragraph p1 = new Paragraph($"\n\nImie i nazwisko zamawiającego: {reader["imie"]} {reader["nazwisko"]}", helvetica16);
-                                        document.Add(p1);
-
-                                        Paragraph p2 = new Paragraph($"\nDane kontaktowe zamawiającego: \n\t     Nr. telefonu: {reader["nrTel"]} \n     Adres e-mail: {reader["mail"]}", helvetica16);
-                                        document.Add(p2);
-
-                                        Paragraph p3 = new Paragraph($"\nZamówienie będzie do odbioru dnia {reader["data"]} w naszym lokalu pod adresem: {reader["lokalOdbioru"]}. \nKwota do zapłaty na miejscu przy odbiorze: {reader["cena"]} zł.(Płatność kartą lub gotówką)", helvetica16);
-                                        p3.Alignment = Element.ALIGN_CENTER;
-                                        document.Add(p3);
-                                        Paragraph p4 = new Paragraph($"\n\n\nZamówione ciasta:", helvetica16);
-                                        document.Add(p4);
-
-                                        string[] ciasta = reader["idCiast"].ToString().Split(';');
-                                        string[] sztuki = reader["iloscCiast"].ToString().Split(';');
-                                        for (int i = 0; i < ciasta.Length - 1; i++)
-                                        {
-                                            string query = $"SELECT * FROM StworzoneCiasta WHERE Id={ciasta[i]};";
-                                            using (SQLiteCommand cmd = new SQLiteCommand(query, connection))
-                                            {
-                                                using (SQLiteDataReader readerTemp = cmd.ExecuteReader())
-                                                {
-                                                    while (readerTemp.Read())
-                                                    {
-                                                        Paragraph ciasto = new Paragraph($"\n-{readerTemp["Nazwa Ciasta"]} {readerTemp["Cena"]} zł X {sztuki[i]}", helvetica16);
-                                                        document.Add(ciasto);
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        Paragraph p5 = new Paragraph($"\n\nW razie pytań proszę kontaktować się z nami telefonicznie lub mailowo: \n     tel: +48 824 123 987\n     tel: +48 765 321 789\n     e-mail: PixelCake@gmail.com", helvetica16);
-                                        document.Add(p5);
-                                        document.Close();
-                                    }
-                                }
-                            }
+                        //wywołanie funkcji tworzącej plik pdf z danymi zamówienia
+                        pdf();
+                        //kwerenda czyszcząca w tabeli koszykTemp ciasta które dodaliśmy do koszyka
                         string queryDelete = "DELETE FROM koszykTemp";
                         using (SQLiteCommand command = new SQLiteCommand(queryDelete, connection))
                         {
@@ -258,12 +274,12 @@ namespace CukierniaProjekt
                         connection.Close();
                     }
                     wartoscKoszyk = 0;
-                    bazaOdczyt();
+                    //bazaOdczyt();
                     textImie.Text = string.Empty;
                     textMail.Text = string.Empty;
                     textNazwisko.Text = string.Empty;
                     textTel.Text = string.Empty;
-
+                    //przejście do podstrony z aktualnościami po finalizacji zamówienia
                     Aktualnosci aktualnosci = new Aktualnosci();
                     var panelContainer = this.Parent as System.Windows.Forms.Panel;
                     var Main = panelContainer.TopLevelControl as Form;
@@ -277,8 +293,11 @@ namespace CukierniaProjekt
                 }
                 else
                 {
+                    //przypisanie zmiennej wartość true, potrzebnej do wyświetlenia komunikatu w okienku okienkoKoszyk w przypadku
+                    //gdy koszyk jest pusty
                     czyPusty = true;
                 }
+                //wyświetlenie komunikatu w okienku okienkoKoszyk albo że zamówienie zostało złożone pomyślnie albo jest pusty koszyk 
                 okienkoZamowienie okienko = new okienkoZamowienie();
                 okienko.ShowDialog();
             }
